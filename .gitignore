@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Vite cache
+.vite/
+
+# dotenv environment variables
+.env
+.env.*.local
+*.local
+
+# Next.js/React/Vite static files (if any)
+out/
+public/static/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript build output
+*.tsbuildinfo
+
+# eslint cache
+.eslintcache
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.cache/
+
+# MongoDB local database files (if accidentally placed)
+*.mongodb
+
+# PM2 logs and dumps
+pids
+*.pid
+*.seed
+*.pid.lock
+dump.rdb
+*.log
+*.gz

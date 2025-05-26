@@ -1,0 +1,30 @@
+body{
+  
+}
+
+
+.facebookIcon{
+  font-size: 25px;
+  
+}
+
+
+
+.myCenterFooter{
+  display: flex;
+  justify-content: center;
+
+}
+
+.myMainSection{
+   width: 100vw;
+  min-height: 83vh;
+  margin-top: 15vh;
+ 
+}
+
+.myFooterProduct{
+
+  margin-left: 15vw;
+  
+}

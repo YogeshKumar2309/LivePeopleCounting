@@ -1,0 +1,11 @@
+.myContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 84vw;
+  gap: 2vw;
+  
+ 
+}
+
