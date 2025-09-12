@@ -1,13 +1,30 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../admin/Sidebar";
+
 
 const AdminLayout = () => {
+  const [sidebarMenu, setSidebarMenu] = useState(true);
   return (
     <>
-    <div>AdminLayout</div>
-    <Outlet/>
-    </>
-  )
-}
+      <div className="flex h-screen ">
+        {/* Sidebar */}
+        {sidebarMenu && (
+          <aside className="w-64 hidden sm:block">
+            <Sidebar />
+          </aside>
+        )}
 
-export default AdminLayout
+      
+
+          {/* Content */}
+          <main className="flex-1 bg-amber-200">
+                <Outlet />
+          </main>
+        </div>
+
+    </>
+  );
+};
+
+export default AdminLayout;
