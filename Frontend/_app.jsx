@@ -1,32 +1,28 @@
-
-// App.js
 import { Routes, Route } from "react-router-dom";
-import PublicLayout from "./componets/layout/PublicLayout";
-import AuthLayout from "./componets/layout/AuthLayout";
-import UserLayout from "./componets/layout/UserLayout";
-import AdminLayout from "./componets/layout/AdminLayout";
+import PublicLayout from "./components/layout/PublicLayout";
+import AuthLayout from "./components/layout/AuthLayout";
+import UserLayout from "./components/layout/UserLayout";
+import AdminLayout from "./components/layout/AdminLayout";
 
 import Home from "./pages/public/Home";
 import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
 import Favorites from "./pages/user/Favorites";
 import Dashboard from "./pages/admin/Dashboard";
-import CheckAuth from "./componets/common/CheckAuth";
+import CheckAuth from "./components/common/CheckAuth";
 import NotFound from "./pages/pageNotFound/NotFound";
 import UnauthPage from "./pages/Unauth/UnauthPage";
 
 const App = () => {
-  // Authentication state - typically from Context/Redux
-  const isAuthenticated = true;
+  const isAuthenticated = true; // ✅ Future में state से आएगा
   const user = {
-    name: 'Yogesh',
-    role: 'user', // 'admin' or 'user'
+    name: "Yogesh",
+    role: "admin", // "admin" या "user"
   };
 
   return (
     <div className="App">
       <Routes>
-        {/* Public/Home Route */}
+        {/* 🌍 Public Route */}
         <Route
           path="/"
           element={
@@ -38,7 +34,7 @@ const App = () => {
           <Route index element={<Home />} />
         </Route>
 
-        {/* Auth Routes */}
+        {/* 🔑 Auth Routes */}
         <Route
           path="/login"
           element={
@@ -58,10 +54,10 @@ const App = () => {
             </CheckAuth>
           }
         >
-          <Route index element={<Register />} />
+          <Route index element={<div>Register Page</div>} />
         </Route>
 
-        {/* User Protected Routes */}
+        {/* 👤 User Protected Routes */}
         <Route
           path="/user"
           element={
@@ -71,8 +67,6 @@ const App = () => {
           }
         >
           <Route index element={<div>User Dashboard</div>} />
-          <Route path="profile" element={<div>User Profile</div>} />
-          <Route path="settings" element={<div>User Settings</div>} />
         </Route>
 
         <Route
@@ -86,7 +80,7 @@ const App = () => {
           <Route index element={<Favorites />} />
         </Route>
 
-        {/* Admin Protected Routes */}
+        {/* 🛠️ Admin Protected Routes */}
         <Route
           path="/admin"
           element={
@@ -96,14 +90,12 @@ const App = () => {
           }
         >
           <Route index element={<Dashboard />} />
-          <Route path="users" element={<div>Manage Users</div>} />
-          <Route path="settings" element={<div>Admin Settings</div>} />
         </Route>
 
-        {/* Unauthorized Page */}
+        {/* 🚫 Unauthorized Page */}
         <Route path="/unauth-page" element={<UnauthPage />} />
 
-        {/* Page Not Found */}
+        {/* ❌ 404 Not Found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

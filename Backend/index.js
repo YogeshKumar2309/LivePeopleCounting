@@ -4,7 +4,8 @@ const cors = require("cors");
 const session = require("express-session");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-const arduinoRoutes = require("./routes/arduinoRoutes"); // ✅ ADD THIS
+const arduinoRoutes = require("./routes/arduinoRoutes"); 
+const livePeopleRoute = require("./routes/livePeopleRoute");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -36,7 +37,6 @@ app.use(
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/arduino", arduinoRoutes); // ✅ ADD THIS
-const livePeopleRoute = require("./routes/livePeopleRoute");
 app.use("/api", livePeopleRoute);
 
 

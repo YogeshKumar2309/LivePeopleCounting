@@ -1,23 +1,22 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import App from './App.jsx'
+// import store from "./store/store";
+// import { Provider } from "react-redux";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import AdminApp from './componets/AdminApp.jsx';
 
-const Root = () => {
-  const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith("/admin");
 
-  return isAdminRoute ? <AdminApp /> : <App />;
-};
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Root />
+      {/* <Provider store={store}> */}
+        <App />
+        {/* </Provider> */}
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );
+
