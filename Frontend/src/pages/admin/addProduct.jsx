@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const addProduct = () => {
+const AddProduct = () => {
+
+
   return (
-    <div>addProduct</div>
-  )
-}
+    <>
+      <div className="shadow-2xl shadow-amber-400 max-w-[80vw] m-auto h-screen">
+        <form action="">
+          <input type="file" />
+        </form>
+      </div>
+    </>
+  );
+};
 
-export default addProduct
+export default AddProduct;

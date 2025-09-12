@@ -6,6 +6,11 @@ const Productlayout = () => {
     const adminNav = [
     {
       id: 1,
+      name: 'AllProductList',
+      link: '/admin/products/allProduct'
+    },
+    {
+      id: 2,
       name: 'addProduct',
       link: '/admin/products/add'
     },

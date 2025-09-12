@@ -13,12 +13,10 @@ const AdminLayout = () => {
           <aside className="w-64 hidden sm:block">
             <Sidebar />
           </aside>
-        )}
-
-      
+        )}   
 
           {/* Content */}
-          <main className="flex-1 bg-amber-200">
+          <main className="flex-1">
                 <Outlet />
           </main>
         </div>

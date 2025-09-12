@@ -13,7 +13,11 @@ import Dashboard from "./pages/admin/Dashboard";
 import CheckAuth from "./componets/common/CheckAuth";
 import NotFound from "./pages/pageNotFound/NotFound";
 import UnauthPage from "./pages/Unauth/UnauthPage";
+import Products from "./pages/admin/Products";
+import AddProduct from "./pages/admin/addProduct";
 import Productlayout from "./pages/admin/Productlayout";
+
+
 
 const App = () => {
   // Authentication state - typically from Context/Redux
@@ -98,7 +102,9 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path="users" element={<div>Manage Users</div>} />
           <Route path="products" element={<Productlayout/>} >
-            <Route path="add" element={<div>addProduct</div>} />
+            <Route index element={<h1>comming soon Dashboard</h1>} />
+            <Route path="add" element={<AddProduct/>} />
+            <Route path="allProduct" element={<Products/>} />
           </Route>
           <Route path="people" element={<div>Admin Settings</div>} />
           <Route path="bisnessAnalytics" element={<div>Admin Settings</div>} />
