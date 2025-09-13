@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Eye, EyeOff, User, Mail, Lock, ArrowRight } from "lucide-react";
-import registerImg from "/images/118.jpg"; // apni image ka path yahan lagao
-
+import registerImg from "/images/118.jpg"; 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -17,8 +16,28 @@ const RegisterForm = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Register submitted:", formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if(!res.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const data = await res.json();
+      console.log("res", data);
+      
+    } catch (error) {
+      console.error("err",error.message)
+    }
   };
 
   return (

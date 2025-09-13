@@ -29,15 +29,15 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      maxAge:  1000 * 60 * 60 * 24 * 365,
     },
   })
 );
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/arduino", arduinoRoutes); // ✅ ADD THIS
-app.use("/api", livePeopleRoute);
+// app.use("/api/arduino", arduinoRoutes); 
+// app.use("/api", livePeopleRoute);
 
 
 // Default route
@@ -47,5 +47,5 @@ app.get("/", (req, res) => {
 
 // Start server
 app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
