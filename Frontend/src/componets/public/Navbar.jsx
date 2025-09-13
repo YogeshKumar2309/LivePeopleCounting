@@ -1,47 +1,102 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 const Navbar = ({ navList }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex items-center h-14 justify-between px-2 md:px-6">
-      <div>logo</div>
+    <nav className="bg-white shadow-md fixed w-full z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
 
-      {/* searchbar */}
-      <div className=" px-2">
-        <span className="md:hidden">search</span>
-        <span className="hidden md:block">
-          <input
-            type="text"
-            className="border rounded-2xl p-0.5"
-            placeholder="Search here your favorite food"
-          />
-        </span>
-      </div>
+          {/* Logo */}
+          <div className="flex-shrink-0 text-2xl font-bold text-yellow-600">
+            Y-Desserts
+          </div>
 
-      {/* navLink */}
-      <div className="text-black order-2 md:order-0">
-        {/* mobile view */}
-        <div className="md:hidden">a</div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex md:items-center md:space-x-4 w-full justify-end">
+            {navList.map((nav, idx) => (
+              <NavLink
+                key={idx}
+                to={nav.link}
+                className={({ isActive }) =>
+                  `${isActive ? "bg-amber-500 text-white" : ""} px-4 py-2 rounded-lg font-semibold hover:bg-amber-500 hover:text-white transition`
+                }
+              >
+                {nav.name}
+              </NavLink>
+            ))}
 
-        {/* desktop view */}
-        <div className="hidden md:block space-x-4">
-          {navList.map((nav) => (
+            {/* Desktop Search Bar */}
+            <input
+              type="text"
+              placeholder="Search desserts..."
+              className="ml-4 px-3 py-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+            />
+
+            {/* Login Button */}
             <NavLink
-              to={nav.link}
+              to="/login"
               className={({ isActive }) =>
-                `${
-                  isActive ? "bg-amber-500 text-white" : ""
-                }  px-4 py-2 my-2 rounded-lg font-bold uppercase hover:bg-amber-500 hover:text-white`
+                `ml-4 px-4 py-1 rounded-lg font-semibold border-2 border-blue-700 ${
+                  isActive
+                    ? "bg-gradient-to-br from-purple-500 via-blue-500 to-rose-400  text-white"
+                    : "hover:bg-gradient-to-b from-blue-400 to-yellow-400 hover:text-white"
+                } transition`
               }
             >
-              {nav.name}
+              Login
             </NavLink>
-          ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 focus:outline-none"
+            >
+              {isOpen ? <HiOutlineX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      <div>login</div>
-    </div>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-lg">
+          <div className="px-4 pt-2 pb-3 space-y-2">
+            {navList.map((nav, idx) => (
+              <NavLink
+                key={idx}
+                to={nav.link}
+                className={({ isActive }) =>
+                  `${isActive ? "bg-amber-500 text-white" : "text-gray-800"} block px-3 py-2 rounded-md font-semibold hover:bg-amber-500 hover:text-white transition`
+                }
+              >
+                {nav.name}
+              </NavLink>
+            ))}
+
+            {/* Mobile Search Bar */}
+            <input
+              type="text"
+              placeholder="Search desserts..."
+              className="w-full mt-2 px-3 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+            />
+
+            {/* Mobile Login Button */}
+            <NavLink
+              to="/login"
+              className="block mt-2 px-3 py-2 rounded-md font-semibold border-2 border-blue-700 text-center hover:bg-gradient-to-b from-blue-400 to-yellow-400 hover:text-white transition"
+            >
+              Login
+            </NavLink>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 
