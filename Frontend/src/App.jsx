@@ -1,7 +1,6 @@
 // App.js
 import { Routes, Route } from "react-router-dom";
 import PublicLayout from "./componets/layout/PublicLayout";
-import AuthLayout from "./componets/layout/AuthLayout";
 import UserLayout from "./componets/layout/UserLayout";
 import AdminLayout from "./componets/layout/AdminLayout";
 
@@ -16,15 +15,20 @@ import UnauthPage from "./pages/Unauth/UnauthPage";
 import Products from "./pages/admin/Products";
 import AddProduct from "./pages/admin/addProduct";
 import Productlayout from "./pages/admin/Productlayout";
+import User from "./pages/admin/User";
+import LivePeople from "./pages/admin/LivePeople";
+import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 
-
+import UserProducts from "./pages/public/UserProducts";
+import About from "./pages/public/About";
+import Contact from "./pages/public/Contact";
 
 const App = () => {
   // Authentication state - typically from Context/Redux
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const user = {
     name: "Yogesh",
-    role: "admin", // 'admin' or 'user'
+    role: "user", // 'admin' or 'user'
   };
 
   return (
@@ -40,30 +44,12 @@ const App = () => {
           }
         >
           <Route index element={<Home />} />
-        </Route>
-
-        {/* Auth Routes */}
-        <Route
-          path="/login"
-          element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <AuthLayout />
-            </CheckAuth>
-          }
-        >
-          <Route index element={<Login />} />
-        </Route>
-
-        <Route
-          path="/register"
-          element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <AuthLayout />
-            </CheckAuth>
-          }
-        >
-          <Route index element={<Register />} />
-        </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="products" element={<UserProducts/>} />
+          <Route path="about" element={<About/>} />
+          <Route path="contact" element={<Contact/>} />
+         </Route>
 
         {/* User Protected Routes */}
         <Route
@@ -77,17 +63,7 @@ const App = () => {
           <Route index element={<div>User Dashboard</div>} />
           <Route path="profile" element={<div>User Profile</div>} />
           <Route path="settings" element={<div>User Settings</div>} />
-        </Route>
-
-        <Route
-          path="/favorites"
-          element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <UserLayout />
-            </CheckAuth>
-          }
-        >
-          <Route index element={<Favorites />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
 
         {/* Admin Protected Routes */}
@@ -100,14 +76,14 @@ const App = () => {
           }
         >
           <Route index element={<Dashboard />} />
-          <Route path="users" element={<div>Manage Users</div>} />
-          <Route path="products" element={<Productlayout/>} >
+          <Route path="users" element={<User />} />
+          <Route path="products" element={<Productlayout />}>
             <Route index element={<h1>comming soon Dashboard</h1>} />
-            <Route path="add" element={<AddProduct/>} />
-            <Route path="allProduct" element={<Products/>} />
+            <Route path="add" element={<AddProduct />} />
+            <Route path="allProduct" element={<Products />} />
           </Route>
-          <Route path="people" element={<div>Admin Settings</div>} />
-          <Route path="bisnessAnalytics" element={<div>Admin Settings</div>} />
+          <Route path="livePeople" element={<LivePeople />} />
+          <Route path="bisnessAnalytics" element={<BisnessAnalytics />} />
         </Route>
 
         {/* Unauthorized Page */}

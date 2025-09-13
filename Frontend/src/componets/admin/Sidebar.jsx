@@ -13,6 +13,17 @@ const Sidebar = () => {
       name: "user",
       link: "/admin/users",
     },
+    {
+      id: 3,
+      name: "Live People",
+      link: "/admin/livePeople",
+    },
+    {
+      id: 4,
+      name: "Analitics",
+      link: "/admin/bisnessAnalytics",
+    },
+   
   ];
 
   return (

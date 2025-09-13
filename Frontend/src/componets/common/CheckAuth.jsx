@@ -10,6 +10,9 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
     // Allow access to public routes and auth routes
     if (
       currentPath === "/" ||
+      currentPath === "/products" ||
+      currentPath === "/about" ||
+      currentPath === "/contact" ||
       currentPath === "/login" ||
       currentPath === "/register"
     ) {
