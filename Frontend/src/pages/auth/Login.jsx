@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff,  Lock, ArrowRight, Mail } from "lucide-react";
-import loginImg from "/images/66.jpg"; // apni image ka path yahan lagao
+import loginImg from "/images/66.jpg"; 
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,6 +9,9 @@ const Login = () => {
     username: "",
     password: "",
   });
+
+  const location = useLocation();
+  const msg = location.state?.msg;
 
   const handleInputChange = (e) => {
     setFormData({
@@ -46,6 +50,9 @@ const Login = () => {
           </p>
 
           <div className="space-y-4">
+
+          {msg && <p className="text-green-950 mb-3 text-center bg-green-100 p-2 rounded-lg">{msg}</p>}
+
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
