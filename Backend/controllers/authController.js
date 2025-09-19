@@ -1,9 +1,9 @@
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
+import {User} from "../models/User.js";
+import bcrypt from "bcryptjs";
 
 // Signup
-exports.signup = async (req, res) => {
-  let { fullName, email, password } = req.body;
+export const signup = async (req, res) => {
+  let { fullName, email, password } = req.body; 
   email = email.trim().toLowerCase();
   try {
     const existingUser = await User.findOne({ email });
@@ -12,7 +12,6 @@ exports.signup = async (req, res) => {
         .status(400)
         .json({ success: false, message: "User already exists" });
     }
-
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
       fullName,
@@ -22,44 +21,23 @@ exports.signup = async (req, res) => {
     });
     await user.save();
 
-    req.session.user = { id: user._id, role: user.role };
-    res
-      .status(201)
-      .json({
-        success: true,
-        message: "User registered successfully",
-        role: user.role,
-      });
+    res.status(201).json({
+      success: true,
+      message: "User registered successfully",
+    });
   } catch (err) {
     console.error("Signup Error:", err);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
 
-// Login Controller (Admin & User both)
-exports.login = async (req, res) => {
+// Login
+export const login = async (req, res) => {
   let { email, password } = req.body;
+  console.log(req.body);
   email = email.trim().toLowerCase();
-
   try {
-    // Admin Login (credentials from .env)
-    if (email === process.env.ADMIN_EMAIL.toLowerCase()) {
-      if (password === process.env.ADMIN_PASSWORD) {
-        req.session.user = { id: "admin", isAdmin: true };
-        return res.json({
-          success: true,
-          message: "Admin login successful",
-          isAdmin: true,
-        });
-      } else {
-        return res
-          .status(401)
-          .json({ success: false, message: "Invalid admin credentials" });
-      }
-    }
-
-    // User Login
-    const user = await User.findOne({ email });
+     const user = await User.findOne({ email });
     if (!user) {
       return res
         .status(404)
@@ -73,12 +51,19 @@ exports.login = async (req, res) => {
         .json({ success: false, message: "Invalid credentials" });
     }
 
-    req.session.user = { id: user._id, isAdmin: user.isAdmin };
-    res.json({
+    req.session.user = {
+      id: user._id,
+      email: user.email,
+      role: user.role,
+    };
+
+    res.status(200).json({
       success: true,
-      message: "Login successful",
-      isAdmin: user.isAdmin,
+      message: "Logged in successfully",
+      user: req.session.user,
+
     });
+
   } catch (err) {
     console.error("Login Error:", err);
     res.status(500).json({ success: false, message: "Internal Server Error" });
@@ -86,7 +71,7 @@ exports.login = async (req, res) => {
 };
 
 // Logout Controller
-exports.logout = (req, res) => {
+export const logout = (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       console.error("Logout Error:", err);
@@ -98,7 +83,7 @@ exports.logout = (req, res) => {
 };
 
 // Session Check
-exports.sessionCheck = (req, res) => {
+export const sessionCheck = (req, res) => {
   if (req.session.user) {
     res.json({ success: true, user: req.session.user });
   } else {

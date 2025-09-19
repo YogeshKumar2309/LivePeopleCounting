@@ -6,6 +6,7 @@ import {  useNavigate } from "react-router-dom";
 const Form = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [resError, setResError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -14,9 +15,9 @@ const Form = () => {
   const navigate = useNavigate()
 
  
-  const onSubmitHandler = async (data) => {
-   
+  const onSubmitHandler = async (data) => {   
     try {
+      setLoading(true);
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
@@ -27,13 +28,15 @@ const Form = () => {
       
       const resData = await res.json();        
       if (!res.ok) {
-        throw new Error(resData.message);
-      }
-      
+        throw new Error(resData.message);      
+      }   
+      setLoading(false);
+      setResError(null);
       navigate("/login",{
-        state: {msg: resData.message, type: "success"}
+        state: {msg: resData.message}
       })    
     } catch (error) {
+      setLoading(false);
       console.error("error", error.message);
       setResError(error.message);
     }
@@ -131,10 +134,11 @@ const Form = () => {
         )}
 
         <button
+          disabled={loading}
           type="submit"
           className="w-full bg-gradient-to-r from-blue-400 to-rose-500 text-white font-semibold py-2 rounded-lg hover:from-blue-500 hover:to-rose-600 transition"
         >
-          Create Account <ArrowRight className="inline w-4 h-4 ml-2" />
+         {loading ? "Creating Account..." : "Create Account"} <ArrowRight className="inline w-4 h-4 ml-2" />
         </button>
       </form>
 

@@ -22,17 +22,52 @@ import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 import UserProducts from "./pages/public/UserProducts";
 import About from "./pages/public/About";
 import Contact from "./pages/public/Contact";
+import { Toaster } from 'react-hot-toast';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { loginSuccess, logout } from "./features/auth/authSlice";
 
 const App = () => {
+  const {isAuthenticated, user} = useSelector((state) => state.auth);
+  console.log(isAuthenticated, user);
+  
   // Authentication state - typically from Context/Redux
-  const isAuthenticated = false;
-  const user = {
-    name: "Yogesh",
-    role: "user", // 'admin' or 'user'
-  };
+  // const isAuthenticated = false;
+  // const user = {
+  //   name: "Yogesh",
+  //   role: "user", // 'admin' or 'user'
+  // };
+   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const checkSession = async () => {
+      try {
+        const res = await fetch("/api/auth/session", {
+          method: "GET",
+          credentials: "include", // session cookie bhejega
+        });
+        const data = await res.json();
+        console.log("data",data);
+        console.log("data.user",data.user);
+        
+
+        if (res.ok && data.success) {
+          dispatch(loginSuccess({ user: data.user}));
+        } else {
+          dispatch(logout());
+        }
+      } catch (err) {
+        dispatch(logout());
+      }
+    };
+
+    checkSession();
+  }, [dispatch]);
+
 
   return (
     <div className="App">
+       <Toaster />
       <Routes>
         {/* Public/Home Route */}
         <Route

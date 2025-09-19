@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ navList }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {isAuthenticated} = useSelector((state) => state.auth);
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -47,7 +49,9 @@ const Navbar = ({ navList }) => {
                 } transition`
               }
             >
-              Login
+              {
+                isAuthenticated ? "logout": "login"
+              }
             </NavLink>
           </div>
 
