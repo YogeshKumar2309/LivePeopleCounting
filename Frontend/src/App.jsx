@@ -91,6 +91,7 @@ const App = () => {
           path="/user"
           element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+              
               <UserLayout />
             </CheckAuth>
           }

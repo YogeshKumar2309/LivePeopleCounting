@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { useSelector } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
+import useLogout from "../../hooks/useLogout";
+import { ArrowRight } from "lucide-react";
+
 
 const Navbar = ({ navList }) => {
   const [isOpen, setIsOpen] = useState(false);
   const {isAuthenticated} = useSelector((state) => state.auth);
+  const handleLogout = useLogout();
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -39,7 +44,21 @@ const Navbar = ({ navList }) => {
             />
 
             {/* Login Button */}
-            <NavLink
+            {isAuthenticated ? (
+              <>
+            <div className="ms-10">watchlist</div>
+            <button
+              onClick={handleLogout}
+              className={
+                `ml-4 px-4 py-2 rounded-lg font-semibold 
+                 bg-gradient-to-r from-red-400 to-rose-500 text-whitehover:from-red-700 hover:to-rose-900 transition`
+              }
+            >
+             Logout<ArrowRight className="inline w-4 h-4 ml-2" />
+            </button>
+            </>
+            ) : (
+           <NavLink
               to="/login"
               className={({ isActive }) =>
                 `ml-4 px-4 py-1 rounded-lg font-semibold border-2 border-blue-700 ${
@@ -49,10 +68,10 @@ const Navbar = ({ navList }) => {
                 } transition`
               }
             >
-              {
-                isAuthenticated ? "logout": "login"
-              }
+              Log in
             </NavLink>
+            )}
+           
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,6 +101,23 @@ const Navbar = ({ navList }) => {
                 {nav.name}
               </NavLink>
             ))}
+               {isAuthenticated ? (
+              <>
+                 
+              <NavLink            
+                to="/user/watchlist"
+                className={({ isActive }) =>
+                  `${isActive ? "bg-amber-500 text-white" : "text-gray-800"} block px-3 py-2 rounded-md font-semibold hover:bg-amber-500 hover:text-white transition`
+                }
+              >
+                watchlist
+              </NavLink>
+                </>
+                )
+                : (
+                  ""
+                )
+                }
 
             {/* Mobile Search Bar */}
             <input
@@ -91,12 +127,25 @@ const Navbar = ({ navList }) => {
             />
 
             {/* Mobile Login Button */}
+             {isAuthenticated ? (
+              <>               
+         
+            <button
+              onClick={handleLogout}
+              className="w-full bg-gradient-to-r from-red-400 to-rose-500 text-white font-semibold py-2 rounded-lg hover:from-red-500 hover:to-rose-600 transition"
+            >
+             Logout<ArrowRight className="inline w-4 h-4 ml-2" />
+            </button>
+       
+            </>
+            ) : (
             <NavLink
               to="/login"
               className="block mt-2 px-3 py-2 rounded-md font-semibold border-2 border-blue-700 text-center hover:bg-gradient-to-b from-blue-400 to-yellow-400 hover:text-white transition"
             >
               Login
             </NavLink>
+            )}            
           </div>
         </div>
       )}
