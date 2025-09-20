@@ -13,7 +13,6 @@ import CheckAuth from "./componets/common/CheckAuth";
 import NotFound from "./pages/pageNotFound/NotFound";
 import UnauthPage from "./pages/Unauth/UnauthPage";
 import Products from "./pages/admin/Products";
-import AddProduct from "./pages/admin/addProduct";
 import Productlayout from "./pages/admin/Productlayout";
 import User from "./pages/admin/User";
 import LivePeople from "./pages/admin/LivePeople";
@@ -26,6 +25,8 @@ import { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loginSuccess, logout } from "./features/auth/authSlice";
+import AddProduct from "./pages/admin/AddProduct";
+import EditProductModal from "./componets/admin/EditProductModal";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -113,6 +114,7 @@ const App = () => {
             <Route index element={<h1>comming soon Dashboard</h1>} />
             <Route path="add" element={<AddProduct />} />
             <Route path="allProduct" element={<Products />} />
+            <Route path="edit/:id" element={<EditProductModal />} />
           </Route>
           <Route path="livePeople" element={<LivePeople />} />
           <Route path="bisnessAnalytics" element={<BisnessAnalytics />} />

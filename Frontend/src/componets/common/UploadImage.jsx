@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const UploadImage = ({ onUpload }) => {
+const UploadImage = ({ onUpload, product }) => {
   const [loading, setLoading] = useState(false);
   const [resError, setResError] = useState(null);
-  const [preview, setPreview] = useState(null); 
+  const [preview, setPreview] = useState(product?.image || null);
   const {
     register,
     watch,
     formState: { errors },
   } = useForm();
 
-  const selectedImage = watch("image"); 
+  const selectedImage = watch("image");
 
   useEffect(() => {
     const uploadImage = async () => {
@@ -32,10 +32,10 @@ const UploadImage = ({ onUpload }) => {
           if (!res.ok) {
             throw new Error(resData.message);
           }
-          setPreview(URL.createObjectURL(selectedImage[0]));
+          setPreview(URL.createObjectURL(selectedImage[0]));     
 
-          if(onUpload) {
-            onUpload(resData.url)
+          if (onUpload) {
+           onUpload(resData.url);
           }
         } catch (error) {
           console.error(" Upload Error:", error.message);
@@ -81,4 +81,3 @@ const UploadImage = ({ onUpload }) => {
 };
 
 export default UploadImage;
-

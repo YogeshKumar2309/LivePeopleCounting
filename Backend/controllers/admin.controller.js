@@ -38,23 +38,64 @@ export const addProduct = async (req, res) => {
     });
 
     const saveProduct = await newProduct.save();
-    res.status(201).json({ success: true, message: "product added successfully",  product: saveProduct });
+    res
+      .status(201)
+      .json({
+        success: true,
+        message: "product added successfully",
+        product: saveProduct,
+      });
   } catch (error) {
     console.log("error in addProduct", error);
     res.status(500).json({ success: false, error: "server error" });
   }
 };
 
-
 //get all products
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    console.log(products);
-    
     res.status(200).json({ success: true, products });
   } catch (error) {
-    console.log("error in getProducts",error);
+    console.log("error in getProducts", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+};
+
+//upldate product
+export const updateProduct = async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const { title, desc, category, price, offerPrice, badge, active, image } =
+      req.body;
+
+    const existingProduct = await Product.findById(productId);
+    if (!existingProduct) {
+      return res
+        .status(404)
+        .json({ success: false, error: "Product not found" });
+    }
+
+    existingProduct.title = title || existingProduct.title;
+    existingProduct.desc = desc || existingProduct.desc;
+    existingProduct.category = category || existingProduct.category;
+    existingProduct.price = price || existingProduct.price;
+    existingProduct.offerPrice = offerPrice || existingProduct.offerPrice;
+    existingProduct.badge = badge || existingProduct.badge;
+    existingProduct.active = active || existingProduct.active;
+    existingProduct.image = image || existingProduct.image;
+
+    const updatedProduct = await existingProduct.save();
+
+    res
+      .status(200)
+      .json({
+        success: true,
+        message: "product updated successfully",
+        product: updatedProduct,
+      });
+  } catch (error) {
+    console.log("error in addProduct", error);
     res.status(500).json({ success: false, error: "server error" });
   }
 };

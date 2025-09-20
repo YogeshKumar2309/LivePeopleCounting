@@ -2,6 +2,7 @@ import React from "react";
 import Food from "../../componets/admin/Food";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [foods, setFoods] = useState([
@@ -17,6 +18,7 @@ const Products = () => {
       active: true,
     },
   ]);
+  const navigate = useNavigate();
 
   const getAllProducts = async () => {
     try {
@@ -26,8 +28,7 @@ const Products = () => {
       });
 
       const data = await res.json();
-       setFoods(data.products);
-      
+      setFoods(data.products);
     } catch (error) {}
   };
 
@@ -35,9 +36,13 @@ const Products = () => {
     getAllProducts();
   }, []);
 
+  const handleEditProduct = async (f) => {
+    navigate(`/admin/products/edit/${f._id}`, { state: { product: f } });
+  };
+
   return (
     <div>
-      <Food foods={foods} />
+      <Food foods={foods} editProduct={handleEditProduct} />
     </div>
   );
 };

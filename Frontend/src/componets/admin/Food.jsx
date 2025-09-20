@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Food = ({ foods }) => {
+const Food = ({ foods, editProduct }) => {
   return (
     <div className="p-4 sm:max-w-[80vw] m-auto ">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">
@@ -96,7 +96,9 @@ const Food = ({ foods }) => {
                   </span>
                 </td>
                 <td className="py-3 px-4">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium shadow-sm">
+                  <button
+                  onClick={() => editProduct(f)}                  
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium shadow-sm">
                     Edit
                   </button>
                 </td>
@@ -145,7 +147,8 @@ const Food = ({ foods }) => {
                   >
                     {f.active ? "Active" : "Inactive"}
                   </span>
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                  <button 
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-medium">
                     Edit
                   </button>
                 </div>
