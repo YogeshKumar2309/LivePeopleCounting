@@ -29,8 +29,7 @@ import { loginSuccess, logout } from "./features/auth/authSlice";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
-  console.log(isAuthenticated, user);
-  
+    
   // Authentication state - typically from Context/Redux
   // const isAuthenticated = false;
   // const user = {
@@ -46,10 +45,7 @@ const App = () => {
           method: "GET",
           credentials: "include", // session cookie bhejega
         });
-        const data = await res.json();
-        console.log("data",data);
-        console.log("data.user",data.user);
-        
+        const data = await res.json();       
 
         if (res.ok && data.success) {
           dispatch(loginSuccess({ user: data.user}));

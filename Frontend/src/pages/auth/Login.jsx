@@ -25,7 +25,6 @@ const Login = () => {
   } = useForm();
 
   const handleOnSubmit = async (data) => {
-    console.log(data);
     dispatch(loginStart());
     try {
       const res = await fetch("/api/auth/login", {
@@ -38,7 +37,6 @@ const Login = () => {
       });
 
       const result = await res.json();
-      console.log(result);
       if (res.ok && result.success) {
         dispatch(loginSuccess({ user: result.user }));
         if (result.user.role === "admin") {

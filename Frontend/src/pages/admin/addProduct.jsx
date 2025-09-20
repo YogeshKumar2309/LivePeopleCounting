@@ -17,7 +17,6 @@ const AddProduct = () => {
   } = useForm();
 
   const handleImageUpload = (url) => {
-    console.log(url);
     setImageUrl(url);
   };
 
