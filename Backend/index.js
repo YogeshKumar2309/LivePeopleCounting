@@ -7,6 +7,7 @@ import {router as adminRoutesrouter} from "./routes/admin.route.js";
 // const livePeopleRoute = require("./routes/livePeopleRoute");
 import  { sessionMiddleware } from "./config/session.js";
 import cors from "cors";
+import { adminAuthMiddleware } from './middleware/adminAuthMiddleware.js';
 
 
 dotenv.config();
@@ -29,7 +30,7 @@ app.use(sessionMiddleware);
 
 // Routes
 app.use("/api/auth", authRoutesrouter);
-app.use("/api/admin", adminRoutesrouter);
+app.use("/api/admin",adminAuthMiddleware, adminRoutesrouter);
 // app.use("/api/arduino", arduinoRoutes); 
 // app.use("/api", livePeopleRoute);
 

@@ -5,19 +5,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-  const [foods, setFoods] = useState([
-    {
-      badge: "Veg",
-      title: "Brownie Sundae 🍨",
-      desc: "Brownie with vanilla ice cream & chocolate sauce.",
-      category: "Dessert",
-      rating: "4.6",
-      price: 220,
-      offerPrice: 180,
-      img: "/assets/img11.jpg",
-      active: true,
-    },
-  ]);
+  const [foods, setFoods] = useState([ ]);
   const navigate = useNavigate();
 
   const getAllProducts = async () => {
