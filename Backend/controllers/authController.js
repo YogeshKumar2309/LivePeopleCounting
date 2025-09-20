@@ -1,9 +1,9 @@
-import {User} from "../models/User.js";
+import { User } from "../models/User.js";
 import bcrypt from "bcryptjs";
 
 // Signup
 export const signup = async (req, res) => {
-  let { fullName, email, password } = req.body; 
+  let { fullName, email, password } = req.body;
   email = email.trim().toLowerCase();
   try {
     const existingUser = await User.findOne({ email });
@@ -33,11 +33,13 @@ export const signup = async (req, res) => {
 
 // Login
 export const login = async (req, res) => {
-  let { email, password } = req.body;
-  console.log(req.body);
-  email = email.trim().toLowerCase();
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+  const normalizedEmail = email.trim().toLowerCase();
   try {
-     const user = await User.findOne({ email });
+    const user = await User.findOne({ email: normalizedEmail });
     if (!user) {
       return res
         .status(404)
@@ -61,9 +63,7 @@ export const login = async (req, res) => {
       success: true,
       message: "Logged in successfully",
       user: req.session.user,
-
     });
-
   } catch (err) {
     console.error("Login Error:", err);
     res.status(500).json({ success: false, message: "Internal Server Error" });
