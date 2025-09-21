@@ -1,9 +1,18 @@
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
+
+const cachedImages = {}; // global cache for images
 
 const FoodProduct = memo(({ item }) => {
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (item?.image && cachedImages[item.image]) {
+      // agar image pehle load ho chuki hai
+      setLoaded(true);
+    }
+  }, [item?.image]);
 
   if (!item) return null;
 
@@ -11,9 +20,14 @@ const FoodProduct = memo(({ item }) => {
     ? Math.round(((item.price - item.offerPrice) / item.price) * 100)
     : 0;
 
+  const handleLoad = () => {
+    setLoaded(true);
+    cachedImages[item.image] = true; // mark as loaded in cache
+  };
+
   return (
     <div
-      className="w-[360px] h-[420px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+      className="w-[240px] h-[320px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
       style={{ willChange: "transform" }}
     >
       {/* Image with placeholder */}
@@ -22,14 +36,14 @@ const FoodProduct = memo(({ item }) => {
           <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
         )}
         <img
-          src={item?.img || ""}
+          src={item?.image || ""}
           alt={item?.title || "Food Item"}
           loading="lazy"
           decoding="async"
           className={`w-full h-full object-cover transition-opacity duration-700 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
-          onLoad={() => setLoaded(true)}
+          onLoad={handleLoad}
           width={360}
           height={231}
         />
