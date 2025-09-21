@@ -4,11 +4,13 @@ import  connectDB from "./config/db.js";
 import {router as authRoutes} from "./routes/authRoutes.js";
 import {router as adminRoutes} from "./routes/admin.route.js";
 import {router as publicRoutes} from "./routes/public.route.js";
+import {router as userRoutes} from "./routes/user.route.js";
 // const arduinoRoutes = require("./routes/arduinoRoutes"); 
 // const livePeopleRoute = require("./routes/livePeopleRoute");
 import  { sessionMiddleware } from "./config/session.js";
 import cors from "cors";
 import { adminAuthMiddleware } from './middleware/adminAuthMiddleware.js';
+import { userAuthMiddleware } from './middleware/userAuthMiddleware.js';
 
 
 dotenv.config();
@@ -33,6 +35,7 @@ app.use(sessionMiddleware);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin",adminAuthMiddleware, adminRoutes);
 app.use("/api/user",publicRoutes);
+app.use("/api/user/private",userAuthMiddleware, userRoutes);
 // app.use("/api/arduino", arduinoRoutes); 
 // app.use("/api", livePeopleRoute);
 

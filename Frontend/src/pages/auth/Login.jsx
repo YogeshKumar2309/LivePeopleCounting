@@ -18,6 +18,9 @@ const Login = () => {
   const navigate = useNavigate()
     const {error,isLoading} = useSelector((state) => state.auth);
 
+  const from = location.state?.from?.pathname || "/";
+  
+
   const {
     register,
     handleSubmit,
@@ -42,7 +45,7 @@ const Login = () => {
         if (result.user.role === "admin") {
           navigate("/admin");
         } else {
-          navigate("/"); // ya user dashboard
+          navigate(from, { replace: true });
         }
       } else {
         dispatch(loginFailure({ error: result.message || "Login failed" }));
