@@ -3,9 +3,8 @@ import { FaStar } from "react-icons/fa";
 import { memo, useState, useEffect } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
-import { useNavigate ,useLocation} from "react-router-dom";
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-
 
 const cachedImages = {}; // global cache for images
 
@@ -16,7 +15,6 @@ const FoodProduct = memo(
 
     const location = useLocation();
     const isLiked = likedProducts.includes(item?.id);
-   
 
     useEffect(() => {
       if (item?.image && cachedImages[item.image]) {
@@ -45,6 +43,10 @@ const FoodProduct = memo(
       handleOnLike(item?.id);
     };
 
+    const handleSeeDetails = () =>{
+       navigate(`/productsDetails/${item?.id}`)
+   
+    }
     return (
       <div
         className="w-[240px] h-[330px] sm:w-[280px] sm:h-[320px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
@@ -103,6 +105,7 @@ const FoodProduct = memo(
           <div>
             <p className="mb-3">
               <button
+                onClick={handleSeeDetails}
                 className="group flex items-center gap-2 text-sm font-medium text-amber-600 border border-blue-200 px-3 py-1.5 rounded-lg 
                hover:bg-amber-600 hover:text-white hover:shadow-md transition-all duration-300"
               >

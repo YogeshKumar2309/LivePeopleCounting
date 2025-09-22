@@ -14,7 +14,8 @@ const CheckAuth = ({ isAuthenticated, user, children }) => {
       currentPath === "/about" ||
       currentPath === "/contact" ||
       currentPath === "/login" ||
-      currentPath === "/register"
+      currentPath === "/register" ||
+      currentPath.startsWith("/productsDetails")
     ) {
       return children;
     }
