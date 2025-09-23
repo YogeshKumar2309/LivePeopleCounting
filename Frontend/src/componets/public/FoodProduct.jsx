@@ -14,7 +14,7 @@ const FoodProduct = memo(
     const navigate = useNavigate();
 
     const location = useLocation();
-    const isLiked = likedProducts.includes(item?.id);
+    const isLiked = likedProducts.includes(item?._id);
 
     useEffect(() => {
       if (item?.image && cachedImages[item.image]) {
@@ -40,11 +40,11 @@ const FoodProduct = memo(
         navigate("/login", { state: { from: location.pathname } });
         return;
       }
-      handleOnLike(item?.id);
+      handleOnLike(item?._id);
     };
 
     const handleSeeDetails = () =>{
-       navigate(`/productsDetails/${item?.id}`)   
+       navigate(`/productsDetails/${item?._id}`)   
     }
 
     return (
