@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import RatingStars from "./RatingStars"; // path अपने project के अनुसार adjust करो
 import { useSelector } from "react-redux";
 import RateProduct from "./RateProduct";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
 
 const NavigationProductDetailsPage = ({ product, reviews }) => {
   const [activePage, setActivePage] = useState("details");
   const { isAuthenticated } = useSelector((state) => state.auth);
+
+  const totalReviews = reviews.length;
 
   return (
     <>
@@ -146,20 +152,20 @@ const NavigationProductDetailsPage = ({ product, reviews }) => {
                     <div className="flex items-start space-x-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                         <span className="text-blue-600 font-medium">
-                          {review.userName?.charAt(0).toUpperCase() || "A"}
+                          {review.username?.charAt(0).toUpperCase() || "A"}
                         </span>
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-2">
                           <span className="font-medium text-gray-900">
-                            {review.userName || "Anonymous User"}
+                            {review.username || "Anonymous User"}
                           </span>
-                          <RatingStars rating={review.rating} totalStars={5} />
+                          <RatingStars rating={review.rating} totalStars={5} totalReviews={totalReviews} />
                         </div>
-                        <p className="text-gray-700">{review.comment}</p>
+                        <p className="text-gray-700">{review.message}</p>
                         <p className="text-sm text-gray-500 mt-2">
-                          {review.date}
-                        </p>
+                         {dayjs(review.createdAt).fromNow()}
+                        </p>                     
                       </div>
                     </div>
                   </div>

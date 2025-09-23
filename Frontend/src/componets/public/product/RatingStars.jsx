@@ -1,6 +1,6 @@
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
-const RatingStars = ({ rating, totalStars = 5 }) => {
+const RatingStars = ({ rating, totalStars = 5 ,totalReviews}) => {
   return (
     <div className="flex items-center space-x-2">
       {/* Stars */}
@@ -25,7 +25,7 @@ const RatingStars = ({ rating, totalStars = 5 }) => {
       <span className="text-gray-400">|</span>
 
       {/* Reviews count */}
-      <span className="text-gray-600">127 reviews</span>
+      <span className="text-gray-600"> {totalReviews}  reviews</span>
     </div>
   );
 };

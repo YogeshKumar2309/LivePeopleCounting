@@ -13,7 +13,7 @@ const Navbar = ({ navList }) => {
   const handleLogout = useLogout();
 
   return (
-    <nav className="bg-white shadow-lg  shadow-stone-300 w-full z-50">
+    <nav className="bg-white fixed shadow-lg  shadow-stone-300 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
 
@@ -88,10 +88,11 @@ const Navbar = ({ navList }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white shadow-lg ">
           <div className="px-4 pt-2 pb-3 space-y-2">
             {navList.map((nav, idx) => (
               <NavLink
+              onClick={() => setIsOpen(!isOpen)}
                 key={idx}
                 to={nav.link}
                 className={({ isActive }) =>
@@ -104,7 +105,8 @@ const Navbar = ({ navList }) => {
                {isAuthenticated ? (
               <>
                  
-              <NavLink            
+              <NavLink      
+              onClick={() => setIsOpen(!isOpen)}
                 to="/user/watchlist"
                 className={({ isActive }) =>
                   `${isActive ? "bg-amber-500 text-white" : "text-gray-800"} block px-3 py-2 rounded-md font-semibold hover:bg-amber-500 hover:text-white transition`
@@ -140,6 +142,7 @@ const Navbar = ({ navList }) => {
             </>
             ) : (
             <NavLink
+              onClick={() => setIsOpen(!isOpen)}
               to="/login"
               className="block mt-2 px-3 py-2 rounded-md font-semibold border-2 border-blue-700 text-center hover:bg-gradient-to-b from-blue-400 to-yellow-400 hover:text-white transition"
             >
