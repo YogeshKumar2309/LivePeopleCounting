@@ -44,9 +44,9 @@ const FoodProduct = memo(
     };
 
     const handleSeeDetails = () =>{
-       navigate(`/productsDetails/${item?.id}`)
-   
+       navigate(`/productsDetails/${item?.id}`)   
     }
+
     return (
       <div
         className="w-[240px] h-[330px] sm:w-[280px] sm:h-[320px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"

@@ -69,6 +69,8 @@ export const updateProduct = async (req, res) => {
     const { title, desc, category, price, offerPrice, badge, active, image } =
       req.body;
 
+      console.log("active", active)
+
     const existingProduct = await Product.findById(productId);
     if (!existingProduct) {
       return res
@@ -76,14 +78,14 @@ export const updateProduct = async (req, res) => {
         .json({ success: false, error: "Product not found" });
     }
 
-    existingProduct.title = title || existingProduct.title;
-    existingProduct.desc = desc || existingProduct.desc;
-    existingProduct.category = category || existingProduct.category;
-    existingProduct.price = price || existingProduct.price;
-    existingProduct.offerPrice = offerPrice || existingProduct.offerPrice;
-    existingProduct.badge = badge || existingProduct.badge;
-    existingProduct.active = active || existingProduct.active;
-    existingProduct.image = image || existingProduct.image;
+    existingProduct.title = title;
+    existingProduct.desc = desc;
+    existingProduct.category = category;
+    existingProduct.price = price;
+    existingProduct.offerPrice = offerPrice;
+    existingProduct.badge = badge;
+    existingProduct.active = active;
+    existingProduct.image = image;
 
     const updatedProduct = await existingProduct.save();
 

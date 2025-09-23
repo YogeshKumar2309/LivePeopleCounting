@@ -26,7 +26,7 @@ import { useEffect } from "react";
 import { loginSuccess, logout } from "./features/auth/authSlice";
 import AddProduct from "./pages/admin/AddProduct";
 import EditProductModal from "./componets/admin/EditProductModal";
-import ProductDetails from "./pages/user/ProductDetails";
+import ProductDetailsPage from "./pages/public/ProductDetailsPage";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -81,7 +81,7 @@ const App = () => {
           <Route path="products" element={<UserProducts/>} />
           <Route path="about" element={<About/>} />
           <Route path="contact" element={<Contact/>} />
-          <Route path="productsDetails/:productId" element={<ProductDetails />} />
+          <Route path="productsDetails/:productId" element={<ProductDetailsPage />} />
          </Route>
 
         {/* User Protected Routes */}
