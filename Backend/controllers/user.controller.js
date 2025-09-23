@@ -1,4 +1,5 @@
 import { Favorite } from "../models/favorite.model.js";
+import Review from "../models/review.model.js";
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -29,7 +30,6 @@ export const addToFavorite = async (req, res) => {
   }
 };
 
-
 //get all favorites
 export const getAllFavorites = async (req, res) => {
   try {
@@ -39,10 +39,42 @@ export const getAllFavorites = async (req, res) => {
     res.status(200).json({
       success: true,
       favorites,
-    })
-
+    });
   } catch (error) {
     console.log("error from get all favorites products", error);
     res.status(500).json({ success: false, error: "server error" });
   }
-}
+};
+
+//post review
+export const postReview = async (req, res) => {
+  const userId = req.session.user.id;
+  const { productId, rating, message } = req.body;
+
+  let ratingValid = rating;
+
+  if (!productId || rating === "" || !message) {
+    console.log("inside validation", rating, productId, message);
+    return res
+      .status(400)
+      .json({ success: false, message: "All fields are required" });
+  }
+  try {
+    if (!ratingValid || ratingValid <= 0) {
+      ratingValid = 5; // default rating
+    } else if (ratingValid > 5) {
+      ratingValid = 5;
+    }
+    const review = new Review({
+      productId,
+      userId,
+      rating: ratingValid,
+      message,
+    });
+    await review.save();
+    res.status(201).json({ success: true, review });
+  } catch (error) {
+    console.log("error in postReview", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+};

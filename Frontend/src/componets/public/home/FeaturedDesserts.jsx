@@ -52,7 +52,6 @@
 //     dispatch(toggleFavorite(productId));
 //   }
 
- 
 //   //fetch desserts from backend
 //   useEffect(() => {
 //     const fetchDesserts = async () => {
@@ -89,7 +88,7 @@
 //           const favoriteIds = data.favorites.map((item) => item.productId);
 //           // setLikedProducts(favoriteIds);
 //           favoriteIds.forEach((id) => dispatch(addLike(id)));// set the redux action here
-//         } 
+//         }
 //       } catch (error) {
 //         console.error("Error fetching desserts:", error);
 //       }
@@ -120,9 +119,6 @@
 
 // export default FeaturedDesserts;
 
-
-
-
 import { useEffect } from "react";
 import FoodProduct from "../FoodProduct";
 import { useDispatch, useSelector } from "react-redux";
@@ -131,6 +127,7 @@ import {
   fetchFavorites,
   toggleFavoriteAsync,
 } from "../../../features/liked/likedSlice";
+import LoaderComponent from "../../common/Loader";
 
 const FeaturedDesserts = () => {
   const dispatch = useDispatch();
@@ -155,15 +152,19 @@ const FeaturedDesserts = () => {
         Our Special Desserts
       </h1>
       <div className="flex flex-wrap justify-evenly gap-5 w-full">
-        {desserts.map((item) => (
-          <FoodProduct
-            key={item.id}
-            item={item}
-            handleOnLike={handleOnLike}
-            isAuthenticated={isAuthenticated}
-            likedProducts={likedProducts}
-          />
-        ))}
+        {desserts.length === 0 ? (
+          <LoaderComponent/>
+        ) : (
+          desserts.map((item) => (
+            <FoodProduct
+              key={item.id}
+              item={item}
+              handleOnLike={handleOnLike}
+              isAuthenticated={isAuthenticated}
+              likedProducts={likedProducts}
+            />
+          ))
+        )}
       </div>
     </div>
   );

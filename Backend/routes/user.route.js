@@ -1,5 +1,5 @@
 import express from "express";
-import { addToFavorite ,getAllFavorites} from "../controllers/user.controller.js";
+import { addToFavorite ,getAllFavorites,postReview} from "../controllers/user.controller.js";
 
 
 
@@ -9,6 +9,7 @@ import { addToFavorite ,getAllFavorites} from "../controllers/user.controller.js
 
 router.post("/favorite", addToFavorite);
 router.get("/getAllFavorites", getAllFavorites);
+router.post("/review", postReview);
 
 
 

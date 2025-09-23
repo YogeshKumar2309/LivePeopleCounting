@@ -26,7 +26,7 @@ const HeroSection = () => {
 
 
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white to-slate-100 gap-8">
+    <div className="min-h-[80vh] flex flex-col items-center justify-center p-8 bg-gradient-to-br from-white to-slate-100 gap-8 mt-10">
       <h1 className="text-4xl font-bold text-gray-800 animate-fadeInDown">
         Live Dine-In Dashboard 🍽️
       </h1>
