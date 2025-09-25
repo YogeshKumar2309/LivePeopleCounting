@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 const RateProduct = ({ product, sendReview, loadingSendRating }) => {
@@ -7,13 +8,15 @@ const RateProduct = ({ product, sendReview, loadingSendRating }) => {
   const { handleSubmit, control, register, reset } = useForm();
   const [hover, setHover] = useState(0);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const reviewData = {
       productId,
       rating: data.rating,
       message: data.message,
     };
-    sendReview(reviewData);
+    const res = await sendReview(reviewData);
+    if(!res) toast.error("Something went wrong");
+    else toast.success("Review sent successfully");
     reset();
   };
 
