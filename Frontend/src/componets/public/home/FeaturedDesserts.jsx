@@ -157,7 +157,7 @@ const FeaturedDesserts = () => {
         ) : (
           desserts.map((item) => (
             <FoodProduct
-              key={item.id}
+              key={item._id}
               item={item}
               handleOnLike={handleOnLike}
               isAuthenticated={isAuthenticated}

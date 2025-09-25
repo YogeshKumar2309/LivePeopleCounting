@@ -17,7 +17,7 @@ import User from "./pages/admin/User";
 import LivePeople from "./pages/admin/LivePeople";
 import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 
-import UserProducts from "./pages/public/UserProducts";
+import PublicProducts from "./pages/public/Products";
 import About from "./pages/public/About";
 import Contact from "./pages/public/Contact";
 import { Toaster } from 'react-hot-toast';
@@ -78,7 +78,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="products" element={<UserProducts/>} />
+          <Route path="products" element={<PublicProducts/>} />
           <Route path="about" element={<About/>} />
           <Route path="contact" element={<Contact/>} />
           <Route path="productsDetails/:productId" element={<ProductDetailsPage />} />

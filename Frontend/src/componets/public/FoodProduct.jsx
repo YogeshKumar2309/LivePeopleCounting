@@ -49,7 +49,7 @@ const FoodProduct = memo(
 
     return (
       <div
-        className="w-[240px] h-[330px] sm:w-[280px] sm:h-[320px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+        className="w-[180px] h-[300px] sm:w-[280px] sm:h-[320px] overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
         style={{ willChange: "transform" }}
       >
         {/* Image with placeholder */}
@@ -75,27 +75,26 @@ const FoodProduct = memo(
                 {item.badge}
               </span>
             ) : (
-              <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-md">
+              <span className="absolute top-3 right-3 bg-red-500 text-white sm:text-xs font-semibold px-3 py-1 rounded-md text-[10px]">
                 {item.badge}
               </span>
             ))}
 
           <h5
             className="font-bold  mb-2 
-           bg-red-500 text-white text-lg px-3 py-1 rounded-md  absolute bottom-0 left-3
+            text-white bg-rose-700 sm:text-lg px-3 py-1 rounded-md  absolute bottom-0 left-3 text-xs 
            "
           >
             {item?.title || "No Title"}
           </h5>
           {item?.rating && (
             <h5
-              className="bg-yellow-400 rounded-full ps-1 pr-2 py-0.5 flex text-red-500 items-center gap-1 absolute bottom-0 right-3
+              className=" rounded-full ps-1 pr-2 py-0.5 flex text-rose-700 items-center gap-1 absolute bottom-0 right-3
               font-semibold mb-2 
-            text-lg  
-              
+            sm:text-lg  text-sm  bg-yellow-500            
               "
             >
-              <FaStar /> {item.rating}
+              <FaStar /> ({item.rating})
             </h5>
           )}
         </div>
@@ -106,11 +105,11 @@ const FoodProduct = memo(
             <p className="mb-3">
               <button
                 onClick={handleSeeDetails}
-                className="group flex items-center gap-2 text-sm font-medium text-amber-600 border border-blue-200 px-3 py-1.5 rounded-lg 
-               hover:bg-amber-600 hover:text-white hover:shadow-md transition-all duration-300"
+                className="group flex items-center gap-2 sm:text-sm font-medium sm:text-amber-600 sm:bg-stone-50 border border-blue-200 px-3 py-1.5 rounded-lg 
+               hover:bg-amber-600 hover:text-white hover:shadow-md transition-all duration-300 text-xs text-white bg-amber-600"
               >
                 See Details
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 h-4" />
               </button>
             </p>
 
@@ -135,7 +134,7 @@ const FoodProduct = memo(
           </div>
 
           <div>
-            <p className="flex items-center justify-between">
+            <p className="flex items-center justify-between text-sm sm:text-lg">
               <span className="flex items-center gap-1">
                 <LiaRupeeSignSolid />
                 <del className="text-gray-400">{item?.price || "-"}</del>
