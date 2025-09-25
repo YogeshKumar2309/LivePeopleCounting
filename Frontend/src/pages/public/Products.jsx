@@ -3,12 +3,12 @@ import { SlidersHorizontal } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import FoodProduct from "../../componets/public/FoodProduct";
 import {
-  fetchDesserts,
   fetchFavorites,
   toggleFavoriteAsync,
 } from "../../features/liked/likedSlice";
 import LoaderComponent from "../../componets/common/Loader";
 import Search from "../../componets/common/Search";
+import { fetchAllDesserts } from "../../features/product/ProductSlice";
 
 const Products = () => {
   const [toggleSidebar, setToggleSidebar] = useState(true);
@@ -17,7 +17,7 @@ const Products = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(fetchDesserts());
+    dispatch(fetchAllDesserts());
   }, [dispatch]);
 
   useEffect(() => {

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import toast from "react-hot-toast";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-const RateProduct = ({ product }) => {
+const RateProduct = ({ product, sendReview, loadingSendRating }) => {
   const productId = product._id;
   const { handleSubmit, control, register, reset } = useForm();
   const [hover, setHover] = useState(0);
-  const [loadingSendRating, setLoadingSendRating] = useState(false);
 
   const onSubmit = (data) => {
     const reviewData = {
@@ -15,30 +13,8 @@ const RateProduct = ({ product }) => {
       rating: data.rating,
       message: data.message,
     };
-    console.log(reviewData);
     sendReview(reviewData);
     reset();
-  };
-
-  const sendReview = async (formData) => {
-    try {
-      const res = await fetch("/api/user/private/review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if(!res.ok) throw Error(data.message);
-      toast.success("Review Submitted Successfully");
-      setLoadingSendRating(false);
-      reset();
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
-      setLoadingSendRating(false);
-    }
   };
 
   return (

@@ -9,9 +9,31 @@ dayjs.extend(relativeTime);
 
 const NavigationProductDetailsPage = ({ product, reviews }) => {
   const [activePage, setActivePage] = useState("details");
+  const [loadingSendRating, setLoadingSendRating] = useState(false);
+
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const totalReviews = reviews.length;
+
+  const sendReview = async (formData) => {
+    try {
+      const res = await fetch("/api/user/private/review", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw Error(data.message);
+      setLoadingSendRating(false);
+      return true;
+      } catch (error) {
+      console.log(error);
+      setLoadingSendRating(false);
+      return false;
+    }
+  };
 
   return (
     <>
@@ -160,12 +182,16 @@ const NavigationProductDetailsPage = ({ product, reviews }) => {
                           <span className="font-medium text-gray-900">
                             {review.username || "Anonymous User"}
                           </span>
-                          <RatingStars rating={review.rating} totalStars={5} totalReviews={totalReviews} />
+                          <RatingStars
+                            rating={review.rating}
+                            totalStars={5}
+                            totalReviews={totalReviews}
+                          />
                         </div>
                         <p className="text-gray-700">{review.message}</p>
                         <p className="text-sm text-gray-500 mt-2">
-                         {dayjs(review.createdAt).fromNow()}
-                        </p>                     
+                          {dayjs(review.createdAt).fromNow()}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -176,8 +202,14 @@ const NavigationProductDetailsPage = ({ product, reviews }) => {
 
           {activePage === "rateProduct" && (
             <div className="p-6">
-              <h1 className="text-2xl font-bold text-center mb-4">{product.title}</h1>
-              <RateProduct product={product} />
+              <h1 className="text-2xl font-bold text-center mb-4">
+                {product.title}
+              </h1>
+              <RateProduct
+                product={product}
+                sendReview={sendReview}
+                loadingSendRating={loadingSendRating}
+              />
             </div>
           )}
         </div>

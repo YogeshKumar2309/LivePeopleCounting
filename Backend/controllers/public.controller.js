@@ -122,3 +122,44 @@ export const getReview = async (req, res) => {
     res.status(500).json({ success: false, error: "server error" });
   }
 };
+
+
+export const getAllProduct = async (req, res) => {
+  try {
+    const products = await Product.aggregate([
+      {
+        $lookup: {
+          from: "reviews",
+          localField: "_id",
+          foreignField: "productId",
+          as: "reviews",
+        },
+      },
+      {
+        $addFields: {
+          averageRating: {
+            $avg: "$reviews.rating",
+          },
+        },
+      },
+      {
+        $project: {
+          _id: 1,
+          title: 1,
+          desc: 1,
+          category: 1,
+          price: 1,
+          offerPrice: 1,
+          badge: 1,
+          active: 1,
+          image: 1,
+          rating: { $round: [{$ifNull: ["$averageRating", 0]},1]},
+        },
+      },
+    ]);
+    res.status(200).json({ success: true, products });
+  } catch (error) {
+    console.log("error in getAllHomeProduct", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+};
