@@ -127,6 +127,7 @@ export const getReview = async (req, res) => {
 export const getAllProduct = async (req, res) => {
   try {
     const products = await Product.aggregate([
+      {$limit: 10},
       {
         $lookup: {
           from: "reviews",
