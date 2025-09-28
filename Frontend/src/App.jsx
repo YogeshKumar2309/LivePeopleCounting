@@ -24,7 +24,7 @@ import { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loginSuccess, logout } from "./features/auth/authSlice";
-import AddProduct from "./pages/admin/AddProduct";
+import AddProduct from "./pages/admin/AddProductPage";
 import EditProductModal from "./componets/admin/EditProductModal";
 import ProductDetailsPage from "./pages/public/ProductDetailsPage";
 import AboutPage from "./pages/public/AboutPage";
