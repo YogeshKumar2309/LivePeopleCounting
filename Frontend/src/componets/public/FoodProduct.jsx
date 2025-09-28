@@ -70,7 +70,7 @@ const FoodProduct = memo(
             height={231}
           />
           {item?.badge &&
-            (item?.badge === "Veg" ? (
+            (item?.badge === "veg" ? (
               <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-md">
                 {item.badge}
               </span>

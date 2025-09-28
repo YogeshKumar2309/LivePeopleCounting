@@ -15,8 +15,12 @@ export const uploadImage = async (req, res) => {
       seccess: true,
       url: result.secure_url,
     });
-  } catch (error) {
+  } catch (error) {    
     console.error(" Error in uploadImage:", error);
+      res.status(500).json({
+      success: false,
+      message: "Failed to upload image. Please try again.",     
+    });
   }
 };
 

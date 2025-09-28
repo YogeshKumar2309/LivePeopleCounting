@@ -13,6 +13,7 @@ const EditProductModal = ({  handleCloseModal }) => {
   const [loading, setLoading] = useState(false);
   const [resError, setResError] = useState(null);
   const [imageUrl, setImageUrl] = useState(product?.image || "");
+  const [uploadImgLoading, setUploadImgLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -76,7 +77,7 @@ const EditProductModal = ({  handleCloseModal }) => {
             <button onClick={() => navigate("/admin/products/allProduct")} className="text-red-500">X</button>
           </h2>
 
-          <UploadImage onUpload={handleImageUpload} product={product}/>
+          <UploadImage onUpload={handleImageUpload} product={product} handleImgLoading={setUploadImgLoading}/>
 
           <form className="space-y-4" onSubmit={handleSubmit(onSubmitHandler)}>
             {/* Title */}
@@ -214,8 +215,8 @@ const EditProductModal = ({  handleCloseModal }) => {
                 name="badge"
                 className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
               >
-                <option value="Veg">Veg</option>
-                <option value="Non-Veg">Non-Veg</option>
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
               </select>
             </div>
 
@@ -234,17 +235,17 @@ const EditProductModal = ({  handleCloseModal }) => {
             {/* Submit */}
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || uploadImgLoading}
               className={`w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-md  transition
               ${
-                 loading
+                 loading || uploadImgLoading
                   ? "cursor-not-allowed opacity-50"
                   : "cursor-pointer"
               }
               
               `}
             >
-              {loading ? "Updating..." : "Update Product"}
+               {loading ? "Updating..." : uploadImgLoading ? "Uploading Image..." : "Update Product"}
             </button>
           </form>
 
