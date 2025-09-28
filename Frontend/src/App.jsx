@@ -35,7 +35,7 @@ const App = () => {
   // const isAuthenticated = false;
   // const user = {
   //   name: "Yogesh",
-  //   role: "user", // 'admin' or 'user'
+  //   role: "user", // 'admin' or 'user' 
   // };
    const dispatch = useDispatch();
 
