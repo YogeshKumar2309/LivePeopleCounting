@@ -25,7 +25,7 @@ const frontendOrigin = process.env.FRONTEND_ORIGIN;
 // Middlewares
 app.use(
   cors({
-    origin: frontendOrigin,
+    origin: `${frontendOrigin}`,
     credentials: true,
   })
 );
