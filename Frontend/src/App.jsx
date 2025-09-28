@@ -19,7 +19,7 @@ import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 
 import PublicProducts from "./pages/public/Products";
 
-import Contact from "./pages/public/Contact";
+
 import { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -28,6 +28,7 @@ import AddProduct from "./pages/admin/AddProduct";
 import EditProductModal from "./componets/admin/EditProductModal";
 import ProductDetailsPage from "./pages/public/ProductDetailsPage";
 import AboutPage from "./pages/public/AboutPage";
+import ContactPage from "./pages/public/ContactPage";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -81,7 +82,7 @@ const App = () => {
           <Route path="register" element={<Register />} />
           <Route path="products" element={<PublicProducts/>} />
           <Route path="about" element={<AboutPage/>} />
-          <Route path="contact" element={<Contact/>} />
+          <Route path="contact" element={<ContactPage/>} />
           <Route path="productsDetails/:productId" element={<ProductDetailsPage />} />
          </Route>
 
