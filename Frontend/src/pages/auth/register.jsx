@@ -3,7 +3,7 @@ import registerImg from "/images/118.jpg";
 import Form from "../../componets/auth/Form";
 
 
-const RegisterForm = () => {
+const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-blue-50 to-rose-100 p-4">
@@ -29,4 +29,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default Register;

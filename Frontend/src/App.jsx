@@ -5,7 +5,7 @@ import AdminLayout from "./componets/layout/AdminLayout";
 
 import Home from "./pages/public/Home";
 import Login from "./pages/auth/Login";
-import RegisterForm from "./pages/auth/Register";
+import Register from "./pages/auth/Register";
 import Favorites from "./pages/user/Favorites";
 import Dashboard from "./pages/admin/Dashboard";
 import CheckAuth from "./componets/common/CheckAuth";
@@ -77,7 +77,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
-          <Route path="register" element={<RegisterForm />} />
+          <Route path="register" element={<Register />} />
           <Route path="products" element={<PublicProducts/>} />
           <Route path="about" element={<About/>} />
           <Route path="contact" element={<Contact/>} />
