@@ -32,7 +32,7 @@ export const getAllHomeProduct = async (req, res) => {
           badge: 1,
           active: 1,
           image: 1,
-          rating: { $round: [{$ifNull: ["$averageRating", 0]},1]},
+          rating: { $round: [{ $ifNull: ["$averageRating", 0] }, 1] },
         },
       },
     ]);
@@ -123,11 +123,10 @@ export const getReview = async (req, res) => {
   }
 };
 
-
 export const getAllProduct = async (req, res) => {
   try {
     const products = await Product.aggregate([
-      {$limit: 10},
+      { $limit: 10 },
       {
         $lookup: {
           from: "reviews",
@@ -154,13 +153,61 @@ export const getAllProduct = async (req, res) => {
           badge: 1,
           active: 1,
           image: 1,
-          rating: { $round: [{$ifNull: ["$averageRating", 0]},1]},
+          rating: { $round: [{ $ifNull: ["$averageRating", 0] }, 1] },
         },
       },
     ]);
     res.status(200).json({ success: true, products });
   } catch (error) {
     console.log("error in getAllHomeProduct", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+};
+
+export const getFilteredProducts = async (req, res) => {
+  console.log(req.query);
+  try {
+    const queryObj = {};
+
+    //category filter
+    if (req.query.category) {
+      queryObj.category = req.query.category;
+    }
+
+    //badge filter (veg/ non-veg)
+    if (req.query.badge) {
+      queryObj.badge = req.query.badge;
+    }
+
+    //price filter
+    if (req.query.price) {
+      if(req.query.price.includes("+")){
+        //500+ case
+        const min = Number(req.query.price.replace("+", ""));
+        queryObj.offerPrice = { $gte: min };
+      } else {
+        //1-50 case
+        const [min, max] = req.query.price.split("-").map(Number);
+        queryObj.offerPrice = { $gte: min, $lte: max };
+      }
+    }
+
+    //search filter (title match)
+    if (req.query.search) {
+      queryObj.title = { $regex: req.query.search, $options: "i" };
+    }
+
+    //if !queary
+    const products = await Product.find(
+      Object.keys(queryObj).length > 0 ? queryObj : {}
+    );
+
+    res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    console.log("error in getFilteredProducts", error);
     res.status(500).json({ success: false, error: "server error" });
   }
 };

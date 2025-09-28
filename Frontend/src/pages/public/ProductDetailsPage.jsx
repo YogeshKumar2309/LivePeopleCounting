@@ -16,6 +16,7 @@ import NavigationProductDetailsPage from "../../componets/public/product/Navigat
 
 const ProductDetails = () => {
   const [togleShare, setTogleShare] = useState(false);
+  const [loadingSendRating, setLoadingSendRating] = useState(false);
   const { productId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,14 +36,34 @@ const ProductDetails = () => {
 
   const fetchReviewData = async () => {
     try {
-      const res = await fetch(
-        `/api/user/getReviews?productId=${productId}`
-      );
+      const res = await fetch(`/api/user/getReviews?productId=${productId}`);
       const data = await res.json();
       setReviews(data.reviews);
       setTotalReviews(data.totalReviews);
-      setAvgRating(data.avgRating);      
+      setAvgRating(data.avgRating);
     } catch (error) {}
+  };
+
+  // Send review
+  const sendReview = async (formData) => {
+    try {
+      const res = await fetch("/api/user/private/review", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw Error(data.message);
+      fetchReviewData();
+      setLoadingSendRating(false);
+      return true;
+    } catch (error) {
+      console.log(error);
+      setLoadingSendRating(false);
+      return false;
+    }
   };
 
   useEffect(() => {
@@ -91,9 +112,7 @@ const ProductDetails = () => {
         <div className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center space-x-2 py-4 text-sm">
-              <span className="text-gray-500">Home</span>
-              <span className="text-gray-400">/</span>
-              <span className="text-gray-500">Products</span>
+              <span className="text-gray-500">ProductsDetiails</span>
               <span className="text-gray-400">/</span>
               <span className="text-gray-900 font-medium">{product.title}</span>
             </nav>
@@ -113,7 +132,11 @@ const ProductDetails = () => {
               {product.title}
             </h1>
             <div className="flex items-center space-x-4">
-              <RatingStars rating={avgRating} totalStars={5} totalReviews={reviews.length}/>
+              <RatingStars
+                rating={avgRating}
+                totalStars={5}
+                totalReviews={reviews.length}
+              />
             </div>
 
             {product.badge && (
@@ -194,10 +217,12 @@ const ProductDetails = () => {
       </div>
       <div className="mx-8">
         <NavigationProductDetailsPage
-         reviews={reviews} 
-         product={product} 
-         totalReviews={totalReviews}
-          />
+          loadingSendRating={loadingSendRating}
+          sendReview={sendReview}
+          reviews={reviews}
+          product={product}
+          totalReviews={totalReviews}
+        />
       </div>
     </>
   );

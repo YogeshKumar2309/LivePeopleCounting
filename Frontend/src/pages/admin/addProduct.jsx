@@ -197,8 +197,8 @@ const AddProduct = () => {
               name="badge"
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
             >
-              <option value="Veg">veg</option>
-              <option value="Non-Veg">non-veg</option>
+              <option value="veg">veg</option>
+              <option value="non-veg">non-veg</option>
             </select>
           </div>
 

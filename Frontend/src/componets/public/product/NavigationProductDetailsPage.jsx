@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RatingStars from "./RatingStars"; // path अपने project के अनुसार adjust करो
+import RatingStars from "./RatingStars"; 
 import { useSelector } from "react-redux";
 import RateProduct from "./RateProduct";
 import dayjs from "dayjs";
@@ -7,33 +7,14 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 
-const NavigationProductDetailsPage = ({ product, reviews }) => {
+const NavigationProductDetailsPage = ({ product, reviews,sendReview,loadingSendRating }) => {
   const [activePage, setActivePage] = useState("details");
-  const [loadingSendRating, setLoadingSendRating] = useState(false);
 
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const totalReviews = reviews.length;
 
-  const sendReview = async (formData) => {
-    try {
-      const res = await fetch("/api/user/private/review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (!res.ok) throw Error(data.message);
-      setLoadingSendRating(false);
-      return true;
-      } catch (error) {
-      console.log(error);
-      setLoadingSendRating(false);
-      return false;
-    }
-  };
+
 
   return (
     <>

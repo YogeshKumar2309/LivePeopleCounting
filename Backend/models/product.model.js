@@ -6,7 +6,16 @@ const productSchema = new mongoose.Schema(
     desc: { type: String },
     category: {
       type: String,
-      enum: ["cakes","pastries","cookies","icecreams","puddings","chocolates","fruit-based","traditional"],
+      enum: [
+        "cakes",
+        "pastries",
+        "cookies",
+        "icecreams",
+        "puddings",
+        "chocolates",
+        "fruit-based",
+        "traditional",
+      ],
       required: true,
     },
     price: { type: Number, required: true },
@@ -18,6 +27,10 @@ const productSchema = new mongoose.Schema(
     },
     active: { type: Boolean, default: true },
     image: { type: String, required: true },
+    ingredients: {
+      type: [String],
+      default: [],
+    },
   },
   { timestamps: true }
 );

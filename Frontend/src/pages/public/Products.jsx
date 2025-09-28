@@ -8,9 +8,7 @@ import {
 } from "../../features/liked/likedSlice";
 import LoaderComponent from "../../componets/common/Loader";
 import Search from "../../componets/common/Search";
-import { fetchAllDesserts } from "../../features/product/ProductSlice";
 import FilterSidebar from "../../componets/public/product/FilterSidebar";
-
 
 const Products = () => {
   const [toggleSidebar, setToggleSidebar] = useState(true);
@@ -20,11 +18,11 @@ const Products = () => {
     badge: "",
     price: "",
   });
+  const [filterProducts, setFilterProducts] = useState([]);
   const [query, setQuery] = useState("");
 
   const dispatch = useDispatch();
   const { likedProducts } = useSelector((state) => state.liked);
-  const { products } = useSelector((state) => state.products);
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const handleOnLike = (productId) => {
@@ -32,16 +30,18 @@ const Products = () => {
   };
 
   //handle filter funtion in sidebar
-const handleFilter = useCallback((values) => {
-  setFilterValues(values);
-}, []);
+  const handleFilter = useCallback((values) => {
+    setFilterValues(values);
+  }, []);
+
   //handle serach val
-const handleSearchVal = useCallback((val) => {
-  setSearchVal(val);
-}, []);
+  const handleSearchVal = useCallback((val) => {
+    setSearchVal(val);
+  }, []);
+
+  //build query string
   useEffect(() => {
     const params = new URLSearchParams();
-
     if (filterValues.category) params.append("category", filterValues.category);
     if (filterValues.badge) params.append("badge", filterValues.badge);
     if (filterValues.price) params.append("price", filterValues.price);
@@ -50,9 +50,22 @@ const handleSearchVal = useCallback((val) => {
     setQuery(params.toString());
   }, [filterValues, searchVal]);
 
+  // fetch filtered products
   useEffect(() => {
-    dispatch(fetchAllDesserts());
-  }, [dispatch]);
+    const fetchFilteredProducts = async () => {
+      try {
+        const url = query
+          ? `/api/user/filteredProducts?${query}`
+          : "/api/user/filteredProducts";
+        const res = await fetch(url);
+        const data = await res.json();
+        setFilterProducts(data.products);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchFilteredProducts();
+  }, [query]);
 
   useEffect(() => {
     if (isAuthenticated) dispatch(fetchFavorites());
@@ -68,7 +81,7 @@ const handleSearchVal = useCallback((val) => {
           <SlidersHorizontal className="w-5 h-5" />
         </button>
         <Search onSearch={handleSearchVal} />
-        <p className="font-semibold">{products.length} products</p>
+        <p className="font-semibold">{filterProducts.length} products</p>
       </div>
       <div className="flex">
         <div className="sidebar border-r border-stone-200 border-b ">
@@ -80,12 +93,13 @@ const handleSearchVal = useCallback((val) => {
         </div>
         <div className="main flex-1 bg-stone-100 min-h-screen overflow-hidden pt-4">
           <div className="flex flex-wrap justify-evenly gap-5 w-full ">
-            {products.length === 0 ? (
-              <LoaderComponent />
+            {filterProducts.length === 0 ? (
+              // <LoaderComponent />
+              <p>Product not found</p>
             ) : (
-              products.map((item) => (
+              filterProducts.map((item, index) => (
                 <FoodProduct
-                  key={item._id}
+                  key={item._id || index}
                   item={item}
                   handleOnLike={handleOnLike}
                   isAuthenticated={isAuthenticated}
