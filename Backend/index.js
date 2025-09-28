@@ -20,10 +20,12 @@ const port = process.env.PORT || 3000;
 // DB Connect
 connectDB();
 
+const frontendOrigin = process.env.FRONTEND_ORIGIN;
+
 // Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: frontendOrigin,
     credentials: true,
   })
 );
