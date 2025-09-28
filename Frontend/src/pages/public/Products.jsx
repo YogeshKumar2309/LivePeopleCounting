@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { useState, useEffect, use, useCallback } from "react";
 import { SlidersHorizontal } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
@@ -55,8 +57,8 @@ const Products = () => {
     const fetchFilteredProducts = async () => {
       try {
         const url = query
-          ? `/api/user/filteredProducts?${query}`
-          : "/api/user/filteredProducts";
+          ? `${API_BASE}/api/user/filteredProducts?${query}`
+          : `${API_BASE}/api/user/filteredProducts`;
         const res = await fetch(url);
         const data = await res.json();
         setFilterProducts(data.products);

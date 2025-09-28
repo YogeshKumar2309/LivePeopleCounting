@@ -1,4 +1,6 @@
 // App.js
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { Routes, Route } from "react-router-dom";
 import PublicLayout from "./componets/layout/PublicLayout";
 import AdminLayout from "./componets/layout/AdminLayout";
@@ -44,7 +46,7 @@ const App = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const res = await fetch("/api/auth/session", {
+        const res = await fetch(`${API_BASE}/api/auth/session`, {
           method: "GET",
           credentials: "include", // session cookie bhejega
         });

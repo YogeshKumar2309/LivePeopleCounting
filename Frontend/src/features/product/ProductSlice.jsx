@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Fetch all desserts
@@ -5,7 +7,9 @@ export const fetchAllDesserts = createAsyncThunk(
   "product/fetchDesserts",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch("/api/user/getAllProduct");
+      const res = await fetch(`${API_BASE}/api/user/getAllProduct`, {
+        method: "GET",
+      });
       if (!res.ok) throw new Error("Failed to fetch products");
       const data = await res.json();
       return data.products;

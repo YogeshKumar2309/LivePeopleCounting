@@ -1,95 +1,4 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
-// const initialState = {
-//   likedProducts: [],
-// };
-
-// const likedProductsSlice = createSlice({
-//   name: "liked",
-//   initialState,
-//   reducers: {
-//     addLike: (state, action) => {
-//       if (!state.likedProducts.includes(action.payload)) {
-//         state.likedProducts.push(action.payload);
-//       }
-//     },
-//     removeLike: (state, action) => {
-//       if (state.likedProducts.includes(action.payload)) {
-//         state.likedProducts = state.likedProducts.filter(
-//           (item) => item !== action.payload
-//         );
-//       }
-//     },
-//     setLikes: (state, action) => {
-//       state.likedProducts = action.payload;
-//     },
-//     clearLikes: (state) => {
-//       state.likedProducts = [];
-//     },
-//   },
-// });
-
-// export const { addLike, removeLike, setLikes, clearLikes } =
-//   likedProductsSlice.actions;
-
-// export default likedProductsSlice.reducer;
-
-// features/liked/likedSlice.js
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import toast from "react-hot-toast";
-
-// export const toggleFavorite = createAsyncThunk(
-//   "liked/toggleFavorite",
-//   async (productId, { dispatch, rejectWithValue }) => {
-//     try {
-//       const res = await fetch("/api/user/private/favorite", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         credentials: "include",
-//         body: JSON.stringify({ productId }),
-//       });
-
-//       const data = await res.json();
-//       if (!res.ok) throw new Error(data.message);
-
-//       if (data.message === "Add to favorite") {
-//         toast.success("Product added to favorites ❤️");
-//         dispatch(addLike(productId));
-//       } else if (data.message === "Remove from favorite") {
-//         toast.success("Product removed from favorites ♡");
-//         dispatch(removeLike(productId));
-//       }
-//     } catch (err) {
-//       console.error("Error in add to favorite:", err);
-//       toast.error("Error in add to favorite, please try again later");
-//       return rejectWithValue(err.message);
-//     }
-//   }
-// );
-
-// const likedSlice = createSlice({
-//   name: "liked",
-//   initialState: {
-//     likedProducts: [],
-//   },
-//   reducers: {
-//     addLike: (state, action) => {
-//       if (!state.likedProducts.includes(action.payload)) {
-//         state.likedProducts.push(action.payload);
-//       }
-//     },
-//     removeLike: (state, action) => {
-//       state.likedProducts = state.likedProducts.filter(
-//         (id) => id !== action.payload
-//       );
-//     },
-//   },
-// });
-
-// export const { addLike, removeLike } = likedSlice.actions;
-// export default likedSlice.reducer;
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
@@ -99,7 +8,7 @@ export const fetchFavorites = createAsyncThunk(
   "liked/fetchFavorites",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch("/api/user/private/getAllFavorites", {
+      const res = await fetch(`${API_BASE}/api/user/private/getAllFavorites`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -118,7 +27,7 @@ export const toggleFavoriteAsync = createAsyncThunk(
   "liked/toggleFavoriteAsync",
   async (productId, { rejectWithValue }) => {
     try {
-      const res = await fetch("/api/user/private/favorite", {
+      const res = await fetch(`${API_BASE}/api/user/private/favorite`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -146,7 +55,7 @@ export const fetchDesserts = createAsyncThunk(
   "liked/fetchDesserts",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch("/api/user/getHomeProduct");
+      const res = await fetch(`${API_BASE}/api/user/getHomeProduct`);
       const data = await res.json();
       return data.products;
     } catch (error) {
@@ -160,7 +69,7 @@ export const fetchProductDetails = createAsyncThunk(
   "liked/fetchProductDetails",
   async (productId, { rejectWithValue }) => {
     try {
-      const res = await fetch(`/api/user/getProductDetails?productId=${productId}`);
+      const res = await fetch(`${API_BASE}/api/user/getProductDetails?productId=${productId}`);
       const data = await res.json();
       if (!res.ok) throw new Error("Failed to fetch product details");
       return data.products[0]; // assuming API returns array

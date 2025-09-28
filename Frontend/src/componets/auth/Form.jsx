@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { useForm } from "react-hook-form";
 import React, { useEffect, useState } from "react";
 import { Eye, EyeOff, User, Mail, Lock, ArrowRight } from "lucide-react";
@@ -18,7 +20,7 @@ const Form = () => {
   const onSubmitHandler = async (data) => {   
     try {
       setLoading(true);
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch(`${API_BASE}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

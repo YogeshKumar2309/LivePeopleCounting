@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import React, { useEffect, useState } from "react";
 import { Star, Share2 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -36,7 +38,7 @@ const ProductDetails = () => {
 
   const fetchReviewData = async () => {
     try {
-      const res = await fetch(`/api/user/getReviews?productId=${productId}`);
+      const res = await fetch(`${API_BASE}/api/user/getReviews?productId=${productId}`);
       const data = await res.json();
       setReviews(data.reviews);
       setTotalReviews(data.totalReviews);
@@ -47,7 +49,7 @@ const ProductDetails = () => {
   // Send review
   const sendReview = async (formData) => {
     try {
-      const res = await fetch("/api/user/private/review", {
+      const res = await fetch(`${API_BASE}/api/user/private/review`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

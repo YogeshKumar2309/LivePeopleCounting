@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
@@ -24,7 +26,7 @@ const UploadImage = ({ onUpload, product, handleImgLoading }) => {
       handleImgLoading(true);
       setResError(null);
 
-      const res = await fetch("/api/admin/uploadImage", {
+      const res = await fetch(`${API_BASE}/api/admin/uploadImage`, {
         method: "POST",
         body: formData,
       });

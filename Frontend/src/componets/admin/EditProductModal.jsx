@@ -1,4 +1,6 @@
 // EditProductModal.jsx
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import React, { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import UploadImage from "../../componets/common/UploadImage";
@@ -42,7 +44,7 @@ const EditProductModal = ({  handleCloseModal }) => {
         image: imageUrl,
       };
 
-      const res = await fetch(`/api/admin/updateProduct/${product._id}`, {
+      const res = await fetch(`${API_BASE}/api/admin/updateProduct/${product._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

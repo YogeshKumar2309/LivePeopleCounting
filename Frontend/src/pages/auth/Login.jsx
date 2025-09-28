@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { useState } from "react";
 import { Eye, EyeOff, Lock, ArrowRight, Mail } from "lucide-react";
 import loginImg from "/images/66.jpg";
@@ -30,7 +32,7 @@ const Login = () => {
   const handleOnSubmit = async (data) => {
     dispatch(loginStart());
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

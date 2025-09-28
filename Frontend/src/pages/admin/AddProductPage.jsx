@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import UploadImage from "../../componets/common/UploadImage";
@@ -35,7 +37,7 @@ const AddProduct = () => {
         image: imageUrl,
       };
 
-      const res = await fetch("/api/admin/addProduct", {
+      const res = await fetch(`${API_BASE}/api/admin/addProduct`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

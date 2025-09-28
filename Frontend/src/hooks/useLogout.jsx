@@ -1,3 +1,5 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../features/auth/authSlice";
@@ -9,7 +11,7 @@ const useLogout = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("/api/auth/logout", {
+      const res = await fetch(`${API_BASE}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });

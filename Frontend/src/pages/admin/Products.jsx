@@ -1,4 +1,5 @@
-import React from "react";
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import Food from "../../componets/admin/Food";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -10,7 +11,7 @@ const Products = () => {
 
   const getAllProducts = async () => {
     try {
-      const res = await fetch("/api/admin/getProducts", {
+      const res = await fetch(`${API_BASE}/api/admin/getProducts`, {
         method: "GET",
         credentials: "include",
       });
