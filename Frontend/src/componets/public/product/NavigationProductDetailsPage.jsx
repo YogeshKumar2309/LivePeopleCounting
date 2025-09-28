@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RatingStars from "./RatingStars"; 
+import RatingStars from "./RatingStars";
 import { useSelector } from "react-redux";
 import RateProduct from "./RateProduct";
 import dayjs from "dayjs";
@@ -7,14 +7,17 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 
-const NavigationProductDetailsPage = ({ product, reviews,sendReview,loadingSendRating }) => {
+const NavigationProductDetailsPage = ({
+  product,
+  reviews,
+  sendReview,
+  loadingSendRating,
+}) => {
   const [activePage, setActivePage] = useState("details");
 
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const totalReviews = reviews.length;
-
-
 
   return (
     <>
@@ -31,16 +34,6 @@ const NavigationProductDetailsPage = ({ product, reviews,sendReview,loadingSendR
               }`}
             >
               Product Details
-            </button>
-            <button
-              onClick={() => setActivePage("specifications")}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
-                activePage === "specifications"
-                  ? "border-blue-600 text-blue-600"
-                  : "border-transparent text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              Specifications
             </button>
             <button
               onClick={() => setActivePage("reviews")}
@@ -77,66 +70,13 @@ const NavigationProductDetailsPage = ({ product, reviews,sendReview,loadingSendR
               <div className="prose max-w-none text-gray-700">
                 <p>{product?.desc || "No description available."}</p>
                 <h4 className="font-semibold text-gray-900 mt-6">
-                  Key Features:
+                  Ingredients :
                 </h4>
                 <ul className="list-disc list-inside space-y-2 mt-2">
-                  <li>Premium quality materials</li>
-                  <li>Durable construction</li>
-                  <li>Easy to use and maintain</li>
-                  <li>Excellent value for money</li>
+                  {product?.ingredients?.map((ingredient, index) => (
+                    <li key={index}>{ingredient}</li>
+                  ))}
                 </ul>
-              </div>
-            </div>
-          )}
-
-          {activePage === "specifications" && (
-            <div className="space-y-6 mr-4">
-              <h3 className="text-xl font-semibold text-gray-900">
-                Specifications
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">Brand</span>
-                    <span className="text-gray-700">
-                      {product?.brand || "N/A"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">Model</span>
-                    <span className="text-gray-700">
-                      {product?.model || "N/A"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">Weight</span>
-                    <span className="text-gray-700">
-                      {product?.weight || "N/A"}
-                    </span>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">
-                      Dimensions
-                    </span>
-                    <span className="text-gray-700">
-                      {product?.dimensions || "N/A"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">Color</span>
-                    <span className="text-gray-700">
-                      {product?.color || "Multiple"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-200">
-                    <span className="font-medium text-gray-900">Warranty</span>
-                    <span className="text-gray-700">
-                      {product?.warranty || "N/A"}
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           )}
