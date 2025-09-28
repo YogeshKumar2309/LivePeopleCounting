@@ -5,7 +5,7 @@ import AdminLayout from "./componets/layout/AdminLayout";
 
 import Home from "./pages/public/Home";
 import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
+import Register from "./pages/auth/RegisterPage";
 import Favorites from "./pages/user/Favorites";
 import Dashboard from "./pages/admin/Dashboard";
 import CheckAuth from "./componets/common/CheckAuth";
