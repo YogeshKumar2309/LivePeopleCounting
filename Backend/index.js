@@ -21,8 +21,8 @@ const port = process.env.PORT;
 connectDB();
 
 const allowedOrigins = [
+  process.env.FRONTEND_ORIGIN_PROD,
   process.env.FRONTEND_ORIGIN_LOCAL,
-  process.env.FRONTEND_ORIGIN_PROD
 ];
 
 app.use(cors({
