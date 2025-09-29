@@ -15,20 +15,27 @@ import { userAuthMiddleware } from './middleware/userAuthMiddleware.js';
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // DB Connect
 connectDB();
 
-const frontendOrigin = process.env.FRONTEND_ORIGIN;
+const allowedOrigins = [
+  process.env.FRONTEND_ORIGIN_LOCAL,
+  process.env.FRONTEND_ORIGIN_PROD
+];
 
-// Middlewares
-app.use(
-  cors({
-    origin: `${frontendOrigin}`,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}))
+
+// app.use(cors({
+//   origin: '*',
+//   credentials: false // Note: credentials must be false with wildcard
+// }));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
