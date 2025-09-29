@@ -29,8 +29,6 @@ import { loginSuccess, logout } from "./features/auth/authSlice";
 import AddProduct from "./pages/admin/AddProductPage";
 import EditProductModal from "./componets/admin/EditProductModal";
 import ProductDetailsPage from "./pages/public/ProductDetailsPage";
-import AboutPage from "./pages/public/AboutPage";
-import ContactPage from "./pages/public/ContactPage";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -83,8 +81,6 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="products" element={<PublicProducts/>} />
-          <Route path="about" element={<AboutPage/>} />
-          <Route path="contact" element={<ContactPage/>} />
           <Route path="productsDetails/:productId" element={<ProductDetailsPage />} />
          </Route>
 

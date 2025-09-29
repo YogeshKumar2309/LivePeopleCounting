@@ -2,6 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../public/Footer";
 import Header from "../public/Header";
+import About from "../public/About";
+import Contact from "../public/product/Contact";
 
 const PublicLayout = () => {
   return (
@@ -11,6 +13,8 @@ const PublicLayout = () => {
       </nav>
       <main className="min-h-screen">
         <Outlet />
+        <About/>
+        <Contact/>
       </main>
       <footer>
         <Footer/>
