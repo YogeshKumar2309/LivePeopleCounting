@@ -109,11 +109,13 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 ">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center space-x-2 py-4 text-sm">
+              <span className="text-gray-500 hover:text-blue-600" onClick={() => navigate(-1)}>product</span>
+              <span className="text-gray-400">/</span>
               <span className="text-gray-500">ProductsDetiails</span>
               <span className="text-gray-400">/</span>
               <span className="text-gray-900 font-medium">{product.title}</span>
@@ -122,11 +124,11 @@ const ProductDetails = () => {
         </div>
 
         {/* Main */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:grid lg:grid-cols-2 lg:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:grid lg:grid-cols-2 lg:gap-12">
           <img
             src={product.image}
             alt={product.title}
-            className="w-full h-full object-cover"
+            className="w-full h-sceen object-cover"
           />
 
           <div className="mt-8 lg:mt-0 space-y-6">
@@ -217,7 +219,7 @@ const ProductDetails = () => {
         </div>
         {/* //Product Navigation */}
       </div>
-      <div className="mx-8">
+      <div className="px-8 min-h-screen bg-gray-50">
         <NavigationProductDetailsPage
           loadingSendRating={loadingSendRating}
           sendReview={sendReview}

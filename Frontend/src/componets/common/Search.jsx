@@ -18,7 +18,11 @@ const Search = ({ onSearch }) => {
           type="search"
           placeholder="Search desserts..."
           {...field}
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-3 py-2 w-[300px] bg-gray-100 
+             border-2 border-gray-300 
+             rounded-md text-gray-800 
+             placeholder:text-gray-500 
+             focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-300"
         />
       )}
     />

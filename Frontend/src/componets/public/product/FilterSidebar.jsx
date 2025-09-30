@@ -21,12 +21,11 @@ useEffect(() => {
 }, [category, badge, price, handleFilter]);
 
   return (
-    <div>
-      <h2>Filters</h2>
-
+    <div className="">
+      <h2 className="text-xl font-semibold mb-4 capitalize text-stone-500">Filters desserts here ...</h2>
       {/*category*/}
-      <div>
-        <label>Category</label>
+      <div className="mb-4">
+        <div className="font-semibold mb-3 pb-1 border-b-2 border-stone-200">Category</div>
         <Controller
           name="category"
           control={control}
@@ -132,7 +131,7 @@ useEffect(() => {
 
       {/* badge */}
       <div>
-        <label >Badge</label>
+        <div className="font-semibold mb-3 pb-1 border-b-2 border-stone-200 " >Badge</div>
          <Controller
           name="badge"
           control={control}
@@ -176,7 +175,7 @@ useEffect(() => {
 
       {/* price */}
 <div className="mt-4">
-  <label className="font-semibold">Price</label>
+  <div className="font-semibold mb-3 pb-1 border-b-2 border-stone-200">Price</div>
   <Controller
     name="price"
     control={control}

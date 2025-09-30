@@ -22,9 +22,9 @@ const NavigationProductDetailsPage = ({
   return (
     <>
       {/* Tab Navigation */}
-      <div className="mt-16">
+      <div className="pt-16">
         <div className="border-b border-gray-200">
-          <nav className="flex space-x-8">
+          <nav className="flex space-x-8 justify-center sm:justify-normal">
             <button
               onClick={() => setActivePage("details")}
               className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${

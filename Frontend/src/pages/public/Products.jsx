@@ -1,14 +1,13 @@
 const API_BASE = import.meta.env.VITE_API_BASE;
 
-import { useState, useEffect, use, useCallback } from "react";
-import { SlidersHorizontal } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Loader, SlidersHorizontal } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import FoodProduct from "../../componets/public/FoodProduct";
 import {
   fetchFavorites,
   toggleFavoriteAsync,
 } from "../../features/liked/likedSlice";
-import LoaderComponent from "../../componets/common/Loader";
 import Search from "../../componets/common/Search";
 import FilterSidebar from "../../componets/public/product/FilterSidebar";
 
@@ -75,7 +74,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="bg-stone-200 h-12 w-full mt-2 flex items-center justify-between px-4 shadow-sm">
+      <div className="bg-stone-200 h-16 w-full mt-2 flex items-center justify-between px-12 shadow-sm sticky top-0 z-30">
         <button
           onClick={() => setToggleSidebar(!toggleSidebar)}
           className="flex items-center gap-2 bg-stone-400 text-white px-3 py-1 rounded-md hover:bg-stone-500 transition"
@@ -86,7 +85,7 @@ const Products = () => {
         <p className="font-semibold">{filterProducts.length} products</p>
       </div>
       <div className="flex">
-        <div className="sidebar border-r border-stone-200 border-b ">
+        <div className="sidebar border-r border-stone-200 border-b sticky top-12 z-10 h-[calc(100vh-3rem)] overflow-y-auto pb-8 pt-1 ps-1">
           {toggleSidebar && (
             <div className="w-56 sm:w-76 p-4">
               <FilterSidebar handleFilter={handleFilter} />
@@ -96,8 +95,12 @@ const Products = () => {
         <div className="main flex-1 bg-stone-100 min-h-screen overflow-hidden pt-4">
           <div className="flex flex-wrap justify-evenly gap-5 w-full ">
             {filterProducts.length === 0 ? (
-              // <LoaderComponent />
-              <p>Product not found</p>
+              <>
+                <p className="text-blue-700 font-semibold text-center mt-16 text-2xl flex flex-col items-center justify-center">
+                <Loader className=" h-12 w-12 animate-bounce text-blue-700 flext items-center justify-center ms-4 mt-1" />
+                 <p>Product not found</p>
+                </p>
+              </>
             ) : (
               filterProducts.map((item, index) => (
                 <FoodProduct
