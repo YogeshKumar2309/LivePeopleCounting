@@ -88,8 +88,8 @@ const Navbar = ({ navList }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg ">
-          <div className="px-4 pt-2 pb-3 space-y-2">
+        <div className="md:hidden bg-white shadow-lg flex inset-0 z-[9999]">
+          <div className="pt-2 pb-3 space-y-4 absolute top-14 right-0 w-full bg-white  h-[50vh] shadow-lg p-4 z-[10000]">
             {navList.map((nav, idx) => (
               <NavLink
               onClick={() => setIsOpen(!isOpen)}
