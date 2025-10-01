@@ -201,24 +201,23 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
     <motion.div
       whileHover={{ scale: 1.05, y: -5 }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
-      className="w-[180px] h-[300px] sm:w-[280px] sm:h-[320px] overflow-hidden 
+      className="w-[110px] h-[170px] sm:w-[280px] sm:h-[320px] overflow-hidden 
                  rounded-2xl bg-white border border-gray-200 shadow-md 
                  hover:shadow-xl flex flex-col"
     >
       {/* Image Section */}
-      <div className="h-[55%] w-full relative border-b border-gray-200 overflow-hidden bg-gray-200 flex items-center justify-center">
+      <div className="h-[64%] sm:h-[55%] w-full relative border-b border-gray-200 overflow-hidden bg-gray-200 flex items-center justify-center">
         <LazyLoadImage
           src={item?.image || ""}
           alt={`${item?.title || "Food Item"} - ${item?.category || ""}`}
           effect="blur"
           className="w-full h-full object-contain transition-all duration-700"
         />
-
         {item?.badge && (
           <span
             className={`absolute top-3 right-3 ${
               item?.badge === "veg" ? "bg-green-500" : "bg-red-500"
-            } text-white text-xs font-semibold px-3 py-1 rounded-md`}
+            } text-white text-[6px] sm:text-xs font-semibold px-3 py-1 rounded-md`}
           >
             {item.badge}
           </span>
@@ -229,7 +228,7 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="font-bold mb-2 text-white bg-rose-700 sm:text-lg 
-                     px-3 py-1 rounded-md absolute bottom-0 left-3 text-xs"
+                     px-3 py-1 rounded-md absolute bottom-0 left-3 text-[6px]"
         >
           {item?.title || "No Title"}
         </motion.h5>
@@ -237,7 +236,7 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
         {item?.rating && (
           <span
             className="rounded-full ps-1 pr-2 py-0.5 flex text-rose-700 items-center gap-1 
-                       absolute bottom-0 right-3 font-semibold mb-2 sm:text-lg text-sm bg-yellow-500"
+                       absolute bottom-0 right-3 font-semibold mb-2 sm:text-lg text-[6px]  bg-yellow-500"
           >
             <FaStar /> ({item.rating})
           </span>
@@ -245,22 +244,22 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col justify-between h-[45%]">
+      <div className="sm:p-4 p-1 flex flex-col justify-between sm:h-[45%]">
         <div>
           <button
             onClick={handleSeeDetails}
-            className="group flex items-center gap-2 sm:text-sm font-medium 
-                       sm:text-amber-600 sm:bg-stone-50 border border-blue-200 px-3 py-1.5 
+            className="group flex items-center sm:gap-2 sm:text-sm font-medium 
+                       sm:text-amber-600 sm:bg-stone-50 border border-blue-200 sm:px-3 sm:py-1.5 
                        rounded-lg hover:bg-amber-600 hover:text-white hover:shadow-md 
-                       transition-all duration-300 text-xs text-white bg-amber-600"
+                       transition-all duration-300 text-[6px] text-white bg-amber-600 px-2 py-1"
           >
-            See Details
-            <ArrowRight className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 h-4" />
+           See Details
+            <ArrowRight className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 h-2" />
           </button>
 
-          <div className="flex items-center justify-between gap-2 mb-2 p-0.5 mt-2">
+          <div className="flex items-center justify-between sm:gap-2 sm:mb-2 p-0.5 sm:mt-2 ">
             {item?.category && (
-              <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded">
+              <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded text-[6px] sm:text-sm">
                 {item.category}
               </span>
             )}
@@ -269,7 +268,7 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
               whileTap={{ scale: 0.8 }}
               onClick={handleFavoriteClick}
               aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
-              className="text-2xl transition transform hover:scale-110"
+              className="text-2xl transition transform hover:scale-110 text-[8px] sm:text-sm"
             >
               {isLiked ? (
                 <FaHeart className="text-red-500" />
@@ -280,8 +279,8 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
           </div>
         </div>
 
-        <div>
-          <p className="flex items-center justify-between text-sm sm:text-lg">
+        <div className="">
+          <p className="flex items-center justify-between text-[6px] sm:text-lg">
             <span className="flex items-center gap-1">
               <LiaRupeeSignSolid />
               <del className="text-gray-400">{item?.price || "-"}</del>
@@ -290,7 +289,7 @@ const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }
               </span>
             </span>
             {discountPercent > 0 && (
-              <span className={`${discountColor} text-white text-xs font-semibold px-2 py-1 rounded`}>
+              <span className={`${discountColor} text-white text-xs font-semibold sm:px-2 sm:py-1  sm:rounded text-[6px] sm:text-sm rounded-lg px-1 py-0.5`}>
                 {discountPercent}% OFF
               </span>
             )}
