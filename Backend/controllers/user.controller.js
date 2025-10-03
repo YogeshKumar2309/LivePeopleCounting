@@ -51,7 +51,6 @@ export const getAllFavorites = async (req, res) => {
 export const postReview = async (req, res) => {
   const userId = req.session.user.id;
   const { productId, rating, message } = req.body;
-
   let ratingValid = rating;
 
   if (!productId || rating === "" || !message) {

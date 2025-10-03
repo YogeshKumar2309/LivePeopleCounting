@@ -20,8 +20,7 @@ const Login = () => {
   const navigate = useNavigate()
     const {error,isLoading} = useSelector((state) => state.auth);
 
-  const from = location.state?.from?.pathname || "/";
-  
+  const from = location.state?.from?.pathname || "/";  
 
   const {
     register,
@@ -47,7 +46,7 @@ const Login = () => {
         if (result.user.role === "admin") {
           navigate("/admin");
         } else {
-          navigate(from, { replace: true });
+          navigate(-1)
         }
       } else {
         dispatch(loginFailure({ error: result.message || "Login failed" }));
@@ -128,9 +127,8 @@ const Login = () => {
                 placeholder="Password"
                 className="w-full pl-10 pr-10 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               />
-              <button
-                type="submit"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+              <div
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
@@ -138,7 +136,7 @@ const Login = () => {
                 ) : (
                   <Eye className="w-5 h-5" />
                 )}
-              </button>
+              </div>
             </div>
             {errors.password && (
               <p className="text-red-500 text-sm">{errors.password.message}</p>

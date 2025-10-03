@@ -29,6 +29,8 @@ import { loginSuccess, logout } from "./features/auth/authSlice";
 import AddProduct from "./pages/admin/AddProductPage";
 import EditProductModal from "./componets/admin/EditProductModal";
 import ProductDetailsPage from "./pages/public/ProductDetailsPage";
+import Checkout from "./pages/user/Checkout";
+import UserLayout from "./componets/layout/UserLayout";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -88,16 +90,16 @@ const App = () => {
         <Route
           path="/user"
           element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              
-              <PublicLayout />
+            <CheckAuth isAuthenticated={isAuthenticated} user={user}>              
+              <UserLayout />
             </CheckAuth>
           }
         >
-          <Route index element={<div>User Dashboard</div>} />
+          {/* <Route index element={<div>User Dashboard</div>} /> */}
           <Route path="profile" element={<div>User Profile</div>} />
           <Route path="settings" element={<div>User Settings</div>} />
           <Route path="favorites" element={<Favorites />} />
+          <Route path="checkout/:productId" element={<Checkout />} />
         </Route>
 
         {/* Admin Protected Routes */}

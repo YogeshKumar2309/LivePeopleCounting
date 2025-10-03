@@ -10,6 +10,7 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
   const [resError, setResError] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
+    const [uploadImgLoading, setUploadImgLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -39,6 +40,7 @@ const AddProduct = () => {
 
       const res = await fetch(`${API_BASE}/api/admin/addProduct`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -67,7 +69,7 @@ const AddProduct = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-xl font-bold mb-4 text-center">Add New Product</h2>
 
-        <UploadImage onUpload={handleImageUpload} />
+        <UploadImage onUpload={handleImageUpload} handleImgLoading={setUploadImgLoading}/>
 
         <form className="space-y-4" onSubmit={handleSubmit(onSubmitHandler)}>
           {/* Title */}

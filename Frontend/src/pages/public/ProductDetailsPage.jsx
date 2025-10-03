@@ -38,7 +38,9 @@ const ProductDetails = () => {
 
   const fetchReviewData = async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/user/getReviews?productId=${productId}`);
+      const res = await fetch(
+        `${API_BASE}/api/user/getReviews?productId=${productId}`
+      );
       const data = await res.json();
       setReviews(data.reviews);
       setTotalReviews(data.totalReviews);
@@ -51,6 +53,7 @@ const ProductDetails = () => {
     try {
       const res = await fetch(`${API_BASE}/api/user/private/review`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -90,6 +93,16 @@ const ProductDetails = () => {
     dispatch(toggleFavoriteAsync(productId));
   };
 
+  //handle buy btn
+  const handleBuyBtn = (productId) => {
+    if (!isAuthenticated) {
+      toast.error("Please login first");
+      navigate("/login", { state: { from: location.pathname } });
+      return;
+    }
+    navigate(`/user/checkout/${productId}`);
+  };
+
   if (loadingProductDetails || !product) {
     return (
       <div className="min-h-screen flex justify-center items-center bg-gray-50">
@@ -114,7 +127,12 @@ const ProductDetails = () => {
         <div className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center space-x-2 py-4 text-sm">
-              <span className="text-gray-500 hover:text-blue-600" onClick={() => navigate(-1)}>product</span>
+              <span
+                className="text-gray-500 hover:text-blue-600"
+                onClick={() => navigate(-1)}
+              >
+                product
+              </span>
               <span className="text-gray-400">/</span>
               <span className="text-gray-500">ProductsDetiails</span>
               <span className="text-gray-400">/</span>
@@ -200,8 +218,17 @@ const ProductDetails = () => {
               >
                 <Share2 className={`w-5 h-5`} />
               </button>
-
               {togleShare && <ShereProduct />}
+              <button
+                onClick={() => handleBuyBtn(product._id)}
+                className="text-xl font-semibold px-6 py-3 rounded-full 
+             bg-gradient-to-r from-pink-500 via-rose-400 to-red-500 
+             text-white shadow-lg transform transition duration-300 
+             hover:scale-105 hover:shadow-2xl hover:from-pink-600 
+             hover:via-rose-500 hover:to-red-600"
+              >
+                🍰 Order Now
+              </button>
             </div>
 
             <div className="text-sm text-gray-500">

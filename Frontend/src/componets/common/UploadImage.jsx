@@ -28,6 +28,7 @@ const UploadImage = ({ onUpload, product, handleImgLoading }) => {
 
       const res = await fetch(`${API_BASE}/api/admin/uploadImage`, {
         method: "POST",
+        credentials: "include",
         body: formData,
       });
 

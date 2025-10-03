@@ -5,12 +5,12 @@ dotenv.config();
 
 
 export const sessionMiddleware =  session({
-    secret: process.env.SESSION_SECRET || "default_secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URI,
-      ttl: 1000 * 60 * 60 * 24 * 365,
+      ttl: 60 * 60 * 24 * 365,
     }),
     cookie: {
       httpOnly: true,

@@ -59,11 +59,19 @@ export const login = async (req, res) => {
       role: user.role,
     };
 
-    res.status(200).json({
-      success: true,
-      message: "Logged in successfully",
-      user: req.session.user,
-    });
+  req.session.save((err) => {
+  if (err) {
+    console.error("Session Save Error:", err);
+    return res.status(500).json({ success: false, message: "Session error" });
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "Logged in successfully",
+    user: req.session.user,
+  });
+});
+
   } catch (err) {
     console.error("Login Error:", err);
     res.status(500).json({ success: false, message: "Internal Server Error" });

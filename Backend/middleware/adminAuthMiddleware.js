@@ -1,5 +1,6 @@
 export const adminAuthMiddleware = (req, res, next) => {
   // Check if user session exists
+  console.log(req.session);
   if (!req.session.user) {
     return res.status(401).json({ success: false, message: "Not logged in" });
   }
