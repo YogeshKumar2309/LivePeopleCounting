@@ -1,6 +1,6 @@
 import { Favorite } from "../models/favorite.model.js";
+import { Message } from "../models/message.model.js";
 import Review from "../models/review.model.js";
-
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -79,10 +79,27 @@ export const postReview = async (req, res) => {
   }
 };
 
-
-
-
-
-
-
-
+//send Message
+export const sendMessage = async (req, res) => {
+  const userId = req.session.user.id;
+  const { message } = req.body;
+  if (!message) {
+    return res.status(400).json({
+      success: false,
+      message: "Message is required",
+    });
+  }
+  try {
+    await Message.create({
+      userId,
+      message,
+    });
+    res.status(201).json({
+      success: true,
+      message: "Message sent successfully",
+    });
+  } catch (error) {
+    console.log("error in sendMessage", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+};

@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom";
 import Footer from "../public/Footer";
 import Header from "../public/Header";
 import About from "../public/About";
-import Contact from "../public/product/Contact";
+import Contact from "../user/Contact";
+
 
 const PublicLayout = () => {
   return (

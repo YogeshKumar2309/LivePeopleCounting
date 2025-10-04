@@ -1,6 +1,55 @@
-import React from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 const Contact = () => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const [sendMsgLoading, setSendMsgLoading] = useState(false);
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const handleOnSubmit = async (data) => {
+    setSendMsgLoading(true);
+    if (!isAuthenticated) {
+      toast.error("Please login first");
+      setTimeout(() => {
+        navigate("/login");
+      }, 500);
+      return;
+    }
+    try {
+      const res = await fetch(`${API_BASE}/api/user/private/contactMsg`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(
+          errorData.message ||
+            "Something went wrong! Please try again sometimes!"
+        );
+      }
+      toast.success("Message sent successfully");
+      setSendMsgLoading(false);
+      reset();
+    } catch (error) {
+      setSendMsgLoading(false);
+      toast.error(error.message);
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-6 md:px-20">
       {/* Heading */}
@@ -21,8 +70,8 @@ const Contact = () => {
 
           <div className="space-y-3 text-gray-700">
             <p>
-              📍 <span className="font-medium">Address:</span> MG Road, Bangalore,
-              India
+              📍 <span className="font-medium">Address:</span> MG Road,
+              Bangalore, India
             </p>
             <p>
               📞 <span className="font-medium">Phone:</span> +91 98765 43210
@@ -39,27 +88,29 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold text-pink-600 mb-6">
             Send a Message
           </h2>
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
+          <form className="space-y-4" onSubmit={handleSubmit(handleOnSubmit)}>
             <textarea
+              {...register("message", {
+                required: "Message is required",
+                minLength: {
+                  value: 10,
+                  message: "Message must be at least 10 characters long",
+                },
+              })}
               placeholder="Your Message"
               rows="4"
               className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
             ></textarea>
+            {errors.message && (
+              <p className="text-red-500 bg-red-100 p-2 rounded-lg">
+                {errors.message.message}
+              </p>
+            )}
             <button
               type="submit"
               className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 rounded-lg transition"
             >
-              Send
+              {sendMsgLoading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
