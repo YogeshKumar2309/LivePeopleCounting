@@ -26,8 +26,6 @@ const allowedOrigins = [
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sessionMiddleware);
-
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -41,6 +39,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(sessionMiddleware);
 // app.use((req, res, next) => {
 //   console.log("Incoming request:", req.path);
 //   console.log("Session:", req.session);
