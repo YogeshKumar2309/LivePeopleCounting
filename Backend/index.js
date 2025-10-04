@@ -40,7 +40,9 @@ app.use(
   })
 );
 
+app.set("trust proxy", 1);
 app.use(sessionMiddleware);
+
 // app.use((req, res, next) => {
 //   console.log("Incoming request:", req.path);
 //   console.log("Session:", req.session);
