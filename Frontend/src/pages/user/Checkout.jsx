@@ -12,6 +12,7 @@ const Checkout = () => {
       <div className="flex">
         <div className="left bg-amber-100 w-[20vw] min-h-screen">
           <ul>
+            
             <li>OrderSummery</li>
             <li>Payment Option</li>
           </ul>
