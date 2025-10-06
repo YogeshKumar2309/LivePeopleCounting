@@ -1,49 +1,48 @@
 import { ShoppingCart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import { fetchCart, updateCartQuantityAsync } from "../../features/cart/cartSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
-const CartBtn = ({ checkoutQuantity, setCheckoutQuantity, productId }) => {
+const CartBtn = ({ productId }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const quantity = useSelector(
     (state) =>
-      state.cart.itmes?.find((item) => item.productId === productId)
-        ?.quantity || 0
+      state.cart.items?.find((item) => item.productId === productId)
+    ?.quantity || 0
   );
+ 
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   function checkAuth() {
     if (!isAuthenticated) {
       toast.error("Please login first");
       navigate("/login");
-      return;
+      return false;
     }
+    return true;
   }
 
-  const handleDecrease = () => {
-    checkAuth();
-    if (checkoutQuantity > 0) {
-      dispatch(
-        updateCartQuantityAsync({ productId, quantity: checkoutQuantity - 1 })
-      );
-      setCheckoutQuantity(checkoutQuantity - 1);
+const handleDecrease = () => {
+  if (!checkAuth()) return;
+  if(quantity > 0) {
+    dispatch(updateCartQuantityAsync({ productId, quantity: quantity - 1 }));
+  }
+};
+
+const handleIncrease = () => {
+  if (!checkAuth()) return;
+  dispatch(updateCartQuantityAsync({ productId, quantity: quantity + 1 }));
+};
+
+ useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(fetchCart());
     }
-  };
-
-  const handleIncrease = () => {
-    checkAuth();
-    dispatch(
-      updateCartQuantityAsync({ productId, quantity: checkoutQuantity + 1 })
-    );
-    setCheckoutQuantity(checkoutQuantity + 1);
-  };
-
-  useEffect(() => {
-    setCheckoutQuantity(quantity);
-  }, [quantity]);
+  }, [dispatch, isAuthenticated]);
 
   return (
     <div className="flex items-center gap-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full shadow-lg overflow-hidden">
@@ -56,7 +55,7 @@ const CartBtn = ({ checkoutQuantity, setCheckoutQuantity, productId }) => {
 
       <button className="flex items-center gap-2 px-6 py-3 text-white hover:bg-white/10 transition">
         <ShoppingCart size={20} />
-        {checkoutQuantity}
+        {quantity}
       </button>
 
       <button

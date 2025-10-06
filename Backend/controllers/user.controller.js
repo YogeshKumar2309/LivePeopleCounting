@@ -1,5 +1,8 @@
+import mongoose from "mongoose";
+import { Cart } from "../models/cart.modle.js";
 import { Favorite } from "../models/favorite.model.js";
 import { Message } from "../models/message.model.js";
+import { Product} from "../models/product.model.js"
 import Review from "../models/review.model.js";
 
 export const addToFavorite = async (req, res) => {
@@ -101,5 +104,83 @@ export const sendMessage = async (req, res) => {
   } catch (error) {
     console.log("error in sendMessage", error);
     res.status(500).json({ success: false, error: "server error" });
+  }
+};
+
+//postUpdateCartQuantity
+export const postUpdateCartQuantity = async (req, res) => {
+  const userId = req.session.user.id;
+  const { productId, quantity } = req.body;
+  if (!userId || !productId || quantity === undefined)
+    throw new Error("userId, productId, and quantity is required!");
+  try {
+    let cartItem = await Cart.findOne({ userId, productId });
+    if (cartItem) {
+      cartItem.quantity = quantity;
+      await cartItem.save();
+    } else {
+      cartItem = await Cart.create({ userId, productId, quantity });
+      await save(cartItem);
+    }
+    res.status(200).json({
+      success: true,
+      message: "cart item saved!",
+    });
+  } catch (error) {
+    console.log("Error comes to postUpdateCart", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error!",
+    });
+  }
+};
+
+//getCart
+export const getCart = async (req, res) => {
+  try {
+  const userId = req.session.user.id;
+   if (!userId) {
+      return res.status(400).json({ message: "User ID is required" });
+    }
+    const cartItems = await Cart.aggregate([
+      { $match: { userId: new mongoose.Types.ObjectId(userId) } },
+      {
+        $lookup: {
+          from: "products",
+          localField: "productId",
+          foreignField: "_id",
+          as: "productDetails",
+        },
+      },
+      {
+        $unwind: "$productDetails",
+      },
+      {
+        $project: {
+          _id: 1,
+          userId: 1,
+          productId: 1,
+          quantity: 1,
+          "productDetails._id":1,
+          "productDetails.title": 1,
+          "productDetails.price": 1,
+          "productDetails.offerPrice": 1,
+          "productDetails.image": 1,
+          "productDetails.category": 1,
+          "productDetails.badge": 1,
+        },
+      }
+    ]);
+   
+    res.json({
+      success: true,
+      cartItems,
+    });
+  } catch (error) {
+    console.log("Error comes to getCart", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error!",
+    });
   }
 };

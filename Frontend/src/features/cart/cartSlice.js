@@ -4,7 +4,8 @@ const API_BASE = import.meta.env.VITE_API_BASE;
 export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async () => {
-    const res = await fetch(`${API_BASE}/api/user/getCart`, {
+    const res = await fetch(`${API_BASE}/api/user/private/getCart`, {
+      method: "GET",
       credentials: "include",
     })
     const data = await res.json();
@@ -16,7 +17,7 @@ export const fetchCart = createAsyncThunk(
 export const updateCartQuantityAsync = createAsyncThunk(
   "cart/updateQuantity",
   async ({ productId, quantity }, thunkAPI) => {
-    const res = await fetch(`${API_BASE}/api/user/updateCartQuantity`, {
+    const res = await fetch(`${API_BASE}/api/user/private/updateCartQuantity`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -40,11 +41,11 @@ const cartSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCart.fulfilled, (state, action) => {
-        state.items = action.payload;
+        state.items = action.payload.cartItems;
       })
       .addCase(updateCartQuantityAsync.fulfilled, (state, action) => {
         const index = state.items.findIndex(
-          (item) => item._id === action.payload.productId
+          (item) => item.productId === action.payload.productId
         );
         if (index !== -1) {
           state.items[index].quantity = action.payload.quantity;

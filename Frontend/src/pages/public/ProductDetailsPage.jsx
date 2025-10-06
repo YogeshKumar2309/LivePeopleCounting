@@ -36,7 +36,6 @@ const ProductDetails = () => {
   const [reviews, setReviews] = useState([]);
   const [totalReviews, setTotalReviews] = useState(0);
   const [avgRating, setAvgRating] = useState(0);
-  const [checkoutQuantity, setCheckoutQuantity] = useState(0);
 
   const fetchReviewData = async () => {
     try {
@@ -200,45 +199,74 @@ const ProductDetails = () => {
                 {product.active ? "In Stock" : "Out of Stock"}
               </span>
             </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 p-4">
+              {/* Like + Share buttons container */}
+              <div className="flex items-center gap-4 justify-end sm:justify-start relative">
+                {/* Heart/Like Button */}
+                <button
+                  onClick={handleFavoriteClick}
+                  className="flex items-center justify-center w-14 h-14 rounded-xl border-2 border-red-400 bg-pink-50 hover:bg-red-100 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                >
+                  {isLiked ? (
+                    <FaHeart className="w-6 h-6 text-red-600" />
+                  ) : (
+                    <FaRegHeart className="w-6 h-6 text-red-500" />
+                  )}
+                </button>
 
-            <div className="flex space-x-4">
-              <button
-                onClick={handleFavoriteClick}
-                className="text-2xl p-3 border border-gray-300 rounded-lg hover:bg-rose-300"
-              >
-                {isLiked ? (
-                  <FaHeart className="text-red-500 hover:text-rose-700" />
-                ) : (
-                  <FaRegHeart className="text-gray-500 hover:text-red-500" />
-                )}
-              </button>
-              <button
-                onClick={() => setTogleShare(!togleShare)}
-                className={`p-3 border border-gray-300 rounded-lg hover:bg-amber-400  ${
-                  togleShare && "bg-amber-500"
-                }`}
-              >
-                <Share2 className={`w-5 h-5`} />
-              </button>
-              {togleShare && <ShereProduct />}
+                {/* Share Button with positioned popup */}
+                <div className="relative">
+                  <button
+                    onClick={() => setTogleShare(!togleShare)}
+                    className={`flex items-center justify-center w-14 h-14 rounded-xl border-2 transition-all duration-300 shadow-md transform hover:scale-105 ${
+                      togleShare
+                        ? "bg-amber-500 border-amber-600 shadow-xl"
+                        : "bg-white border-gray-300 hover:bg-amber-100 hover:border-amber-400"
+                    }`}
+                  >
+                    <Share2
+                      className={`w-6 h-6 ${
+                        togleShare ? "text-white" : "text-gray-700"
+                      }`}
+                    />
+                  </button>
 
-              <CartBtn
-                checkoutQuantity={checkoutQuantity}
-                setCheckoutQuantity={setCheckoutQuantity}
-                productId={product._id}
-              />
-              <button
-                onClick={() => handleBuyBtn(product._id)}
-                className="text-xl font-semibold px-6 py-3 rounded-full 
-             bg-gradient-to-r from-pink-500 via-rose-400 to-red-500 
-             text-white shadow-lg transform transition duration-300 
-             hover:scale-105 hover:shadow-2xl hover:from-pink-600 
-             hover:via-rose-500 hover:to-red-600"
-              >
-                🍰 Order Now
-              </button>
+                  {/* Share popup positioned below share button */}
+                  {togleShare && (
+                    <div className="absolute top-full left-0 mt-2 z-10">
+                      <ShereProduct />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Cart & Order buttons container */}
+              <div className="flex flex-row gap-3 w-full sm:w-auto">
+                {/* Cart Button Container - Fixed for mobile */}
+                <div className="w-full sm:w-auto">
+                  <div className="flex justify-center sm:block">
+                    <CartBtn productId={product._id} />
+                  </div>
+                </div>
+
+                {/* Order Now Button - Reduced height */}
+                <button
+                  onClick={() => handleBuyBtn(product._id)}
+                  className="flex items-center justify-center gap-3 h-12 px-6 rounded-2xl
+        bg-gradient-to-r from-red-500 via-pink-600 to-rose-700 
+        text-white font-extrabold text-lg uppercase tracking-wider 
+        shadow-2xl shadow-red-300/50 
+        transition-all duration-500 
+        hover:scale-[1.02] hover:shadow-red-400/80 
+        hover:from-red-600 hover:via-pink-700 hover:to-rose-800 
+        active:scale-[0.98] 
+        w-full sm:w-auto"
+                >
+                  <span className="text-xl animate-pulse">🍰</span>
+                  <span>Order Now</span>
+                </button>
+              </div>
             </div>
-
             <div className="text-sm text-gray-500">
               <hr className="border-t border-gray-300 my-2" />
               Listed on:{" "}
