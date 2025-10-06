@@ -1,0 +1,56 @@
+import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+const API_BASE = import.meta.env.VITE_API_BASE;
+
+export const fetchCart = createAsyncThunk(
+  "cart/fetchCart",
+  async () => {
+    const res = await fetch(`${API_BASE}/api/user/getCart`, {
+      credentials: "include",
+    })
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message);
+    return data;
+  }
+)
+
+export const updateCartQuantityAsync = createAsyncThunk(
+  "cart/updateQuantity",
+  async ({ productId, quantity }, thunkAPI) => {
+    const res = await fetch(`${API_BASE}/api/user/updateCartQuantity`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ productId, quantity }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message);
+
+    thunkAPI.dispatch(fetchCart());
+
+    return  { productId, quantity };
+  }
+)
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: { items: []},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCart.fulfilled, (state, action) => {
+        state.items = action.payload;
+      })
+      .addCase(updateCartQuantityAsync.fulfilled, (state, action) => {
+        const index = state.items.findIndex(
+          (item) => item._id === action.payload.productId
+        );
+        if (index !== -1) {
+          state.items[index].quantity = action.payload.quantity;
+        }
+      })
+  }
+})
+
+export default cartSlice.reducer;

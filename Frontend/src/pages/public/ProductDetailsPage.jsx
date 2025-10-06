@@ -1,7 +1,7 @@
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 import React, { useEffect, useState } from "react";
-import { Star, Share2 } from "lucide-react";
+import { Star, Share2, ShoppingCart } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
@@ -15,6 +15,7 @@ import {
 import ShereProduct from "../../componets/public/product/ShereProduct";
 import RatingStars from "../../componets/public/product/RatingStars";
 import NavigationProductDetailsPage from "../../componets/public/product/NavigationProductDetailsPage";
+import CartBtn from "../../componets/common/CartBtn";
 
 const ProductDetails = () => {
   const [togleShare, setTogleShare] = useState(false);
@@ -35,6 +36,7 @@ const ProductDetails = () => {
   const [reviews, setReviews] = useState([]);
   const [totalReviews, setTotalReviews] = useState(0);
   const [avgRating, setAvgRating] = useState(0);
+  const [checkoutQuantity, setCheckoutQuantity] = useState(0);
 
   const fetchReviewData = async () => {
     try {
@@ -142,7 +144,7 @@ const ProductDetails = () => {
         </div>
 
         {/* Main */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:grid lg:grid-cols-2 lg:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:grid lg:grid-cols-2 lg:gap-12 ">
           <img
             src={product.image}
             alt={product.title}
@@ -219,6 +221,12 @@ const ProductDetails = () => {
                 <Share2 className={`w-5 h-5`} />
               </button>
               {togleShare && <ShereProduct />}
+
+              <CartBtn
+                checkoutQuantity={checkoutQuantity}
+                setCheckoutQuantity={setCheckoutQuantity}
+                productId={product._id}
+              />
               <button
                 onClick={() => handleBuyBtn(product._id)}
                 className="text-xl font-semibold px-6 py-3 rounded-full 
@@ -260,4 +268,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
