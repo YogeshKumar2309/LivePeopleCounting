@@ -205,12 +205,12 @@ const ProductDetails = () => {
                 {/* Heart/Like Button */}
                 <button
                   onClick={handleFavoriteClick}
-                  className="flex items-center justify-center w-14 h-14 rounded-xl border-2 border-red-400 bg-pink-50 hover:bg-red-100 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  className="flex items-center justify-center w-14 h-14 rounded-xl border-2 border-gray-300 bg-stone-50 hover:bg-red-100 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 hover:border-red-400"
                 >
                   {isLiked ? (
                     <FaHeart className="w-6 h-6 text-red-600" />
                   ) : (
-                    <FaRegHeart className="w-6 h-6 text-red-500" />
+                    <FaRegHeart className="w-6 h-6 text-red-400" />
                   )}
                 </button>
 

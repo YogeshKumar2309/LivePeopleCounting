@@ -78,7 +78,9 @@ const HeroSection = () => {
             where every bite is a piece of happiness. From cakes to pastries, we bring
             sweetness to your life with love and care.
           </p>
-          <button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition">
+          <button
+          onClick={() => window.location.href = '/products'}
+          className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition">
             Explore Menu
           </button>
         </div>
@@ -86,17 +88,17 @@ const HeroSection = () => {
         {/* Right Content - 3 Images */}
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://images.unsplash.com/photo-1600891964092-4316c288032e"
+           src="https://res.cloudinary.com/dfifffuai/image/upload/v1759067666/products/zsvbk5idosvfc4c5hesu.jpg"
             alt="Dessert 1"
             className="w-full h-56 object-cover rounded-lg shadow-lg col-span-2"
           />
           <img
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+           src="https://res.cloudinary.com/dfifffuai/image/upload/v1759076870/products/uyugfl8ipnmy8ailepm4.jpg"
             alt="Dessert 2"
             className="w-full h-40 object-cover rounded-lg shadow-lg"
           />
           <img
-            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187"
+              src="https://res.cloudinary.com/dfifffuai/image/upload/v1759058139/products/kuofz9rstympntqzft9g.jpg"
             alt="Dessert 3"
             className="w-full h-40 object-cover rounded-lg shadow-lg"
           />
@@ -108,3 +110,6 @@ const HeroSection = () => {
 
 export default HeroSection;
 
+
+
+  

@@ -15,7 +15,7 @@ const Header = () => {
     },
   ]
   return (
-    <div className='h-14 border-b-2 border-blue-400 bg-blue-200'>
+    <div className='h-16 border-b-2 border-blue-400 bg-blue-200'>
       <Navbar navList={navList}/>
     </div>
   )
