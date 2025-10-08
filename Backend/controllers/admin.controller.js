@@ -72,9 +72,7 @@ export const updateProduct = async (req, res) => {
     const productId = req.params.id;
     const { title, desc, category, price, offerPrice, badge, active, image } =
       req.body;
-
-      console.log("active", active)
-
+     
     const existingProduct = await Product.findById(productId);
     if (!existingProduct) {
       return res

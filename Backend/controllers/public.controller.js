@@ -165,7 +165,6 @@ export const getAllProduct = async (req, res) => {
 };
 
 export const getFilteredProducts = async (req, res) => {
-  console.log(req.query);
   try {
     const queryObj = {};
 

@@ -120,7 +120,7 @@ export const postUpdateCartQuantity = async (req, res) => {
       await cartItem.save();
     } else {
       cartItem = await Cart.create({ userId, productId, quantity });
-      await save(cartItem);
+      await cartItem.save();
     }
     res.status(200).json({
       success: true,
@@ -184,3 +184,30 @@ export const getCart = async (req, res) => {
     });
   }
 };
+
+
+export const deleteCart = async (req,res) => {
+  try {
+    const userId = req.session.user?.id;
+    const {productId} = req.body;
+    if(!userId || !productId) {
+      return res.status(400).json({message: "userId and productID are required!"});
+    }
+
+    const deletedItem = await Cart.findOneAndDelete({userId, productId});
+
+    if(!deleteCart) {
+      return res.status(404).json({
+        success: true,
+        message: "Item not found in cart!"
+      })
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Item is deleted successfully in cart!", 
+      deletedItem})
+  } catch (error) {
+    res.status(500).json({message: "Server error:" + error.messsage})
+  }
+}

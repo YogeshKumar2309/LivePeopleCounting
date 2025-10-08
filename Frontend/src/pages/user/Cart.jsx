@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ShoppingCart, Trash2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCart, updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import { deleteCartItemAsync, fetchCart, updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -18,8 +21,9 @@ const Cart = () => {
   );
 
 
-  const removeItem = (id) => setCart(cart.filter((item) => item.id !== id));
-
+  const removeItem = (productId) => {
+    dispatch(deleteCartItemAsync({productId}))
+  }
   const increaseQty = (productId,quantity) => {
     dispatch(updateCartQuantityAsync({ productId, quantity: quantity + 1}))
   }  
@@ -77,7 +81,7 @@ const Cart = () => {
                   ₹{item.productDetails.price * item.quantity}
                 </p>
                 <button
-                  onClick={() => removeItem(item.id)}
+                  onClick={() => removeItem(item.productId)}
                   className="text-red-500 text-sm mt-1 hover:text-red-600 flex items-center"
                 >
                   <Trash2 className="w-4 h-4 mr-1" /> Remove
@@ -93,7 +97,9 @@ const Cart = () => {
             <span className="text-amber-700">₹{getTotal()}</span>
           </div>
 
-          <button className="w-full mt-5 py-2.5 text-white font-semibold rounded-lg bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 transition-all shadow-md">
+          <button
+           onClick={() => navigate("/user/checkout")}
+           className="w-full mt-5 py-2.5 text-white font-semibold rounded-lg bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 transition-all shadow-md">
             Checkout Karen
           </button>
         </div>
