@@ -56,6 +56,8 @@ export const deleteCartItemAsync = createAsyncThunk(
   }
 );
 
+//update Cart Active or not
+
 const cartSlice = createSlice({
   name: "cart",
   initialState: { items: [] },

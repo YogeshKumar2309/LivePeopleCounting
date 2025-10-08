@@ -101,7 +101,7 @@ const App = () => {
           <Route path="profile" element={<div>User Profile</div>} />
           <Route path="settings" element={<div>User Settings</div>} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="checkout/:productId" element={<Checkout />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
 
         {/* Admin Protected Routes */}

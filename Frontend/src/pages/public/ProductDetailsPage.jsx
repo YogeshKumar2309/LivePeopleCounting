@@ -16,6 +16,7 @@ import ShereProduct from "../../componets/public/product/ShereProduct";
 import RatingStars from "../../componets/public/product/RatingStars";
 import NavigationProductDetailsPage from "../../componets/public/product/NavigationProductDetailsPage";
 import CartBtn from "../../componets/common/CartBtn";
+import { updateCartQuantityAsync } from "../../features/cart/cartSlice";
 
 const ProductDetails = () => {
   const [togleShare, setTogleShare] = useState(false);
@@ -101,7 +102,8 @@ const ProductDetails = () => {
       navigate("/login", { state: { from: location.pathname } });
       return;
     }
-    navigate(`/user/checkout/${productId}`);
+     dispatch(updateCartQuantityAsync({ productId, quantity:1}))
+    navigate(`/user/checkout`);
   };
 
   if (loadingProductDetails || !product) {
@@ -253,14 +255,14 @@ const ProductDetails = () => {
                 <button
                   onClick={() => handleBuyBtn(product._id)}
                   className="flex items-center justify-center gap-3 h-12 px-6 rounded-2xl
-        bg-gradient-to-r from-red-500 via-pink-600 to-rose-700 
-        text-white font-extrabold text-lg uppercase tracking-wider 
-        shadow-2xl shadow-red-300/50 
-        transition-all duration-500 
-        hover:scale-[1.02] hover:shadow-red-400/80 
-        hover:from-red-600 hover:via-pink-700 hover:to-rose-800 
-        active:scale-[0.98] 
-        w-full sm:w-auto"
+                  bg-gradient-to-r from-red-500 via-pink-600 to-rose-700 
+                  text-white font-extrabold text-lg uppercase tracking-wider 
+                  shadow-2xl shadow-red-300/50 
+                  transition-all duration-500 
+                  hover:scale-[1.02] hover:shadow-red-400/80 
+                  hover:from-red-600 hover:via-pink-700 hover:to-rose-800 
+                  active:scale-[0.98] 
+                  w-full sm:w-auto"
                 >
                   <span className="text-xl animate-pulse">🍰</span>
                   <span>Order Now</span>

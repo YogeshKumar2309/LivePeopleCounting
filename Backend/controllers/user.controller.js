@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { Cart } from "../models/cart.modle.js";
 import { Favorite } from "../models/favorite.model.js";
 import { Message } from "../models/message.model.js";
-import { Product} from "../models/product.model.js"
+import { Product } from "../models/product.model.js";
 import Review from "../models/review.model.js";
 
 export const addToFavorite = async (req, res) => {
@@ -138,8 +138,8 @@ export const postUpdateCartQuantity = async (req, res) => {
 //getCart
 export const getCart = async (req, res) => {
   try {
-  const userId = req.session.user.id;
-   if (!userId) {
+    const userId = req.session.user.id;
+    if (!userId) {
       return res.status(400).json({ message: "User ID is required" });
     }
     const cartItems = await Cart.aggregate([
@@ -161,7 +161,8 @@ export const getCart = async (req, res) => {
           userId: 1,
           productId: 1,
           quantity: 1,
-          "productDetails._id":1,
+          isActive: 1,
+          "productDetails._id": 1,
           "productDetails.title": 1,
           "productDetails.price": 1,
           "productDetails.offerPrice": 1,
@@ -169,9 +170,9 @@ export const getCart = async (req, res) => {
           "productDetails.category": 1,
           "productDetails.badge": 1,
         },
-      }
+      },
     ]);
-   
+
     res.json({
       success: true,
       cartItems,
@@ -185,29 +186,31 @@ export const getCart = async (req, res) => {
   }
 };
 
-
-export const deleteCart = async (req,res) => {
+export const deleteCart = async (req, res) => {
   try {
     const userId = req.session.user?.id;
-    const {productId} = req.body;
-    if(!userId || !productId) {
-      return res.status(400).json({message: "userId and productID are required!"});
+    const { productId } = req.body;
+    if (!userId || !productId) {
+      return res
+        .status(400)
+        .json({ message: "userId and productID are required!" });
     }
 
-    const deletedItem = await Cart.findOneAndDelete({userId, productId});
+    const deletedItem = await Cart.findOneAndDelete({ userId, productId });
 
-    if(!deleteCart) {
+    if (!deleteCart) {
       return res.status(404).json({
         success: true,
-        message: "Item not found in cart!"
-      })
+        message: "Item not found in cart!",
+      });
     }
 
     res.status(200).json({
       success: true,
-      message: "Item is deleted successfully in cart!", 
-      deletedItem})
+      message: "Item is deleted successfully in cart!",
+      deletedItem,
+    });
   } catch (error) {
-    res.status(500).json({message: "Server error:" + error.messsage})
+    res.status(500).json({ message: "Server error:" + error.messsage });
   }
-}
+};
