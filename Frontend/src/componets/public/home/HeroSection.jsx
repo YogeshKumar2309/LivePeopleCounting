@@ -61,9 +61,11 @@
 
 // export default HeroSection;
 
-import React from "react";
+import {useNavigate} from "react-router-dom";
 
 const HeroSection = () => {
+
+  const navigate = useNavigate();
   return (
     <section className="relative bg-stone-900 text-white">
       {/* Hero Content */}
@@ -79,7 +81,7 @@ const HeroSection = () => {
             sweetness to your life with love and care.
           </p>
           <button
-          onClick={() => window.location.href = '/products'}
+          onClick={() => navigate("/products")}
           className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition">
             Explore Menu
           </button>

@@ -31,6 +31,7 @@ import EditProductModal from "./componets/admin/EditProductModal";
 import ProductDetailsPage from "./pages/public/ProductDetailsPage";
 import Checkout from "./pages/user/Checkout";
 import UserLayout from "./componets/layout/UserLayout";
+import Cart from "./pages/user/Cart";
 
 const App = () => {
   const {isAuthenticated, user} = useSelector((state) => state.auth);
@@ -96,6 +97,7 @@ const App = () => {
           }
         >
           {/* <Route index element={<div>User Dashboard</div>} /> */}
+          <Route path="cart" element={<Cart/>} />
           <Route path="profile" element={<div>User Profile</div>} />
           <Route path="settings" element={<div>User Settings</div>} />
           <Route path="favorites" element={<Favorites />} />
