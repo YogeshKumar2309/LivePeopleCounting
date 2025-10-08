@@ -23,15 +23,15 @@ const CurrentOrder = () => {
         setCurrentOrders(
           data.orders.filter(
             ({ delivery }) =>
-              delivery.deliveryStatus === "pending" ||
-              delivery.deliveryStatus === "ready-for-pickup"
+              delivery?.deliveryStatus === "pending" ||
+              delivery?.deliveryStatus === "ready-for-pickup"
           )
         );
         setCompletedOrders(
-          data.orders.filter(({ delivery }) => delivery.deliveryStatus === "picked-up")
+          data.orders.filter(({ delivery }) => delivery?.deliveryStatus === "picked-up")
         );
         setCancelledOrders(
-          data.orders.filter(({ delivery }) => delivery.deliveryStatus === "cancelled")
+          data.orders.filter(({ delivery }) => delivery?.deliveryStatus === "cancelled")
         );
       }
     } catch (error) {

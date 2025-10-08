@@ -332,7 +332,12 @@ export const getOrder = async (req, res) => {
         const delivery = await Delivery.findOne({ orderId: order._id });
         return {
           order,
-          delivery,
+          delivery : delivery || {
+            deliveryStatus: "unknown",
+            pickupType: "N/A",
+            pickupCode: "N/A",
+            shopLocation: { name: "", address: "", contact: "" },
+          },
         };
       })
     );
