@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaTrashAlt, FaTimesCircle } from "react-icons/fa";
-
+import {toast} from "react-hot-toast"
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 const CurrentOrder = () => {
@@ -44,26 +44,54 @@ const CurrentOrder = () => {
   }, []);
 
   // --- Cancel Order Placeholder ---
-  const handleCancelOrder = async (orderId) => {
-    if (isProcessing) return;
-    setIsProcessing(true);
-    try {
-      // TODO: Implement cancel API
-      console.log("Cancel order:", orderId);
-      await fetchAllOrderSummary();
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+const handleCancelOrder = async (orderId) => {
+  if (isProcessing) return; 
+  setIsProcessing(true);
+
+  try {
+    // API call to cancel order
+    const res = await fetch(`${API_BASE}/api/user/private/cancelOrder/${orderId}`, {
+      method: "PUT", 
+      credentials: "include",
+    });
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(data.message || "Failed to cancel order");
+
+    toast.success(`Your order is canceled successfully!`)
+    // Re-fetch orders to update UI
+    await fetchAllOrderSummary();
+
+  } catch (error) {
+    console.error("Error cancelling order:", error.message);
+    toast.error("Failed to cancel order. Please try again.");
+  } finally {
+    setIsProcessing(false);
+  }
+};
+
 
   // --- Delete Order Placeholder ---
   const handleDeleteOrder = async (orderId) => {
     if (isProcessing) return;
     setIsProcessing(true);
     try {
-      // TODO: Implement delete API
-      console.log("Delete order:", orderId);
-      await fetchAllOrderSummary();
+     const res = await fetch(`${API_BASE}/api/user/private/deleteOrder/${orderId}`, {
+      method: "DELETE",
+      credentials: "include",
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+         throw new Error(data.message || "Failed to delete order");
+    }
+
+    toast.success(data.message || `Order ${orderId} deleted successfully!`);
+
+    await fetchAllOrderSummary();
+  } catch (error) {
+    console.error("Error deleting order:", error.message);
+    toast.error("Failed to delete order. Please try again.");
     } finally {
       setIsProcessing(false);
     }
