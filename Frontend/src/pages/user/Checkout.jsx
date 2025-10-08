@@ -44,7 +44,7 @@ const Checkout = () => {
      const resultAction = await dispatch(confirmOrderAsync())      ;
      if(confirmOrderAsync.fulfilled.match(resultAction)) {
       toast.success("Order confirmed successfully!");
-      navigate("/user/profile/orderSummary")
+      navigate("/user/profile/orderDetails")
      } else {
       toast.error("Failed to confirm order!");
      }

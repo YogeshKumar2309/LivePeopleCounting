@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 import { Cart } from "../models/cart.modle.js";
 import { Favorite } from "../models/favorite.model.js";
 import { Message } from "../models/message.model.js";
-import { Product } from "../models/product.model.js";
 import Review from "../models/review.model.js";
 import { Order } from "../models/order.model.js";
+import { Delivery } from "../models/delivery.model.js";
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -253,57 +253,177 @@ export const postUpdateCartActive = async (req, res) => {
   }
 };
 
-
 //confirm order
 export const confirmOrder = async (req, res) => {
- try {
-  const userId = req.session.user.id;
+  try {
+    const userId = req.session.user.id;
 
-  //fetch active cart items
-  const cartItems = await Cart.find({
-    userId, 
-    isActive: true
-  }).populate("productId");
+    //fetch active cart items
+    const cartItems = await Cart.find({
+      userId,
+      isActive: true,
+    }).populate("productId");
 
-  if(cartItems.length === 0) {
-    return res.status(400).json({
+    if (cartItems.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "No active items in cart!",
+      });
+    }
+
+    //calculate total amount
+    const totalAmount = cartItems.reduce(
+      (sum, item) => sum + item.productId.price * item.quantity,
+      0
+    );
+
+    //create new order
+    const newOrder = await Order.create({
+      userId,
+      items: cartItems.map((item) => ({
+        productId: item.productId._id,
+        quantity: item.quantity,
+        price: item.productId.price,
+      })),
+      totalAmount,
+      paymentMethod: "cod",
+      status: "confirmed",
+    });
+
+    //create delivery record automatically
+    const pickupCode = Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit code
+    await Delivery.create({
+      orderId: newOrder._id,
+      pickupType: "shop-pickup",
+      deliveryStatus: "pending",
+      pickupCode,
+    });
+
+    //mark cart items delete
+    await Cart.deleteMany({ userId, isActive: true });
+
+    res.status(200).json({
+      success: true,
+      message: "Order confirmed successfully!",
+      orderId: newOrder._id,
+      pickupCode,
+    });
+  } catch (error) {
+    console.error("Error in confirmOrder:", error.message);
+    res.status(500).json({
       success: false,
-      message: "No active items in cart!",
+      message: "Internal server error!",
     });
   }
+};
 
-  //calculate total amount
-  const totalAmount = cartItems.reduce(
-    (sum, item) => sum + item.productId.price * item.quantity, 0
-  );
+//get order details
+export const getOrder = async (req, res) => {
+  try {
+    //find all orders
+    const orders = await Order.find().populate(
+      "items.productId",
+      "title price"
+    );
 
-  //create new order
-  const newOrder = await Order.create({
-    userId, 
-    items: cartItems.map((item) => ({
-      productId: item.productId._id,
-      quantity: item.quantity,
-      price: item.productId.price,
-    })),
-    totalAmount,
-    paymentMethod: 'cod',
-    status: "confirmed",
-  });
+    //get delivery ingo for each order
+    const ordersWithDelivery = await Promise.all(
+      orders.map(async (order) => {
+        const delivery = await Delivery.findOne({ orderId: order._id });
+        return {
+          order,
+          delivery,
+        };
+      })
+    );
 
-  //mark cart items as inactive
-  await Cart.deleteMany({userId, isActive: true});
+    //send response
+    res.status(200).json({
+      success: true,
+      orders: ordersWithDelivery,
+    });
+  } catch (error) {
+    console.error("Error in getOrder:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error!",
+    });
+  }
+};
 
-  res.status(200).json({
-    success: true,
-    message: "Order confirmed successfully!",
-    orderId: newOrder._id,
-  })
-  
- } catch (error) {
-  console.error("Error in confirmOrder:", error.message);
-  res.status(500).json({
-    success: false,
-    message: "Internal server error!"
-  })
- }
-}
+// cancel order
+export const cancelOrder = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+    const { orderId } = req.params;
+
+    // Find the delivery
+    const delivery = await Delivery.findOne({ orderId });
+    if (!delivery)
+      return res.status(404).json({
+        success: false,
+        message: "Order not found",
+      });
+
+    // Check if order belongs to user
+    const order = await Order.findById(orderId);
+    if (!order || order.userId.toString() !== userId) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to cancel this order",
+      });
+    }
+
+    // Update delivery status
+    delivery.deliveryStatus = "cancelled";
+    await delivery.save();
+
+    // Update order status
+    order.status = "cancelled";
+    await order.save();   
+
+    res.status(200).json({
+      success: true,
+      message: "Order cancelled successfully!",
+    });
+  } catch (error) {
+    console.error("Cancel Order Error:", error.message);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+};
+
+//delete Order
+export const deleteOrder = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+    const { orderId } = req.params;
+
+    // Find the delivery
+    const delivery = await Delivery.findOne({ orderId });
+    if (!delivery)
+      return res.status(404).json({
+        success: false,
+        message: "Order not found",
+      });
+
+    // Check if order belongs to user
+    const order = await Order.findById(orderId);
+    if (!order || order.userId.toString() !== userId) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to cancel this order",
+      });
+    }
+
+    await Delivery.findByIdAndDelete(delivery._id);
+    await Order.findByIdAndDelete(order._id);
+
+    res.status(200).json({
+      success: true,
+      message: "Order deleted successfully!",
+    });
+  } catch (error) {
+    console.error("Delete Order Error:", error.message);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+};
