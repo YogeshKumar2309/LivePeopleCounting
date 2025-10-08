@@ -21,8 +21,7 @@ import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 
 import PublicProducts from "./pages/public/Products";
 
-
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loginSuccess, logout } from "./features/auth/authSlice";
@@ -33,17 +32,19 @@ import Checkout from "./pages/user/Checkout";
 import UserLayout from "./componets/layout/UserLayout";
 import Cart from "./pages/user/Cart";
 import UserProfile from "./pages/user/UserProfile";
+import ProfilePage from "./pages/user/ProfilePage";
+import CurrentOrder from "./pages/user/CurrentOrder";
 
 const App = () => {
-  const {isAuthenticated, user} = useSelector((state) => state.auth);
-    
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+
   // Authentication state - typically from Context/Redux
   // const isAuthenticated = false;
   // const user = {
   //   name: "Yogesh",
-  //   role: "user", // 'admin' or 'user' 
+  //   role: "user", // 'admin' or 'user'
   // };
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const checkSession = async () => {
@@ -52,10 +53,10 @@ const App = () => {
           method: "GET",
           credentials: "include", // session cookie bhejega
         });
-        const data = await res.json();       
+        const data = await res.json();
 
         if (res.ok && data.success) {
-          dispatch(loginSuccess({ user: data.user}));
+          dispatch(loginSuccess({ user: data.user }));
         } else {
           dispatch(logout());
         }
@@ -67,10 +68,9 @@ const App = () => {
     checkSession();
   }, [dispatch]);
 
-
   return (
     <div className="App">
-       <Toaster />
+      <Toaster />
       <Routes>
         {/* Public/Home Route */}
         <Route
@@ -84,27 +84,30 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="products" element={<PublicProducts/>} />
-          <Route path="productsDetails/:productId" element={<ProductDetailsPage />} />
-         </Route>
+          <Route path="products" element={<PublicProducts />} />
+          <Route
+            path="productsDetails/:productId"
+            element={<ProductDetailsPage />}
+          />
+        </Route>
 
         {/* User Protected Routes */}
         <Route
           path="/user"
           element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>              
+            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
               <UserLayout />
             </CheckAuth>
           }
         >
           {/* <Route index element={<div>User Dashboard</div>} /> */}
-          <Route path="cart" element={<Cart/>} />
-          <Route path="profile" element={<UserProfile/>} >
-             <Route path="orderSummary" element={<div>Order summary</div> } />
+          <Route path="cart" element={<Cart />} />
+          <Route path="profile" element={<UserProfile />}>
+            <Route index element={<ProfilePage />} />           
+            <Route path="orderDetails" element={<CurrentOrder/>} />
+            <Route path="favorites" element={<Favorites />} />
           </Route>
-          <Route path="settings" element={<div>User Settings</div>} />
-          <Route path="favorites" element={<Favorites />} />
-          <Route path="checkout" element={<Checkout />} />
+            <Route path="checkout" element={<Checkout />} />
         </Route>
 
         {/* Admin Protected Routes */}

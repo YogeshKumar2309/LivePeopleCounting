@@ -12,7 +12,7 @@ import Search from "../../componets/common/Search";
 import FilterSidebar from "../../componets/public/product/FilterSidebar";
 
 const Products = () => {
-  const [toggleSidebar, setToggleSidebar] = useState(true);
+  const [toggleSidebar, setToggleSidebar] = useState();
   const [searchVal, setSearchVal] = useState("");
   const [filterValues, setFilterValues] = useState({
     category: "",
@@ -74,16 +74,16 @@ const Products = () => {
 
   return (
     <>
-      <div className="bg-stone-200 h-16 w-full mt-2 flex items-center justify-between px-12 shadow-sm sticky top-0 z-30">
+    <div className="bg-stone-200 h-16 w-full mt-2 flex items-center justify-between px-12 shadow-sm sticky top-0 z-30 overflow-x-auto text-xs sm:text-md lg:text-xl">
         <button
           onClick={() => setToggleSidebar(!toggleSidebar)}
-          className="flex items-center gap-2 bg-stone-400 text-white px-3 py-1 rounded-md hover:bg-stone-500 transition"
+          className="flex items-center gap-2 bg-stone-400 text-white px-3 py-1 rounded-md hover:bg-stone-500 transition mr-4 "
         >
           <SlidersHorizontal className="w-5 h-5" />
         </button>
         <Search onSearch={handleSearchVal} />
-        <p className="font-semibold">{filterProducts.length} products</p>
-      </div>
+        <p className="font-semibold ms-4">{filterProducts.length} products</p>
+      </div>  
       <div className="flex">
         <div className="sidebar border-r border-stone-200 border-b sticky top-12 z-10 h-[calc(100vh-3rem)] overflow-y-auto pb-8 pt-1 ps-1">
           {toggleSidebar && (
@@ -95,12 +95,12 @@ const Products = () => {
         <div className="main flex-1 bg-stone-100 min-h-screen overflow-hidden pt-4">
           <div className="flex flex-wrap justify-evenly gap-5 w-full ">
             {filterProducts.length === 0 ? (
-              <>
+              <div>
                 <p className="text-blue-700 font-semibold text-center mt-16 text-2xl flex flex-col items-center justify-center">
                 <Loader className=" h-12 w-12 animate-bounce text-blue-700 flext items-center justify-center ms-4 mt-1" />
                  <p>Product not found</p>
                 </p>
-              </>
+              </div>
             ) : (
               filterProducts.map((item, index) => (
                 <FoodProduct

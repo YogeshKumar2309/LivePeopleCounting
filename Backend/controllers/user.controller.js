@@ -291,7 +291,7 @@ export const confirmOrder = async (req, res) => {
   });
 
   //mark cart items as inactive
-  await Cart.updateMany({userId, isActive: true}, {isActive: false});
+  await Cart.deleteMany({userId, isActive: true});
 
   res.status(200).json({
     success: true,
