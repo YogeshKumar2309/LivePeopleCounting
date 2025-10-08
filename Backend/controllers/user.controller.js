@@ -214,3 +214,40 @@ export const deleteCart = async (req, res) => {
     res.status(500).json({ message: "Server error:" + error.messsage });
   }
 };
+
+//UpdateCartActive
+export const postUpdateCartActive = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+    const { productId, isActive } = req.body;
+
+    if (!userId || !productId || isActive === undefined) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing fields!",
+      });
+    }
+
+    const cartItem = await Cart.findOne({ userId, productId });
+    if (!cartItem) {
+      return res.status(404).json({
+        success: false,
+        message: "Item not found!",
+      });
+    }
+
+    cartItem.isActive = isActive;
+    await cartItem.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Cart item active status updated!",
+    });
+  } catch (error) {
+    console.log("Error in postUpdateCartActive", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Internal server Error!",
+    });
+  }
+};

@@ -1,6 +1,6 @@
 import { Package } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import { updateCartActiveAsync, updateCartQuantityAsync } from "../../features/cart/cartSlice";
 
 const OrderSummary = ({ productQueantity, setProductQunatiy }) => {
   const cart = useSelector((state) => state.cart.items);
@@ -17,11 +17,13 @@ const OrderSummary = ({ productQueantity, setProductQunatiy }) => {
   };
 
   const getTotal = () =>
-    cart.reduce(
-      (acc, item) => acc + item.productDetails.price * item.quantity,
-      0
-    );
-
+  cart.reduce(
+    (acc, item) =>
+      item.isActive
+        ? acc + item.productDetails.price * item.quantity
+        : acc,
+    0
+  );
   return (
     <div className="space-y-6 animate-fadeIn">
       <div className="flex items-center gap-3 mb-6">
@@ -32,9 +34,30 @@ const OrderSummary = ({ productQueantity, setProductQunatiy }) => {
         <div className="space-y-4">
           <div className="flex justify-between items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
             <div>
-              <p className="font-semibold text-gray-800">
-                {item.productDetails.title}
-              </p>
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={item.isActive}
+                  onChange={() =>
+                    dispatch(
+                      updateCartActiveAsync({
+                        productId: item.productId,
+                        isActive: !item.isActive,
+                      })
+                    )
+                  }
+                  className="w-4 h-4 accent-purple-600"
+                />
+                <p
+                  className={`font-semibold ${
+                    item.isActive
+                      ? "text-gray-800"
+                      : "text-gray-400 line-through"
+                  }`}
+                >
+                  {item.productDetails.title}
+                </p>
+              </div>
               <p className="text-sm text-gray-600">
                 Quantity:{" "}
                 <div className="flex items-center space-x-2">
