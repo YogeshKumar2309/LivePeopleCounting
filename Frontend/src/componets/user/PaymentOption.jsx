@@ -19,7 +19,7 @@ const PaymentOption = ({ paymentMethod, setPaymentMethod }) => {
                   }`}
                 >
                   <input
-                    type="checkbox"
+                                     type="checkbox"
                     checked={paymentMethod === "cod"}
                     onChange={(e) => setPaymentMethod(e.target.checked ? "cod" : "")}
                     className="w-6 h-6 text-green-500 rounded focus:ring-2 focus:ring-green-400"
@@ -37,7 +37,7 @@ const PaymentOption = ({ paymentMethod, setPaymentMethod }) => {
                 </label>
 
                 {/* Online Payment */}
-                <label
+                {/* <label
                   className={`flex items-center gap-4 p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
                     paymentMethod === "online"
                       ? "border-purple-500 bg-gradient-to-r from-purple-50 to-pink-50 shadow-lg"
@@ -60,7 +60,7 @@ const PaymentOption = ({ paymentMethod, setPaymentMethod }) => {
                   {paymentMethod === "online" && (
                     <Check className="w-6 h-6 text-purple-500" strokeWidth={3} />
                   )}
-                </label>
+                </label> */}
               </div>
 
               {!paymentMethod && (
@@ -72,4 +72,4 @@ const PaymentOption = ({ paymentMethod, setPaymentMethod }) => {
   )
 }
 
-export default PaymentOption
+export default PaymentOption;

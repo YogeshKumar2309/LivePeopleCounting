@@ -1,8 +1,12 @@
 import { Package } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartActiveAsync, updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import {
+  updateCartActiveAsync,
+  updateCartQuantityAsync,
+} from "../../features/cart/cartSlice";
+import { useEffect } from "react";
 
-const OrderSummary = ({ productQueantity, setProductQunatiy }) => {
+const OrderSummary = ({onTotalChange}) => {
   const cart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
@@ -17,13 +21,17 @@ const OrderSummary = ({ productQueantity, setProductQunatiy }) => {
   };
 
   const getTotal = () =>
-  cart.reduce(
-    (acc, item) =>
-      item.isActive
-        ? acc + item.productDetails.price * item.quantity
-        : acc,
-    0
-  );
+    cart.reduce(
+      (acc, item) =>
+        item.isActive ? acc + item.productDetails.price * item.quantity : acc,
+      0
+    );
+
+  useEffect(() => {
+    const total = getTotal();
+    onTotalChange(total); // parent ko value bhejna
+  }, [cart]);
+
   return (
     <div className="space-y-6 animate-fadeIn">
       <div className="flex items-center gap-3 mb-6">

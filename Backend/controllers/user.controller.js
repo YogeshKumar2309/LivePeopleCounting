@@ -4,6 +4,7 @@ import { Favorite } from "../models/favorite.model.js";
 import { Message } from "../models/message.model.js";
 import { Product } from "../models/product.model.js";
 import Review from "../models/review.model.js";
+import { Order } from "../models/order.model.js";
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -251,3 +252,58 @@ export const postUpdateCartActive = async (req, res) => {
     });
   }
 };
+
+
+//confirm order
+export const confirmOrder = async (req, res) => {
+ try {
+  const userId = req.session.user.id;
+
+  //fetch active cart items
+  const cartItems = await Cart.find({
+    userId, 
+    isActive: true
+  }).populate("productId");
+
+  if(cartItems.length === 0) {
+    return res.status(400).json({
+      success: false,
+      message: "No active items in cart!",
+    });
+  }
+
+  //calculate total amount
+  const totalAmount = cartItems.reduce(
+    (sum, item) => sum + item.productId.price * item.quantity, 0
+  );
+
+  //create new order
+  const newOrder = await Order.create({
+    userId, 
+    items: cartItems.map((item) => ({
+      productId: item.productId._id,
+      quantity: item.quantity,
+      price: item.productId.price,
+    })),
+    totalAmount,
+    paymentMethod: 'cod',
+    status: "confirmed",
+  });
+
+  //mark cart items as inactive
+  await Cart.updateMany({userId, isActive: true}, {isActive: false});
+
+  res.status(200).json({
+    success: true,
+    message: "Order confirmed successfully!",
+    orderId: newOrder._id,
+  })
+  
+ } catch (error) {
+  console.error("Error in confirmOrder:", error.message);
+  res.status(500).json({
+    success: false,
+    message: "Internal server error!"
+  })
+ }
+}

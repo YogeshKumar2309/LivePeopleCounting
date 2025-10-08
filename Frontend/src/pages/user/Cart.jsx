@@ -46,9 +46,9 @@ const Cart = () => {
         <p className="text-gray-500 text-center py-6">Cart khaali hai 😔</p>
       ) : (
         <div className="space-y-4">
-          {cart.map((item) => (
+          {cart.map((item,idx) => (
             <div
-              key={item.id}
+              key={idx}
               className="flex justify-between items-center bg-amber-50 p-3 rounded-lg shadow-sm"
             >
               <div>

@@ -1,4 +1,3 @@
-  import React, { useState } from "react";
 import {
   Check,
   ShoppingCart,
@@ -9,26 +8,50 @@ import toast from "react-hot-toast";
 import OrderSummary from "../../componets/user/OrderSummary";
 import PaymentOption from "../../componets/user/PaymentOption";
 import ConfirmOrder from "../../componets/user/ConfirmOrder";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { confirmOrderAsync } from "../../features/cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [step, setStep] = useState(1);
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [productQueantity, setProductQunatiy] = useState(1);
-
+  const [paymentMethod, setPaymentMethod] = useState("cod");
+ const [totalAmount, setTotalAmount] = useState(0);
+ 
   const steps = [
     { id: 1, label: "Order Summary", icon: ShoppingCart },
     { id: 2, label: "Payment Option", icon: CreditCard },
     { id: 3, label: "Confirm Order", icon: CheckCircle },
   ];
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleNext = () => {
+    if (step === 1 && totalAmount === 0 ) {
+         toast.error("Please Check at least one Product!");
+      return;
+    }
     if (step === 2 && !paymentMethod) {
-      alert("Please Chose a payment option!");
       toast.error("Please Chose a payment option!");
       return;
     }
     setStep((prev) => prev + 1);
   };
+
+  const handleConfirmOrder = async () => {
+    try {
+     const resultAction = await dispatch(confirmOrderAsync())      ;
+     if(confirmOrderAsync.fulfilled.match(resultAction)) {
+      toast.success("Order confirmed successfully!");
+      navigate("/user/profile/orderSummary")
+     } else {
+      toast.error("Failed to confirm order!");
+     }
+    } catch (error) { 
+      toast.error(error.message || "Failed to confirm order");
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-6 md:p-10">
@@ -108,7 +131,7 @@ const Checkout = () => {
 
         {/* Content Card */}
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-8 min-h-[350px] border border-gray-100">
-          {step === 1 && <OrderSummary productQueantity={productQueantity} setProductQunatiy={setProductQunatiy} />}
+          {step === 1 && <OrderSummary onTotalChange={setTotalAmount} />}
 
           {step === 2 && (
             <PaymentOption
@@ -117,7 +140,9 @@ const Checkout = () => {
             />
           )}
 
-          {step === 3 && <ConfirmOrder paymentMethod={paymentMethod} />}
+          {step === 3 && <ConfirmOrder 
+          paymentMethod={paymentMethod} 
+          totalAmount={totalAmount}/>}
         </div>
 
         {/* Navigation Buttons */}
@@ -140,9 +165,7 @@ const Checkout = () => {
           ) : (
             <button
               className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 font-semibold transform hover:scale-105 active:scale-95 hover:from-green-600 hover:to-emerald-600 flex items-center gap-2"
-              onClick={() =>
-                alert("🎉 आपका order successfully place हो गया है! धन्यवाद!")
-              }
+              onClick={() => handleConfirmOrder() }
             >
               <CheckCircle className="w-5 h-5" />
               Confirm Order 🎉

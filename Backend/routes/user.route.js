@@ -1,5 +1,5 @@
 import express from "express";
-import { addToFavorite ,getAllFavorites,postReview,sendMessage, getCart, postUpdateCartQuantity,deleteCart,postUpdateCartActive} from "../controllers/user.controller.js";
+import { addToFavorite ,getAllFavorites,postReview,sendMessage, getCart, postUpdateCartQuantity,deleteCart,postUpdateCartActive,confirmOrder} from "../controllers/user.controller.js";
 
 export const  router = express.Router();
 
@@ -11,6 +11,7 @@ router.post("/updateCartQuantity", postUpdateCartQuantity);
 router.get("/getCart", getCart);
 router.delete("/deleteCart", deleteCart);
 router.post("/updateCartActive", postUpdateCartActive);
+router.post("/confirmOrder", confirmOrder);
 
 
 

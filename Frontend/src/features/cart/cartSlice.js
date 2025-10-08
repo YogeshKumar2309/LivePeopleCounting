@@ -59,7 +59,7 @@ export const deleteCartItemAsync = createAsyncThunk(
 //update Cart Active or not
 export const updateCartActiveAsync = createAsyncThunk(
   "cart/updateCartActive",
-  async ({ productId, isActive }, thunkAPI) => {
+  async ({ productId, isActive }) => {
     const res = await fetch(`${API_BASE}/api/user/private/updateCartActive`, {
       method: "POST",
       credentials: "include",
@@ -76,9 +76,32 @@ export const updateCartActiveAsync = createAsyncThunk(
   }
 );
 
+// ------------------ CONFIRM ORDER ------------------
+export const confirmOrderAsync = createAsyncThunk(
+  "cart/confirmOrder",
+  async (_, thunkAPI) => {
+    const res = await fetch(`${API_BASE}/api/user/private/confirmOrder`, {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message);
+
+    return data;
+  }
+);
+
+// ------------------ SLICE ------------------
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { items: [] },
+  initialState: {
+    items: [],
+    orderDetails: null,
+    status: "idle",
+    error: null,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCart.fulfilled, (state, action) => {
@@ -99,6 +122,19 @@ const cartSlice = createSlice({
         if (index !== -1) {
           state.items[index].isActive = action.payload.isActive;
         }
+      })
+      //confirm order
+      .addCase(confirmOrderAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(confirmOrderAsync.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.orderDetails = action.payload;
+        state.items = [];
+      })
+      .addCase(confirmOrderAsync.rejected, (state,action) => {
+        state.status = "failed",
+        state.error = action.error.message;
       });
   },
 });
