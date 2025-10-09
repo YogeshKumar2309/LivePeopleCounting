@@ -332,7 +332,7 @@ export const getOrder = async (req, res) => {
         const delivery = await Delivery.findOne({ orderId: order._id });
         return {
           order,
-          delivery : delivery || {
+          delivery: delivery || {
             deliveryStatus: "unknown",
             pickupType: "N/A",
             pickupCode: "N/A",
@@ -385,7 +385,7 @@ export const cancelOrder = async (req, res) => {
 
     // Update order status
     order.status = "cancelled";
-    await order.save();   
+    await order.save();
 
     res.status(200).json({
       success: true,
@@ -429,6 +429,30 @@ export const deleteOrder = async (req, res) => {
     });
   } catch (error) {
     console.error("Delete Order Error:", error.message);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+};
+
+//get all Favorite
+export const getProfileFavorite = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+    const favorites = await Favorite.find({ userId }).populate(
+      "productId",
+      "title price image offerPrice active"
+    );
+
+    if (!favorites)
+      return res.status(404).json({
+        success: false,
+        message: "Favorite is Not found!",
+      });
+    res.status(200).json({
+      success: true,
+      favorites,
+    });
+  } catch (error) {
+    console.error("Delete getProfileFavorite Error:", error.message);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
