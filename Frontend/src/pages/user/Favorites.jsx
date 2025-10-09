@@ -1,7 +1,10 @@
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import React, { useEffect, useState } from "react";
 import { Heart, ShoppingCart, Trash2, AlertCircle } from "lucide-react";
-
-const API_BASE = import.meta.env.VITE_API_BASE;
+import { toggleFavoriteAsync } from "../../features/liked/likedSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -9,6 +12,9 @@ const Favorites = () => {
   const [error, setError] = useState(null);
   const [removingId, setRemovingId] = useState(null);
   const [addingToCartId, setAddingToCartId] = useState(null);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchFavorites();
@@ -39,19 +45,19 @@ const Favorites = () => {
     }
   };
 
-  const handleRemoveFavorite = async (itemId) => {
-    setRemovingId(itemId);
+  const handleRemoveFavorite = async (productId) => {
+    setRemovingId(productId);
     try {
-      const res = await fetch(`${API_BASE}/api/user/private/removeFavorite`, {
-        method: "DELETE",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ favoriteId: itemId }),
-      });
+      const resultAction = await dispatch(toggleFavoriteAsync(productId));
 
-      const data = await res.json();
-      if (data.success) {
-        setFavorites(favorites.filter((item) => item._id !== itemId));
+      //checking action success or not
+      if (toggleFavoriteAsync.fulfilled.match(resultAction)) {
+        //wihout refetch remove favorite component
+        setFavorites((prev) =>
+          prev.filter((item) => item.productId !== productId)
+        );
+      } else {
+        console.error("Failed to remove favorite:", resultAction.payload)
       }
     } catch (err) {
       console.error("Error removing favorite:", err);
@@ -134,7 +140,7 @@ const Favorites = () => {
           <h1 className="text-3xl font-bold text-gray-900">My Favorites</h1>
         </div>
         <p className="text-gray-600">
-          {favorites.length === 0
+          {favorites?.length === 0
             ? "Start adding items to your favorites"
             : `${favorites.length} ${
                 favorites.length === 1 ? "item" : "items"
@@ -143,7 +149,7 @@ const Favorites = () => {
       </div>
 
       {/* Empty State */}
-      {favorites.length === 0 ? (
+      {favorites?.length === 0 ? (
         <div className="bg-gray-50 rounded-2xl p-12 text-center">
           <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
             <Heart className="w-10 h-10 text-gray-400" />
@@ -154,7 +160,9 @@ const Favorites = () => {
           <p className="text-gray-600 mb-6">
             Items you favorite will appear here for quick access
           </p>
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+          <button 
+          onClick={()=> navigate("/products")}
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
             Start Shopping
           </button>
         </div>
@@ -163,7 +171,7 @@ const Favorites = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {favorites.map((item) => (
             <div
-              key={item._id}
+              key={item?._id}
               className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group"
             >
               {/* Product Image Placeholder */}
@@ -172,8 +180,8 @@ const Favorites = () => {
                 <div className="relative h-48 w-full overflow-hidden rounded-xl">
                   {/* Background Image */}
                   <img
-                    src={item.productId.image}
-                    alt={item.productId.title}
+                    src={item?.productId?.image}
+                    alt={item?.productId?.title}
                     className="absolute inset-0 w-full h-full object-cove opacity-80"
                   />
 
@@ -186,12 +194,12 @@ const Favorites = () => {
 
                   {/* Remove Favorite Button */}
                   <button
-                    onClick={() => handleRemoveFavorite(item._id)}
-                    disabled={removingId === item._id}
+                    onClick={() => handleRemoveFavorite(item?.productId)}
+                    disabled={removingId === item?._id}
                     className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition-colors disabled:opacity-50"
                     title="Remove from favorites"
                   >
-                    {removingId === item._id ? (
+                    {removingId === item?._id ? (
                       <div className="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
                     ) : (
                       <Trash2 className="w-5 h-5 text-red-500" />
@@ -200,12 +208,12 @@ const Favorites = () => {
                 </div>
 
                 <button
-                  onClick={() => handleRemoveFavorite(item._id)}
-                  disabled={removingId === item._id}
+                  onClick={() => handleRemoveFavorite(item?.productId)}
+                  disabled={removingId === item?._id}
                   className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition-colors disabled:opacity-50"
                   title="Remove from favorites"
                 >
-                  {removingId === item._id ? (
+                  {removingId === item?._id ? (
                     <div className="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
                   ) : (
                     <Trash2 className="w-5 h-5 text-red-500" />
@@ -216,24 +224,24 @@ const Favorites = () => {
               {/* Product Details */}
               <div className="p-5">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2 line-clamp-2 min-h-[3.5rem]">
-                  {item.productId.title}
+                  {item?.productId?.title}
                 </h3>
 
                 <div className="flex items-baseline gap-2 mb-4">
                   <span className="text-2xl font-bold text-gray-900">
-                    ₹{item.productId.offerPrice.toLocaleString("en-IN")}
+                    ₹{item?.productId?.offerPrice.toLocaleString("en-IN")}
                   </span>
-                  {item.productId.price && (
+                  {item?.productId?.price && (
                     <span className="text-sm text-gray-500 line-through">
-                      ₹{item.productId.price.toLocaleString("en-IN")}
+                      ₹{item?.productId?.price.toLocaleString("en-IN")}
                     </span>
                   )}
                 </div>
 
                 {/* Stock Status */}
-                {item.productId.active !== undefined && (
+                {item?.productId?.active !== undefined && (
                   <div className="mb-4">
-                    {item.productId.active ? (
+                    {item?.productId?.active ? (
                       <span className="text-sm text-green-600 font-medium">
                         In Stock
                       </span>
@@ -247,17 +255,17 @@ const Favorites = () => {
 
                 {/* Action Button */}
                 <button
-                  onClick={() => handleAddToCart(item.productId._id)}
+                  onClick={() => handleAddToCart(item?.productId?._id)}
                   disabled={
-                    addingToCartId === item.productId._id ||
-                    item.productId.stock === 0
+                    addingToCartId === item?.productId?._id ||
+                    item?.productId?.stock === 0
                   }
                   className="w-full px-4 py-3 rounded-lg text-white font-medium flex items-center justify-center gap-2
                   bg-gradient-to-r from-rose-400 via-yellow-400 to-amber-500
                   hover:from-rose-500 hover:via-yellow-500 hover:to-amber-600
                   transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
-                  {addingToCartId === item.productId._id ? (
+                  {addingToCartId === item?.productId?._id ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                       <span>Adding...</span>
