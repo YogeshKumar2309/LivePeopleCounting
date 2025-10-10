@@ -1,17 +1,17 @@
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 import React, { useEffect, useState } from "react";
-import { Heart, ShoppingCart, Trash2, AlertCircle } from "lucide-react";
+import { Heart,  Trash2, AlertCircle } from "lucide-react";
 import { toggleFavoriteAsync } from "../../features/liked/likedSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import AddToCartBtn from "../../componets/common/AddToCartBtn";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [removingId, setRemovingId] = useState(null);
-  const [addingToCartId, setAddingToCartId] = useState(null);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -65,27 +65,7 @@ const Favorites = () => {
       setRemovingId(null);
     }
   };
-
-  const handleAddToCart = async (productId) => {
-    setAddingToCartId(productId);
-    try {
-      const res = await fetch(`${API_BASE}/api/cart/add`, {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, quantity: 1 }),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        // Optional: Show success notification
-      }
-    } catch (err) {
-      console.error("Error adding to cart:", err);
-    } finally {
-      setAddingToCartId(null);
-    }
-  };
+ 
 
   if (loading) {
     return (
@@ -254,29 +234,7 @@ const Favorites = () => {
                 )}
 
                 {/* Action Button */}
-                <button
-                  onClick={() => handleAddToCart(item?.productId?._id)}
-                  disabled={
-                    addingToCartId === item?.productId?._id ||
-                    item?.productId?.stock === 0
-                  }
-                  className="w-full px-4 py-3 rounded-lg text-white font-medium flex items-center justify-center gap-2
-                  bg-gradient-to-r from-rose-400 via-yellow-400 to-amber-500
-                  hover:from-rose-500 hover:via-yellow-500 hover:to-amber-600
-                  transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                  {addingToCartId === item?.productId?._id ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Adding...</span>
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingCart className="w-5 h-5" />
-                      <span>Add to Cart</span>
-                    </>
-                  )}
-                </button>
+              <AddToCartBtn productId={(item?.productId?._id)} />
               </div>
             </div>
           ))}
