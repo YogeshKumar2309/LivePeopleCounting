@@ -44,7 +44,7 @@
 //     };
 
 //     const handleSeeDetails = () =>{
-//        navigate(`/productsDetails/${item?._id}`)   
+//        navigate(`/productsDetails/${item?._id}`)
 //     }
 
 //     return (
@@ -81,8 +81,8 @@
 //             ))}
 
 //           <h5
-//             className="font-bold  mb-2 
-//             text-white bg-rose-700 sm:text-lg px-3 py-1 rounded-md  absolute bottom-0 left-3 text-xs 
+//             className="font-bold  mb-2
+//             text-white bg-rose-700 sm:text-lg px-3 py-1 rounded-md  absolute bottom-0 left-3 text-xs
 //            "
 //           >
 //             {item?.title || "No Title"}
@@ -90,8 +90,8 @@
 //           {item?.rating && (
 //             <h5
 //               className=" rounded-full ps-1 pr-2 py-0.5 flex text-rose-700 items-center gap-1 absolute bottom-0 right-3
-//               font-semibold mb-2 
-//             sm:text-lg  text-sm  bg-yellow-500            
+//               font-semibold mb-2
+//             sm:text-lg  text-sm  bg-yellow-500
 //               "
 //             >
 //               <FaStar /> ({item.rating})
@@ -105,7 +105,7 @@
 //             <p className="mb-3">
 //               <button
 //                 onClick={handleSeeDetails}
-//                 className="group flex items-center gap-2 sm:text-sm font-medium sm:text-amber-600 sm:bg-stone-50 border border-blue-200 px-3 py-1.5 rounded-lg 
+//                 className="group flex items-center gap-2 sm:text-sm font-medium sm:text-amber-600 sm:bg-stone-50 border border-blue-200 px-3 py-1.5 rounded-lg
 //                hover:bg-amber-600 hover:text-white hover:shadow-md transition-all duration-300 text-xs text-white bg-amber-600"
 //               >
 //                 See Details
@@ -158,7 +158,13 @@
 // export default FoodProduct;
 
 import { LiaRupeeSignSolid } from "react-icons/lia";
-import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa";
+import {
+  FaStar,
+  FaHeart,
+  FaRegHeart,
+  FaCartPlus,
+  FaCartArrowDown,
+} from "react-icons/fa";
 import { memo, useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -166,139 +172,153 @@ import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import AddToCartBtn from "../common/AddToCartBtn";
 
-const FoodProduct = memo(({ item, handleOnLike, isAuthenticated, likedProducts }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const FoodProduct = memo(
+  ({ item, handleOnLike, isAuthenticated, likedProducts }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  const isLiked = useMemo(
-    () => likedProducts.includes(item?._id),
-    [likedProducts, item?._id]
-  );
+    const isLiked = useMemo(
+      () => likedProducts.includes(item?._id),
+      [likedProducts, item?._id]
+    );
 
-  if (!item) return null;
+    if (!item) return null;
 
-  const discountPercent = item?.price
-    ? Math.round(((item.price - item.offerPrice) / item.price) * 100)
-    : 0;
+    const discountPercent = item?.price
+      ? Math.round(((item.price - item.offerPrice) / item.price) * 100)
+      : 0;
 
-  const discountColor = discountPercent > 50 ? "bg-green-500" : "bg-red-400";
+    const discountColor = discountPercent > 50 ? "bg-green-500" : "bg-red-400";
 
-  const handleFavoriteClick = () => {
-    if (!isAuthenticated) {
-      toast.error("Login first");
-      navigate("/login", { state: { from: location.pathname } });
-      return;
-    }
-    handleOnLike(item?._id);
-  };
+    const handleFavoriteClick = () => {
+      if (!isAuthenticated) {
+        toast.error("Login first");
+        navigate("/login", { state: { from: location.pathname } });
+        return;
+      }
+      handleOnLike(item?._id);
+    };
 
-  const handleSeeDetails = () => {
-    navigate(`/productsDetails/${item?._id}`);
-  };
+    const handleSeeDetails = () => {
+      navigate(`/productsDetails/${item?._id}`);
+    };
 
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05, y: -5 }}
-      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-      className="w-[110px] h-[170px] sm:w-[280px] sm:h-[320px] overflow-hidden 
+    return (
+      <motion.div
+        whileHover={{ scale: 1.05, y: -5 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        className="w-[110px] h-[170px] sm:w-[280px] sm:h-[320px] overflow-hidden 
                  rounded-2xl bg-white border border-gray-200 shadow-md 
                  hover:shadow-xl flex flex-col"
-    >
-      {/* Image Section */}
-      <div className="h-[64%] sm:h-[55%] w-full relative border-b border-gray-200 overflow-hidden bg-gray-200 flex items-center justify-center">
-        <LazyLoadImage
-          src={item?.image || ""}
-          alt={`${item?.title || "Food Item"} - ${item?.category || ""}`}
-          effect="blur"
-          className="w-full h-full object-contain transition-all duration-700"
-        />
-        {item?.badge && (
-          <span
-            className={`absolute top-3 right-3 ${
-              item?.badge === "veg" ? "bg-green-500" : "bg-red-500"
-            } text-white text-[6px] sm:text-xs font-semibold px-3 py-1 rounded-md`}
-          >
-            {item.badge}
-          </span>
-        )}
+      >
+        {/* Image Section */}
+        <div className="h-[64%] sm:h-[55%] w-full relative border-b border-gray-200 overflow-hidden bg-gray-200 flex items-center justify-center">
+          <LazyLoadImage
+            src={item?.image || ""}
+            alt={`${item?.title || "Food Item"} - ${item?.category || ""}`}
+            effect="blur"
+            className="w-full h-full object-contain transition-all duration-700"
+          />
+          {item?.badge && (
+            <span
+              className={`absolute top-3 right-3 ${
+                item?.badge === "veg" ? "bg-green-500" : "bg-red-500"
+              } text-white text-[6px] sm:text-xs font-semibold px-3 py-1 rounded-md`}
+            >
+              {item.badge}
+            </span>
+          )}
 
-        <motion.h5
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-bold mb-2 text-white bg-rose-700 sm:text-lg 
+          <motion.h5
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-bold mb-2 text-white bg-rose-700 sm:text-lg 
                      px-3 py-1 rounded-md absolute bottom-0 left-3 text-[6px]"
-        >
-          {item?.title || "No Title"}
-        </motion.h5>
-
-        {item?.rating && (
-          <span
-            className="rounded-full ps-1 pr-2 py-0.5 flex text-rose-700 items-center gap-1 
-                       absolute bottom-0 right-3 font-semibold mb-2 sm:text-lg text-[6px]  bg-yellow-500"
           >
-            <FaStar /> ({item.rating})
-          </span>
-        )}
-      </div>
+            {item?.title || "No Title"}
+          </motion.h5>
 
-      {/* Content */}
-      <div className="sm:p-4 p-1 flex flex-col justify-between sm:h-[45%]">
-        <div>
-          <button
-            onClick={handleSeeDetails}
-            className="group flex items-center sm:gap-2 sm:text-sm font-medium 
+          {item?.rating && (
+            <span
+              className="rounded-full ps-1 pr-2 py-0.5 flex text-rose-700 items-center gap-1 
+                       absolute bottom-0 right-3 font-semibold mb-2 sm:text-lg text-[6px]  bg-yellow-500"
+            >
+              <FaStar /> ({item.rating})
+            </span>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="sm:p-4 p-1 flex flex-col justify-between sm:h-[45%]">
+          <div>
+            <div className="flex justify-between">
+              <button
+                onClick={handleSeeDetails}
+                className="group flex items-center sm:gap-2 sm:text-sm font-medium 
                        sm:text-amber-600 sm:bg-stone-50 border border-blue-200 sm:px-3 sm:py-1.5 
                        rounded-lg hover:bg-amber-600 hover:text-white hover:shadow-md 
                        transition-all duration-300 text-[6px] text-white bg-amber-600 px-2 py-1"
-          >
-           See Details
-            <ArrowRight className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 h-2" />
-          </button>
+              >
+                See Details
+                <ArrowRight className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 h-2" />
+              </button>
+              <AddToCartBtn
+                productId={item._id}
+                produnctName={item.title}
+                AddIcon={FaCartPlus}
+                RemoveIcon={FaCartArrowDown}
+              />
+            </div>
 
-          <div className="flex items-center justify-between sm:gap-2 sm:mb-2 p-0.5 sm:mt-2 ">
-            {item?.category && (
-              <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded text-[6px] sm:text-sm">
-                {item.category}
-              </span>
-            )}
-
-            <motion.button
-              whileTap={{ scale: 0.8 }}
-              onClick={handleFavoriteClick}
-              aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
-              className="text-2xl transition transform hover:scale-110 text-[8px] sm:text-sm"
-            >
-              {isLiked ? (
-                <FaHeart className="text-red-500" />
-              ) : (
-                <FaRegHeart className="text-gray-500" />
+            <div className="flex items-center justify-between sm:gap-2 sm:mb-2 p-0.5 sm:mt-2 ">
+              {item?.category && (
+                <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded text-[6px] sm:text-sm">
+                  {item.category}
+                </span>
               )}
-            </motion.button>
+
+              <motion.button
+                whileTap={{ scale: 0.8 }}
+                onClick={handleFavoriteClick}
+                aria-label={
+                  isLiked ? "Remove from favorites" : "Add to favorites"
+                }
+                className="text-2xl transition transform hover:scale-110 text-[8px] sm:text-sm"
+              >
+                {isLiked ? (
+                  <FaHeart className="text-red-500" />
+                ) : (
+                  <FaRegHeart className="text-gray-500" />
+                )}
+              </motion.button>
+            </div>
+          </div>
+
+          <div className="">
+            <p className="flex items-center justify-between text-[6px] sm:text-lg">
+              <span className="flex items-center gap-1">
+                <LiaRupeeSignSolid />
+                <del className="text-gray-400">{item?.price || "-"}</del>
+                <span className="font-semibold text-gray-900">
+                  {item?.offerPrice || "-"}
+                </span>
+              </span>
+              {discountPercent > 0 && (
+                <span
+                  className={`${discountColor} text-white text-xs font-semibold sm:px-2 sm:py-1  sm:rounded text-[6px] sm:text-sm rounded-lg px-1 py-0.5`}
+                >
+                  {discountPercent}% OFF
+                </span>
+              )}
+            </p>
           </div>
         </div>
-
-        <div className="">
-          <p className="flex items-center justify-between text-[6px] sm:text-lg">
-            <span className="flex items-center gap-1">
-              <LiaRupeeSignSolid />
-              <del className="text-gray-400">{item?.price || "-"}</del>
-              <span className="font-semibold text-gray-900">
-                {item?.offerPrice || "-"}
-              </span>
-            </span>
-            {discountPercent > 0 && (
-              <span className={`${discountColor} text-white text-xs font-semibold sm:px-2 sm:py-1  sm:rounded text-[6px] sm:text-sm rounded-lg px-1 py-0.5`}>
-                {discountPercent}% OFF
-              </span>
-            )}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-});
+      </motion.div>
+    );
+  }
+);
 
 export default FoodProduct;
-

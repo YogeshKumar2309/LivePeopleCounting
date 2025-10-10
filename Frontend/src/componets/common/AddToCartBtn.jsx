@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import { deleteCartItemAsync, updateCartQuantityAsync } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-const AddToCartBtn = ({ productId }) => {
+const AddToCartBtn = ({ productId, produnctName, AddIcon, RemoveIcon }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,7 +14,9 @@ const AddToCartBtn = ({ productId }) => {
   const [loading, setLoading] = useState(false);
 
   // Check if product is already in cart
-  const isInCart = cart.some((item) => item.productId === productId);
+  const isInCart = cart.some((item) => item.productId === productId);  
+  
+  const productTitle = produnctName ? produnctName : "Product";
 
   const handleCartAction = async () => {
     if (!isAuthenticated) {
@@ -28,12 +30,14 @@ const AddToCartBtn = ({ productId }) => {
 
       if (isInCart) {
         //  Remove item
-        await dispatch(updateCartQuantityAsync({ productId, quantity: 0 }));
-        toast.success("Removed from cart");
+        await  dispatch(deleteCartItemAsync({productId}))
+           toast.success(<div>
+          <span className="bg-red-200 px-2 py-0.5 rounded-lg">{productTitle}</span> Removed from cart</div>);      
       } else {
         // Add item (quantity = 1)
         await dispatch(updateCartQuantityAsync({ productId, quantity: 1 }));
-        toast.success("Added to cart");
+        toast.success(<div>
+          <span className="bg-green-200 px-2 py-0.5 rounded-lg">{productTitle}</span> Added to cart</div>);
       }
 
     } catch (err) {
@@ -52,11 +56,13 @@ const AddToCartBtn = ({ productId }) => {
         isInCart ? "bg-red-500 hover:bg-red-600" : "bg-green-500 hover:bg-green-600"
       }`}
     >
-      {loading
-        ? "Please wait..."
-        : isInCart
-        ? "Remove from Cart"
-        : "Add to Cart"}
+            {loading ? (
+        "Please wait..."
+      ) : isInCart ? (
+        RemoveIcon ? <RemoveIcon size={12} /> : "Remove from Cart"
+      ) : (
+        AddIcon ? <AddIcon size={12}/> : "Add to Cart"
+      )}
     </button>
   );
 };

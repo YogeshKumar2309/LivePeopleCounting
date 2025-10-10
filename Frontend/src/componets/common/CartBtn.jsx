@@ -1,10 +1,14 @@
-import { ShoppingCart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCart, updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import { ShoppingCart } from "lucide-react";
+import {
+  fetchCart,
+  updateCartQuantityAsync,
+} from "../../features/cart/cartSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useState } from "react";
+import AddToCartBtn from "./AddToCartBtn";
+import { FaCartArrowDown, FaCartPlus } from "react-icons/fa";
 
 const CartBtn = ({ productId }) => {
   const navigate = useNavigate();
@@ -12,9 +16,9 @@ const CartBtn = ({ productId }) => {
   const quantity = useSelector(
     (state) =>
       state.cart.items?.find((item) => item.productId === productId)
-    ?.quantity || 0
+        ?.quantity || 0
   );
- 
+
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   function checkAuth() {
@@ -26,19 +30,19 @@ const CartBtn = ({ productId }) => {
     return true;
   }
 
-const handleDecrease = () => {
-  if (!checkAuth()) return;
-  if(quantity > 0) {
-    dispatch(updateCartQuantityAsync({ productId, quantity: quantity - 1 }));
-  }
-};
+  const handleDecrease = () => {
+    if (!checkAuth()) return;
+    if (quantity > 1) {
+      dispatch(updateCartQuantityAsync({ productId, quantity: quantity - 1 }));
+    }
+  };
 
-const handleIncrease = () => {
-  if (!checkAuth()) return;
-  dispatch(updateCartQuantityAsync({ productId, quantity: quantity + 1 }));
-};
+  const handleIncrease = () => {
+    if (!checkAuth()) return;
+    dispatch(updateCartQuantityAsync({ productId, quantity: quantity + 1 }));
+  };
 
- useEffect(() => {
+  useEffect(() => {
     if (isAuthenticated) {
       dispatch(fetchCart());
     }
@@ -54,7 +58,11 @@ const handleIncrease = () => {
       </button>
 
       <button className="flex items-center gap-2 px-6 py-3 text-white hover:bg-white/10 transition">
-        <ShoppingCart size={20} />
+        <AddToCartBtn
+          productId={productId}
+          AddIcon={ ShoppingCart}
+          RemoveIcon={FaCartArrowDown}
+        />
         {quantity}
       </button>
 
