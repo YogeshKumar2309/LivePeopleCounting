@@ -5,6 +5,7 @@ import { Message } from "../models/message.model.js";
 import Review from "../models/review.model.js";
 import { Order } from "../models/order.model.js";
 import { Delivery } from "../models/delivery.model.js";
+import { User } from "../models/User.js";
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -320,8 +321,9 @@ export const confirmOrder = async (req, res) => {
 //get order details
 export const getOrder = async (req, res) => {
   try {
+    const userId = req.session.user.id;
     //find all orders
-    const orders = await Order.find().populate(
+    const orders = await Order.find({userId}).populate(
       "items.productId",
       "title price"
     );
@@ -454,5 +456,43 @@ export const getProfileFavorite = async (req, res) => {
   } catch (error) {
     console.error("Delete getProfileFavorite Error:", error.message);
     res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+};
+
+//get user profile
+export const getuserProfile = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+
+    const user = await User.findById(userId).select("fullName email avator");
+
+    const [
+      confirmedOrders,
+      deliveredOrders,
+      cancelOrders,
+      totalOrders,
+      wishlistCount,
+      cartCount,
+    ] = await Promise.all([
+      Order.countDocuments({ userId, status: { $eq: "confirmed" } }),
+      Order.countDocuments({ userId, status: { $eq: "delivered" } }),
+      Order.countDocuments({ userId, status: { $eq: "cancelled" } }),
+      Order.countDocuments({ userId }),
+      Favorite.countDocuments({ userId }),
+      Cart.countDocuments({ userId }),
+    ]);
+
+    res.json({
+      user,
+      totalOrders,
+      confirmedOrders,
+      deliveredOrders,
+      cancelOrders,
+      wishlistCount,
+      cartCount,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
   }
 };

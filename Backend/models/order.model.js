@@ -12,7 +12,11 @@ const orderSchema = new mongoose.Schema(
     ],
     totalAmount: Number,
     paymentMethod: {type: String, default: "cod"},
-    status: {type: String, default: "confirmed"},    
+    status: {
+      type: String, 
+      default: "confirmed",
+      enum:["confirmed","cancelled","delivered"]
+    },    
   },
   { timestamps: true }
 );
