@@ -1,11 +1,18 @@
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter, FaUser, FaYoutube, FaYoutubeSquare } from "react-icons/fa";
-import {Link} from "react-router-dom";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaTwitter,
+  FaUser,
+  FaYoutube,
+  FaYoutubeSquare,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-stone-900 text-white py-10 mt-10">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-        
         {/* Logo + About */}
         <div>
           <h2 className="text-2xl font-bold text-amber-400 mb-3">Y-Desserts</h2>
@@ -21,11 +28,30 @@ const Footer = () => {
             Quick Links
           </h3>
           <div className="space-y-2 text-stone-300 text-sm flex flex-col capitalize">
-            <Link to={"/"} className="hover:text-yellow-700 hover:font-semibold  transition">Home</Link>
-            <Link to={"/user/cart"} className="hover:text-yellow-700 hover:font-semibold transition">cart</Link>
-            <Link to={"/products"} className="hover:text-yellow-700 hover:font-semibold  transition">poroducts</Link>
-            <Link to={"/user/profile/orderDetails"} className="hover:text-yellow-700 hover:font-semibold  transition">MyOrders</Link>
-         
+            <Link
+              to={"/"}
+              className="hover:text-yellow-700 hover:font-semibold  transition"
+            >
+              Home
+            </Link>
+            <Link
+              to={"/user/cart"}
+              className="hover:text-yellow-700 hover:font-semibold transition"
+            >
+              cart
+            </Link>
+            <Link
+              to={"/products"}
+              className="hover:text-yellow-700 hover:font-semibold  transition"
+            >
+              poroducts
+            </Link>
+            <Link
+              to={"/user/profile/orderDetails"}
+              className="hover:text-yellow-700 hover:font-semibold  transition"
+            >
+              MyOrders
+            </Link>
           </div>
         </div>
 
@@ -35,28 +61,32 @@ const Footer = () => {
             Follow Us
           </h3>
           <div className="flex space-x-4">
-          <Link
-              to={"https://www.instagram.com/yogeshwebdev"}
-              target="blank"
+            <a
+              href="https://www.instagram.com/yogeshwebdev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-rose-500 transition"
             >
               <FaInstagram />
-            </Link>
-          <Link
-              to={"https://github.com/YogeshKumar2309"}
-              target="blank"
+            </a>
+
+            <a
+              href="https://github.com/YogeshKumar2309"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-500 transition"
             >
               <FaGithub />
-            </Link>
-          <Link
-              to={"https://www.youtube.com/@engineering2391"}
-              target="blank"
+            </a>
+
+            <a
+              href="https://www.youtube.com/@engineering2391"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-red-500 transition"
             >
               <FaYoutubeSquare />
-            </Link>
-          
+            </a>
           </div>
         </div>
       </div>
