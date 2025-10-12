@@ -93,7 +93,7 @@ const Products = () => {
           )}
         </div>
         <div className="main flex-1 bg-stone-100 min-h-screen overflow-hidden pt-4">
-          <div className="flex flex-wrap justify-evenly gap-5 w-full ">
+          <div className="flex flex-wrap justify-evenly gap-5 w-full px-6 sm:px-0">
             {filterProducts.length === 0 ? (
               <div>
                 <p className="text-blue-700 font-semibold text-center mt-16 text-2xl flex flex-col items-center justify-center">
@@ -102,9 +102,9 @@ const Products = () => {
                 </p>
               </div>
             ) : (
-              filterProducts.map((item, index) => (
+              filterProducts.map((item) => (
                 <FoodProduct
-                  key={item._id || index}
+                  key={item._id}
                   item={item}
                   handleOnLike={handleOnLike}
                   isAuthenticated={isAuthenticated}

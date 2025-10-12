@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllHomeProduct ,getProductDetails,getReview,getAllProduct,getFilteredProducts} from "../controllers/public.controller.js";
+import { getAllHomeProduct ,getProductDetails,getReview,getFilteredProducts} from "../controllers/public.controller.js";
 
  export const  router = express.Router();
 
@@ -7,7 +7,7 @@ import { getAllHomeProduct ,getProductDetails,getReview,getAllProduct,getFiltere
 router.get("/getHomeProduct", getAllHomeProduct);
 router.get("/getProductDetails", getProductDetails);
 router.get("/getReviews", getReview);
-router.get("/getAllProduct", getAllProduct);
+// router.get("/getAllProduct", getAllProduct);
 router.get("/filteredProducts", getFilteredProducts);
 
 

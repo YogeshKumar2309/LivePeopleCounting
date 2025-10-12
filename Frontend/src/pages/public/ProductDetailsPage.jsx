@@ -254,7 +254,7 @@ const ProductDetails = () => {
                 {/* Order Now Button - Reduced height */}
                 <button
                   onClick={() => handleBuyBtn(product._id)}
-                  className="flex items-center justify-center gap-3 h-12 px-6 rounded-2xl
+                  className="flex items-center justify-center gap-3 h-15 px-6 rounded-2xl
                   bg-gradient-to-r from-red-500 via-pink-600 to-rose-700 
                   text-white font-extrabold text-lg uppercase tracking-wider 
                   shadow-2xl shadow-red-300/50 

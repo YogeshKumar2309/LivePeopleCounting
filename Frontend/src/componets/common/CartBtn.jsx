@@ -63,7 +63,6 @@ const CartBtn = ({ productId }) => {
           AddIcon={ ShoppingCart}
           RemoveIcon={FaCartArrowDown}
         />
-        {quantity}
       </button>
 
       <button

@@ -1,11 +1,7 @@
-import React, { useState } from "react";
-import RatingStars from "./RatingStars";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import RateProduct from "./RateProduct";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-
-dayjs.extend(relativeTime);
+import Reviews from "./Reviews";
 
 const NavigationProductDetailsPage = ({
   product,
@@ -16,8 +12,6 @@ const NavigationProductDetailsPage = ({
   const [activePage, setActivePage] = useState("details");
 
   const { isAuthenticated } = useSelector((state) => state.auth);
-
-  const totalReviews = reviews.length;
 
   return (
     <>
@@ -81,45 +75,7 @@ const NavigationProductDetailsPage = ({
             </div>
           )}
 
-          {activePage === "reviews" && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                Customer Reviews
-              </h3>
-              <div className="space-y-6">
-                {reviews.map((review) => (
-                  <div
-                    key={review.id}
-                    className="border border-gray-200 rounded-lg p-6"
-                  >
-                    <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-medium">
-                          {review.username?.charAt(0).toUpperCase() || "A"}
-                        </span>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <span className="font-medium text-gray-900">
-                            {review.username || "Anonymous User"}
-                          </span>
-                          <RatingStars
-                            rating={review.rating}
-                            totalStars={5}
-                            totalReviews={totalReviews}
-                          />
-                        </div>
-                        <p className="text-gray-700">{review.message}</p>
-                        <p className="text-sm text-gray-500 mt-2">
-                          {dayjs(review.createdAt).fromNow()}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {activePage === "reviews" && <Reviews reviews={reviews} />}
 
           {activePage === "rateProduct" && (
             <div className="p-6">

@@ -61,7 +61,7 @@ const Contact = () => {
         {/* Contact Info */}
         <div className="bg-white p-8 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-semibold text-pink-600 mb-4">
-            Dessert Shop
+            Y-Desserts
           </h2>
           <p className="text-gray-600 mb-4">
             We’d love to hear from you! Whether you have a question, feedback,
@@ -70,15 +70,15 @@ const Contact = () => {
 
           <div className="space-y-3 text-gray-700">
             <p>
-              📍 <span className="font-medium">Address:</span> MG Road,
-              Bangalore, India
+              📍 <span className="font-medium">Address:</span> Near Sector 63
+              Metro Station, Noida, Uttar Pradesh 201307
             </p>
             <p>
               📞 <span className="font-medium">Phone:</span> +91 98765 43210
             </p>
             <p>
               📧 <span className="font-medium">Email:</span>{" "}
-              contact@dessertshop.com
+              contact@ydesserts.com
             </p>
           </div>
         </div>
@@ -120,7 +120,7 @@ const Contact = () => {
       <div className="mt-12 max-w-6xl mx-auto">
         <iframe
           title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.825468989276!2d77.59456231430434!3d12.97159899086067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670f4c59b3b%3A0x97d0531a6e2b8e7c!2sMG%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1635673924567!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.188154935432!2d77.37543527451748!3d28.62887068494444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5c8af2e5483%3A0x2a993c6c25df1d1b!2sSector%2063%20Metro%20Station!5e0!3m2!1sen!2sin!4v1734040500012!5m2!1sen!2sin"
           width="100%"
           height="350"
           allowFullScreen=""

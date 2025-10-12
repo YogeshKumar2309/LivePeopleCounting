@@ -8,7 +8,7 @@ const Footer = () => {
         
         {/* Logo + About */}
         <div>
-          <h2 className="text-2xl font-bold text-amber-400 mb-3">Y-Dessert Shop</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-3">Y-Desserts</h2>
           <p className="text-stone-300 text-sm leading-relaxed">
             Serving happiness with every bite! Freshly baked cakes, pastries,
             and desserts made with love and premium ingredients.
@@ -63,7 +63,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-stone-700 mt-8 pt-4 text-center text-stone-400 text-sm">
-        © {new Date().getFullYear()} Dessert Shop. All rights reserved.
+        © {new Date().getFullYear()} Y-Desserts. All rights reserved.
       </div>
     </footer>
   );

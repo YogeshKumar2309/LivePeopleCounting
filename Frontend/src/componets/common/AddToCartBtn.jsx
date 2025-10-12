@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCartItemAsync, updateCartQuantityAsync } from "../../features/cart/cartSlice";
+import {
+  deleteCartItemAsync,
+  updateCartQuantityAsync,
+} from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const AddToCartBtn = ({ productId, produnctName, AddIcon, RemoveIcon }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  const cart = useSelector((state) => state.cart.items);
-
-  const [loading, setLoading] = useState(false);
+  const cartItems = useSelector((state) => state.cart.items);
 
   // Check if product is already in cart
-  const isInCart = cart.some((item) => item.productId === productId);  
-  
-  const productTitle = produnctName ? produnctName : "Product";
+  const cartItem = cartItems.find((item) => item.productId === productId);
+  const isInCart = !!cartItem;
+
+  const productTitle = produnctName || "Product";
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const [loading, setLoading] = useState(false);
 
   const handleCartAction = async () => {
     if (!isAuthenticated) {
@@ -30,16 +33,27 @@ const AddToCartBtn = ({ productId, produnctName, AddIcon, RemoveIcon }) => {
 
       if (isInCart) {
         //  Remove item
-        await  dispatch(deleteCartItemAsync({productId}))
-           toast.success(<div>
-          <span className="bg-red-200 px-2 py-0.5 rounded-lg">{productTitle}</span> Removed from cart</div>);      
+        await dispatch(deleteCartItemAsync({ productId }));
+        toast.success(
+          <div>
+            <span className="bg-red-200 px-2 py-0.5 rounded-lg">
+              {productTitle}
+            </span>{" "}
+            Removed from cart
+          </div>
+        );
       } else {
         // Add item (quantity = 1)
         await dispatch(updateCartQuantityAsync({ productId, quantity: 1 }));
-        toast.success(<div>
-          <span className="bg-green-200 px-2 py-0.5 rounded-lg">{productTitle}</span> Added to cart</div>);
+        toast.success(
+          <div>
+            <span className="bg-green-200 px-2 py-0.5 rounded-lg">
+              {productTitle}
+            </span>{" "}
+            Added to cart
+          </div>
+        );
       }
-
     } catch (err) {
       toast.error("Something went wrong");
       console.error("Cart error:", err);
@@ -52,16 +66,32 @@ const AddToCartBtn = ({ productId, produnctName, AddIcon, RemoveIcon }) => {
     <button
       onClick={handleCartAction}
       disabled={loading}
-      className={`px-4 py-2 rounded-lg text-white font-semibold transition-all duration-200 ${
-        isInCart ? "bg-red-500 hover:bg-red-600" : "bg-green-500 hover:bg-green-600"
+      className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
+        isInCart
+          ? " hover:bg-red-400 text-rose-500 border-1"
+          : " hover:bg-green-400 text-green-500 border-1"
       }`}
     >
-            {loading ? (
-        "wait..."
+      {loading ? (
+        <sapn className="text-md">wait...</sapn>
       ) : isInCart ? (
-        RemoveIcon ? <RemoveIcon size={12} /> : "Remove from Cart"
+        RemoveIcon ? (
+          <>
+            <div className="relative">
+              <RemoveIcon size={18} />
+              <div className="absolute -right-6 -top-4 bg-rose-500 rounded-full px-2  text-md text-white border-rose-600 border-1">
+                {" "}
+                {cartItem.quantity}
+              </div>
+            </div>
+          </>
+        ) : (
+          "Remove from Cart"
+        )
+      ) : AddIcon ? ( 
+          <AddIcon size={18} />     
       ) : (
-        AddIcon ? <AddIcon size={12}/> : "Add to Cart"
+        "Add to Cart"
       )}
     </button>
   );

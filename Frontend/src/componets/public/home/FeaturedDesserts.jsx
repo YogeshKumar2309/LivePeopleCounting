@@ -149,9 +149,9 @@ const FeaturedDesserts = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100 py-12 ">
       <h1 className="text-center text-4xl font-bold text-gray-800 mb-12 font-poppins">
-        Our Special Desserts
+        Top Rating Desserts
       </h1>
-      <div className="flex flex-wrap justify-evenly gap-5 w-full">
+      <div className="flex flex-wrap justify-evenly gap-5 w-full px-6 sm:px-0">
         {desserts.length === 0 ? (
           <LoaderComponent/>
         ) : (
