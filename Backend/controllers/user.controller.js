@@ -6,6 +6,7 @@ import Review from "../models/review.model.js";
 import { Order } from "../models/order.model.js";
 import { Delivery } from "../models/delivery.model.js";
 import { User } from "../models/User.js";
+import { imageUploadUtil } from "../config/cloudinary.js";
 
 export const addToFavorite = async (req, res) => {
   try {
@@ -323,7 +324,7 @@ export const getOrder = async (req, res) => {
   try {
     const userId = req.session.user.id;
     //find all orders
-    const orders = await Order.find({userId}).populate(
+    const orders = await Order.find({ userId }).populate(
       "items.productId",
       "title price"
     );
@@ -464,7 +465,7 @@ export const getuserProfile = async (req, res) => {
   try {
     const userId = req.session.user.id;
 
-    const user = await User.findById(userId).select("fullName email avator");
+    const user = await User.findById(userId).select("fullName email avatar");
 
     const [
       confirmedOrders,
@@ -494,5 +495,86 @@ export const getuserProfile = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
+  }
+};
+
+export const uploadImage = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
+  try {
+    const b64 = req.file.buffer.toString("base64");
+    const url = `data:${req.file.mimetype};base64,${b64}`;
+    const folderName = "UserProfile";
+    const result = await imageUploadUtil(url, folderName);
+    res.status(201).json({
+      seccess: true,
+      url: result.secure_url,
+    });
+  } catch (error) {
+    console.error(" Error in uploadImage:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to upload image. Please try again.",
+    });
+  }
+};
+
+//postUserProfile
+export const postUserProfile = async (req, res) => {
+  try {
+    const userId = req.session.user.id;
+
+    if (!userId) {
+      return res.status(401).json({
+        success: false,
+        message: "Unauthorized: Please log in again",
+      });
+    }
+
+    const { name, email, avatar } = req.body;
+    if (!name || !email) {
+      return res.status(400).json({
+        success: false,
+        message: "Name and email are required!",
+      });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        fullName: name,
+        email,
+        avatar,
+      },
+      {
+        new: true,
+      } //updated user data return
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found.",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Profile updated successfully.",
+      user: {
+        fullName: updatedUser.fullName,
+        email: updatedUser.email,
+        avatar: updatedUser.avatar,
+      },
+    });
+  } catch (error) {
+    console.error("Error updating user profile:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+      error: error.message,
+    });
   }
 };

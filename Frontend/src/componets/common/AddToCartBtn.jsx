@@ -57,7 +57,7 @@ const AddToCartBtn = ({ productId, produnctName, AddIcon, RemoveIcon }) => {
       }`}
     >
             {loading ? (
-        "Please wait..."
+        "wait..."
       ) : isInCart ? (
         RemoveIcon ? <RemoveIcon size={12} /> : "Remove from Cart"
       ) : (

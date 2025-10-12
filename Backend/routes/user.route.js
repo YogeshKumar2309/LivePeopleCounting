@@ -1,5 +1,6 @@
 import express from "express";
-import { addToFavorite ,getAllFavorites,postReview,sendMessage, getCart, postUpdateCartQuantity,deleteCart,postUpdateCartActive,confirmOrder,getOrder,cancelOrder,deleteOrder,getProfileFavorite,getuserProfile} from "../controllers/user.controller.js";
+import { addToFavorite ,getAllFavorites,postReview,sendMessage, getCart, postUpdateCartQuantity,deleteCart,postUpdateCartActive,confirmOrder,getOrder,cancelOrder,deleteOrder,getProfileFavorite,getuserProfile,uploadImage,postUserProfile} from "../controllers/user.controller.js";
+import upload from "../config/multer.js";
 
 export const  router = express.Router();
 
@@ -17,6 +18,8 @@ router.put("/cancelOrder/:orderId", cancelOrder);
 router.delete("/deleteOrder/:orderId", deleteOrder);
 router.get("/getProfileFavorite", getProfileFavorite);
 router.get("/getuserProfile", getuserProfile);
+router.post('/uploadImage', upload.single('image'), uploadImage)
+router.post("/postUserProfile", postUserProfile);
 
 
 

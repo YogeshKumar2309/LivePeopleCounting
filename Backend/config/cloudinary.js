@@ -10,10 +10,10 @@ cloudinary.config({
 });
 
 // Async upload function (base64 or URL)
-export async function imageUploadUtil(fileData) {
+export async function imageUploadUtil(fileData, folderName = "products") {
   const result = await cloudinary.uploader.upload(fileData, {
     resource_type: "auto",
-    folder: "products",
+    folder: folderName,
   });
   return result;
 }
