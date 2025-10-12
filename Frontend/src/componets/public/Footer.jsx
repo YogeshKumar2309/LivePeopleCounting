@@ -1,5 +1,5 @@
-import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaInstagram, FaTwitter, FaUser, FaYoutube, FaYoutubeSquare } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         
         {/* Logo + About */}
         <div>
-          <h2 className="text-2xl font-bold text-amber-400 mb-3">Dessert Shop</h2>
+          <h2 className="text-2xl font-bold text-amber-400 mb-3">Y-Dessert Shop</h2>
           <p className="text-stone-300 text-sm leading-relaxed">
             Serving happiness with every bite! Freshly baked cakes, pastries,
             and desserts made with love and premium ingredients.
@@ -20,12 +20,13 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-amber-400 mb-3">
             Quick Links
           </h3>
-          <ul className="space-y-2 text-stone-300 text-sm">
-            <li className="hover:text-white transition">Home</li>
-            <li className="hover:text-white transition">About Us</li>
-            <li className="hover:text-white transition">Menu</li>
-            <li className="hover:text-white transition">Contact</li>
-          </ul>
+          <div className="space-y-2 text-stone-300 text-sm flex flex-col capitalize">
+            <Link to={"/"} className="hover:text-yellow-700 hover:font-semibold  transition">Home</Link>
+            <Link to={"/user/cart"} className="hover:text-yellow-700 hover:font-semibold transition">cart</Link>
+            <Link to={"/products"} className="hover:text-yellow-700 hover:font-semibold  transition">poroducts</Link>
+            <Link to={"/user/profile/orderDetails"} className="hover:text-yellow-700 hover:font-semibold  transition">MyOrders</Link>
+         
+          </div>
         </div>
 
         {/* Social Media */}
@@ -34,24 +35,28 @@ const Footer = () => {
             Follow Us
           </h3>
           <div className="flex space-x-4">
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-amber-500 transition"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-amber-500 transition"
+          <Link
+              to={"https:/instagram.com/yogeshwebdev"}
+              target="blank"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-rose-500 transition"
             >
               <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-amber-500 transition"
+            </Link>
+          <Link
+              to={"https:/github.com/yogeshkumar2309"}
+              target="blank"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-500 transition"
             >
-              <FaTwitter />
-            </a>
+              <FaGithub />
+            </Link>
+          <Link
+              to={"https://www.youtube.com/@engineering2391"}
+              target="blank"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-red-500 transition"
+            >
+              <FaYoutubeSquare />
+            </Link>
+          
           </div>
         </div>
       </div>

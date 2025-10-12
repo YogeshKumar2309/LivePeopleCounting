@@ -324,10 +324,9 @@ export const getOrder = async (req, res) => {
   try {
     const userId = req.session.user.id;
     //find all orders
-    const orders = await Order.find({ userId }).populate(
-      "items.productId",
-      "title price"
-    );
+    const orders = await Order.find({ userId })
+      .sort({ createdAt: -1 })
+      .populate("items.productId", "title price");
 
     //get delivery ingo for each order
     const ordersWithDelivery = await Promise.all(
