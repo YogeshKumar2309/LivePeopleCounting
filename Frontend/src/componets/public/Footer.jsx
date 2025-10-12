@@ -36,14 +36,14 @@ const Footer = () => {
           </h3>
           <div className="flex space-x-4">
           <Link
-              to={"https:/instagram.com/yogeshwebdev"}
+              to={"https://www.instagram.com/yogeshwebdev"}
               target="blank"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-rose-500 transition"
             >
               <FaInstagram />
             </Link>
           <Link
-              to={"https:/github.com/yogeshkumar2309"}
+              to={"https://github.com/YogeshKumar2309"}
               target="blank"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-stone-700 hover:bg-stone-500 transition"
             >
