@@ -1,5 +1,6 @@
 import { imageUploadUtil } from "../config/cloudinary.js";
 import { Product } from "../models/product.model.js";
+import { User } from "../models/User.js";
 
 //upload image to cloudinary
 export const uploadImage = async (req, res) => {
@@ -103,3 +104,14 @@ export const updateProduct = async (req, res) => {
     res.status(500).json({ success: false, error: "server error" });
   }
 };
+
+//get all user
+export const getAllUser = async (req, res) => {
+  try {
+     const users = await User.find({ role: { $ne: "admin" } });     
+    res.status(200).json({ success: true, users });
+  } catch (error) {
+     console.log("error in getAllUser", error);
+    res.status(500).json({ success: false, error: "server error" });
+  }
+}

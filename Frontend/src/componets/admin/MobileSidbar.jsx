@@ -1,13 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import useLogout from "../../hooks/useLogout";
-import { BarChart2, Box, ChevronRight, LogOut, ShoppingBag, User } from "lucide-react";
+import { BarChart2, Boxes, ChevronRight, LogOut, MessageCircle, ShoppingBag, User } from "lucide-react";
 
 const MobileSidbar = ({ onClose }) => {
   const navList = [
     {
       id: 1,
       link: "/admin/products",
-      icon: <Box />,
+      icon: <Boxes />,
     },
     {
       id: 2,
@@ -21,6 +21,11 @@ const MobileSidbar = ({ onClose }) => {
     },
     {
       id: 4,
+      link: "/admin/userMessage",
+      icon: <MessageCircle />,
+    },
+    {
+      id: 5,
       link: "/admin/bisnessAnalytics",
       icon: <BarChart2 />,
     },

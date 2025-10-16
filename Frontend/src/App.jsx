@@ -34,6 +34,8 @@ import UserProfile from "./pages/user/UserProfile";
 import ProfilePage from "./pages/user/ProfilePage";
 import CurrentOrder from "./pages/user/CurrentOrder";
 import Order from "./pages/admin/Order";
+import UserMessage from "./pages/admin/UserMessage";
+import ProductDahboard from "./componets/admin/ProductDahboard";
 
 const App = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -122,12 +124,13 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path="users" element={<User />} />
           <Route path="products" element={<Productlayout />}>
-            <Route index element={<h1>comming soon Dashboard</h1>} />
+            <Route index element={<ProductDahboard/>} />
             <Route path="add" element={<AddProduct />} />
             <Route path="allProduct" element={<Products />} />
             <Route path="edit/:id" element={<EditProductModal />} />
           </Route>
           <Route path="orders" element={<Order />} />
+          <Route path="userMessage" element={<UserMessage />} />
           <Route path="bisnessAnalytics" element={<BisnessAnalytics />} />
         </Route>
 

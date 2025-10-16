@@ -1,19 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import useLogout from "../../hooks/useLogout";
-import { BarChart2, Box, ChevronLeft, LogOut,  ShoppingBag, User } from "lucide-react";
+import { BarChart2, Box, ChevronLeft, LogOut,  MessageCircle,  ShoppingBag, User } from "lucide-react";
 
 const Sidebar = ({ onClose }) => {
   const navList = [
     { id: 1, link: "/admin/products", icon: <Box size={20} className="mr-3" />, label: "Products" },
     { id: 2, link: "/admin/users", icon: <User size={20} className="mr-3" />, label: "Users" },
     { id: 3, link: "/admin/orders", icon: <ShoppingBag size={20} className="mr-3" />, label: "Order" },   
-    { id: 4, link: "/admin/bisnessAnalytics", icon: <BarChart2 size={20} className="mr-3" />, label: "Analytics" },   
+    { id: 4, link: "/admin/userMessage", icon: <MessageCircle size={20} className="mr-3" />, label: "Order" },   
+    { id: 5, link: "/admin/bisnessAnalytics", icon: <BarChart2 size={20} className="mr-3" />, label: "Analytics" },   
    ];
 
   const handleLogout = useLogout();
 
   return (
-    <div className="w-74">
+    <div className="w-64 sm:w-72">
     <div className="fixed top-0 left-0 w-64 sm:w-72 h-full bg-white shadow-lg flex flex-col px-4 py-6 z-50">
       {/* Logo & Close Button */}
       <div className="flex items-center justify-between mb-6 border-b border-gray-200 pb-3">

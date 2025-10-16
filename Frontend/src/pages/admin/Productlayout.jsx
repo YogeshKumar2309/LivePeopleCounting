@@ -1,25 +1,26 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import AdminNavbar from "../../componets/admin/AdminNavbar";
+import {  PlusSquare, Store } from "lucide-react";
+
 
 const Productlayout = () => {
     const adminNav = [
     {
       id: 1,
       name: 'AllProductList',
-      link: '/admin/products/allProduct'
+      link: '/admin/products/allProduct',
+      icon: <Store/>
     },
     {
       id: 2,
       name: 'addProduct',
-      link: '/admin/products/add'
+      link: '/admin/products/add',
+      icon: <PlusSquare/>   
     },
   ]
   return (
     <>
-      <header className="h-16 flex justify-around border-b-2 border-sky-300 bg-sky-100">
-       <AdminNavbar adminNav={adminNav}/>
-      </header>
+       <AdminNavbar adminNav={adminNav}/>   
        <Outlet/>
     </>
   );

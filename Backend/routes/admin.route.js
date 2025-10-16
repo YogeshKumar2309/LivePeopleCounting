@@ -1,5 +1,5 @@
 import express from "express";
-import { uploadImage,addProduct, getProducts , updateProduct} from "../controllers/admin.controller.js";
+import { uploadImage,addProduct, getProducts , updateProduct,getAllUser} from "../controllers/admin.controller.js";
 import upload from "../config/multer.js";
 
 
@@ -10,6 +10,7 @@ import upload from "../config/multer.js";
  router.post('/addProduct',  addProduct);
  router.get('/getProducts',  getProducts);
  router.put('/updateProduct/:id',  updateProduct);
+ router.get('/getAllUser',  getAllUser);
 
 
 
