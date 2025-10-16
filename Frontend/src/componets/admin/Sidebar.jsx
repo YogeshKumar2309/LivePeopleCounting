@@ -1,69 +1,67 @@
-import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useLogout from "../../hooks/useLogout";
-import { ArrowRight } from "lucide-react";
+import { BarChart2, Box, ChevronLeft, LogOut,  ShoppingBag, User } from "lucide-react";
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
   const navList = [
-    {
-      id: 1,
-      name: "products",
-      link: "/admin/products",
-    },
-    {
-      id: 2,
-      name: "user",
-      link: "/admin/users",
-    },
-    {
-      id: 3,
-      name: "Live People",
-      link: "/admin/livePeople",
-    },
-    {
-      id: 4,
-      name: "Analitics",
-      link: "/admin/bisnessAnalytics",
-    },
-    
-  ];
+    { id: 1, link: "/admin/products", icon: <Box size={20} className="mr-3" />, label: "Products" },
+    { id: 2, link: "/admin/users", icon: <User size={20} className="mr-3" />, label: "Users" },
+    { id: 3, link: "/admin/orders", icon: <ShoppingBag size={20} className="mr-3" />, label: "Order" },   
+    { id: 4, link: "/admin/bisnessAnalytics", icon: <BarChart2 size={20} className="mr-3" />, label: "Analytics" },   
+   ];
 
-    const handleLogout = useLogout();
+  const handleLogout = useLogout();
 
   return (
-    <div className="">
-      <div className="text-3xl text-center mb-3 bg-gradient-to-b from-blue-500 p-2 font-extrabold h-16 items-center text-red-50">
-        <Link to="/admin">Logo</Link>
+    <div className="w-74">
+    <div className="fixed top-0 left-0 w-64 sm:w-72 h-full bg-white shadow-lg flex flex-col px-4 py-6 z-50">
+      {/* Logo & Close Button */}
+      <div className="flex items-center justify-between mb-6 border-b border-gray-200 pb-3">
+        <Link
+          to="/admin"
+          className="font-extrabold text-2xl bg-gradient-to-r from-rose-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+        >
+          Y-Dessets
+        </Link>
+        <button
+          onClick={() => onClose(false)}
+          className="p-2 rounded-full hover:bg-gray-200 transition"
+        >
+          <ChevronLeft size={24} />
+        </button>
       </div>
-      {navList.map((li) => (
-        <div className=" hover:bg-amber-300 hover:transition-colors duration-300 rounded-lg mb-2" key={li.id}>
+
+      {/* Navigation Links */}
+      <nav className="flex-1 overflow-y-auto">
+        {navList.map((item) => (
           <NavLink
-            to={li.link}
+            key={item.id}
+            to={item.link}
             className={({ isActive }) =>
-              `flex px-4 py-2 capitalize text-lg rounded-lg transition-colors duration-300 ${
-                isActive ? "bg-amber-400 text-white" : ""
+              `flex items-center px-4 py-3 mb-2 text-lg rounded-lg transition-all duration-300 font-medium ${
+                isActive
+                  ? "bg-amber-400 text-white shadow-md"
+                  : "text-gray-700 hover:bg-amber-300 hover:text-gray-900"
               }`
             }
           >
-            {li.name}
+            {item.icon}
+            <span>{item.label}</span>
           </NavLink>
-        </div>
-      ))}
+        ))}
+      </nav>
 
-       <div className=" hover:transition-colors duration-300 rounded-lg font-semibold hover:bg-red-500  transition" >
-          <NavLink
-            to="/"
-               onClick={handleLogout}
-            className={
-              `flex px-4 py-2 items-center capitalize text-lg rounded-lg transition-colors duration-300 `
-            }
-          >
-          Logout<ArrowRight className="inline ml-1 pt-1" />
-          </NavLink>
-        </div>
-
-       
-      
+      {/* Logout Button */}
+      <div className="mt-auto">
+        <button
+          onClick={handleLogout}
+          className="flex items-center w-full px-4 py-3 text-lg font-semibold rounded-lg text-gray-700 hover:bg-red-500 hover:text-white transition-all duration-300"
+        >
+          <LogOut size={20} className="mr-3" />
+          Logout
+        </button>
+      </div>
+    </div>
     </div>
   );
 };

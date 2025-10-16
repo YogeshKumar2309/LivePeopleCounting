@@ -1,2268 +1,2189 @@
-[
-  {
- 
-  "title": "Chocolate Pudding",
-  "desc": "Rich and creamy chocolate pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "chocolate",
-    "sugar",
-    "cornstarch",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
- 
-  "title": "Vanilla Pudding",
-  "desc": "Classic vanilla custard pudding",
-  "category": "puddings",
-  "price": 100,
-  "offerPrice": 85,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "vanilla",
-    "sugar",
-    "cornstarch",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
- 
-  "title": "Rice Pudding (Kheer)",
-  "desc": "Traditional Indian rice pudding",
-  "category": "puddings",
-  "price": 90,
-  "offerPrice": 75,
+[{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b66"
+  },
+  "title": "White Chocolate Cookie",
+  "desc": "Enjoy the delicate crunch and rich, buttery flavour of our White Chocolate Cookie. Made with premium white chocolate chunks, this cookie offers a melt-in-your-mouth experience. It's the perfect sweet treat for an afternoon snack or dessert, providing a satisfying blend of texture and sweetness. A delightful choice for white chocolate lovers.",
+  "category": "cookies",
+  "price": 80,
+  "offerPrice": 70,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538856/White_Chocolate_Cookie_j7psv3.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "white chocolate chips",
+    "eggs",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:00:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b67"
+  },
+  "title": "White Chocolate Bar",
+  "desc": "Experience the smooth, creamy luxury of our exquisite White Chocolate Bar. Crafted from high-quality cocoa butter, milk solids, and vanilla, this bar delivers a velvety texture and a sweet, comforting flavour. Ideal for sharing, baking, or savoring slowly on your own. A truly indulgent experience for a sweet craving.",
+  "category": "chocolates",
+  "price": 180,
+  "offerPrice": 160,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538850/White_Chocolate_kg6n2k.jpg",
+  "ingredients": [
+    "cocoa butter",
+    "sugar",
+    "milk solids",
+    "vanilla extract",
+    "emulsifier"
+  ],
+  "createdAt": "2025-10-15T10:01:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:01:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b68"
+  },
+  "title": "Vanilla Pudding",
+  "desc": "A classic dessert offering a smooth, delicate, and creamy texture with the timeless flavour of pure vanilla. Our Vanilla Pudding is a light and comforting treat, perfect for any occasion. It’s made with real vanilla beans for an authentic taste. Serve chilled for a refreshing and satisfying dessert.",
+  "category": "puddings",
+  "price": 110,
+  "offerPrice": 95,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538846/Vanilla_Pudding_efaytx.jpg",
+  "ingredients": [
+    "milk",
+    "sugar",
+    "cornstarch",
+    "vanilla extract",
+    "cream"
+  ],
+  "createdAt": "2025-10-15T10:02:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:02:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b69"
+  },
+  "title": "Vanilla Sponge Cake",
+  "desc": "Our Vanilla Sponge Cake is light, airy, and moist, embodying simple elegance. Layers of fluffy sponge are perfectly baked with a hint of vanilla, making it an excellent base for any frosting or topping. This classic cake is ideal for birthdays, celebrations, or a delightful afternoon tea. A guaranteed crowd-pleaser.",
+  "category": "cakes",
+  "price": 450,
+  "offerPrice": 400,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538845/Vanilla_Sponge_Cake_f7wkqh.jpg",
+  "ingredients": [
+    "flour",
+    "sugar",
+    "eggs",
+    "baking powder",
+    "vanilla essence"
+  ],
+  "createdAt": "2025-10-15T10:03:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:03:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6a"
+  },
+  "title": "Strawberry Ice Cream",
+  "desc": "Indulge in the refreshing taste of summer with our Strawberry Ice Cream. Made with real, ripe strawberries, it boasts a vibrant pink hue and a natural, sweet-tart flavour. This creamy delight is a classic favourite, perfect for cooling down on a warm day or as a delightful dessert after any meal. Simply irresistible.",
+  "category": "ice-creams",
+  "price": 140,
+  "offerPrice": 120,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538842/Strawberry_Ice_Cream_isdp6y.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "strawberries",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T10:04:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:04:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6b"
+  },
+  "title": "Tiramisu Ice Cream",
+  "desc": "Experience the classic Italian dessert in a frozen form with our Tiramisu Ice Cream. This sophisticated flavour combines rich coffee-soaked ladyfingers, creamy mascarpone cheese, and a dusting of cocoa. Each scoop is a blend of espresso bitterness and sweet creaminess. A gourmet treat for coffee and dessert connoisseurs.",
+  "category": "ice-creams",
+  "price": 170,
+  "offerPrice": 150,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538836/Tiramisu_Ice_Cream_ve6jfi.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "mascarpone",
+    "coffee extract",
+    "cocoa"
+  ],
+  "createdAt": "2025-10-15T10:05:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:05:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6c"
+  },
+  "title": "Vanilla Ice Cream",
+  "desc": "The quintessential ice cream flavour, our Vanilla Ice Cream is exceptionally smooth and intensely aromatic. We use high-quality vanilla for a pure, unmistakable taste that pairs perfectly with any dessert topping or can be enjoyed on its own. A simple yet luxurious indulgence that’s a favourite across all ages. A versatile classic.",
+  "category": "ice-creams",
+  "price": 130,
+  "offerPrice": 110,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538833/Vanilla_Ice_Cream_o3cph4.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "vanilla beans",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T10:06:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:06:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6d"
+  },
+  "title": "Sugar Cookie",
+  "desc": "Our classic Sugar Cookie is a simple delight with a crisp edge and a soft, chewy centre. Lightly dusted with granulated sugar, it has a buttery, sweet flavour that is universally loved. Perfect for decorating, dunking in milk, or simply enjoying as a timeless treat. A comforting, straightforward sweet.",
+  "category": "cookies",
+  "price": 70,
+  "offerPrice": 60,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538824/Sugar_Cookie_awsubn.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "eggs",
+    "vanilla extract"
+  ],
+  "createdAt": "2025-10-15T10:07:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:07:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6e"
+  },
+  "title": "Vanilla Croissant",
+  "desc": "A flaky, golden-brown French pastry filled with a smooth, sweet vanilla cream. Our Vanilla Croissant offers a perfect balance of crispy layers and a rich, aromatic filling. Ideal for a luxurious breakfast or a satisfying afternoon indulgence with a cup of coffee. Experience the true taste of a Parisian bakery.",
+  "category": "pastries",
+  "price": 140,
+  "offerPrice": 125,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538824/Vanilla_Croissant_jilflh.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "milk",
+    "sugar",
+    "vanilla pastry cream",
+    "yeast"
+  ],
+  "createdAt": "2025-10-15T10:08:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:08:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b6f"
+  },
+  "title": "Raspberry Tart",
+  "desc": "A beautiful and vibrant dessert featuring a buttery, shortbread crust filled with a creamy pastry cream and topped with fresh, tart raspberries. The contrast between the sweet cream and the tangy fruit creates a flavour explosion. Perfect for a sophisticated gathering or a light, refreshing treat.",
+  "category": "tarts",
+  "price": 160,
+  "offerPrice": 145,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538823/Raspberry_Tart_al3zfp.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "pastry cream",
+    "fresh raspberries"
+  ],
+  "createdAt": "2025-10-15T10:09:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:09:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b70"
+  },
+  "title": "Tapioca Pudding",
+  "desc": "A wholesome and comforting dessert, our Tapioca Pudding is made with small pearls of tapioca cooked in creamy milk and sweetened perfectly. It has a unique, slightly chewy texture and a subtle vanilla flavour. A classic comfort food, best served warm or chilled for a delightful and soothing treat.",
+  "category": "puddings",
+  "price": 115,
+  "offerPrice": 100,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538820/Tapioca_Pudding_fph0oz.jpg",
+  "ingredients": [
+    "tapioca pearls",
+    "milk",
+    "sugar",
+    "vanilla extract",
+    "cinnamon"
+  ],
+  "createdAt": "2025-10-15T10:10:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:10:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b71"
+  },
+  "title": "Pistachio Ice Cream",
+  "desc": "Savour the sophisticated and nutty flavour of our Pistachio Ice Cream. Made with finely ground pistachios, this ice cream is rich, creamy, and distinctively flavoured. The beautiful green hue and the crunch of real pistachio pieces make it an elevated dessert experience. A perfect indulgence for a gourmet palate.",
+  "category": "ice-creams",
+  "price": 180,
+  "offerPrice": 165,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538788/Pistachio_Ice_Cream_ruydei.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "pistachio paste",
+    "chopped pistachios"
+  ],
+  "createdAt": "2025-10-15T10:11:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:11:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b72"
+  },
+  "title": "Rice Pudding (Kheer)",
+  "desc": "Our traditional Rice Pudding, or Kheer, is a creamy, sweet, and aromatic Indian dessert. Slow-cooked with milk, rice, sugar, and infused with cardamom and nuts, it's a comforting classic. Perfect for celebrations or as a warm, cozy treat. Its rich texture and delicate sweetness make it utterly delightful.",
+  "category": "puddings",
+  "price": 100,
+  "offerPrice": 90,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538782/Rice_Pudding_Kheer_aqet3j.jpg",
   "ingredients": [
     "rice",
     "milk",
     "sugar",
     "cardamom",
-    "nuts"
+    "nuts (cashews, almonds)"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:12:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:12:00.000Z"
+  },
   "__v": 0
 },
 {
- 
-  "title": "Bread Pudding",
-  "desc": "Warm bread pudding with vanilla sauce",
-  "category": "puddings",
-  "price": 140,
-  "offerPrice": 120,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b73"
+  },
+  "title": "Red Velvet Cake",
+  "desc": "A visually stunning cake with a mild cocoa flavour and a distinctive deep red colour. Our Red Velvet Cake is layered with a rich, tangy cream cheese frosting that perfectly complements the moist crumb. It's an elegant dessert, often chosen for special occasions. A sophisticated blend of textures and flavours.",
+  "category": "cakes",
+  "price": 600,
+  "offerPrice": 550,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538774/Red_Velvet_Cake_cpshky.jpg",
   "ingredients": [
-    "bread",
-    "milk",
-    "sugar",
-    "vanilla",
-    "eggs"
+    "flour",
+    "cocoa powder",
+    "buttermilk",
+    "red food colouring",
+    "cream cheese frosting"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:13:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:13:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Caramel Pudding",
-  "desc": "Creamy pudding with caramel sauce",
-  "category": "puddings",
-  "price": 130,
-  "offerPrice": 110,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b74"
+  },
+  "title": "Strawberry Cake",
+  "desc": "A light and refreshing cake bursting with the fresh flavour of strawberries. This cake is typically a moist sponge layered with real strawberry puree and a light cream frosting. It’s a perfect springtime or summer dessert, offering a balanced sweetness and a lovely fruity aroma. A simple, fresh, and beautiful cake.",
+  "category": "cakes",
+  "price": 550,
+  "offerPrice": 500,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538765/Strawberry_Cake_tpfwtz.jpg",
   "ingredients": [
-    "milk",
-    "caramel",
+    "flour",
     "sugar",
-    "gelatin",
-    "eggs"
+    "eggs",
+    "fresh strawberries",
+    "whipped cream"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:14:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:14:00.000Z"
+  },
   "__v": 0
 },
 {
- 
-  "title": "Mango Pudding",
-  "desc": "Tropical mango flavored pudding",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b75"
+  },
+  "title": "Semolina Pudding (Suji Halwa)",
+  "desc": "A popular Indian sweet made from semolina (suji), ghee, sugar, and water or milk. Our Suji Halwa is rich, soft, and melt-in-your-mouth, often flavoured with cardamom and garnished with dry fruits. It's a quick, comforting, and deeply satisfying dessert, traditionally served during festive occasions. A classic Indian sweet.",
+  "category": "puddings",
+  "price": 90,
+  "offerPrice": 80,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538759/Semolina_Pudding_Suji_Halwa_ww3wat.jpg",
+  "ingredients": [
+    "semolina (suji)",
+    "ghee",
+    "sugar",
+    "water/milk",
+    "cardamom",
+    "raisins"
+  ],
+  "createdAt": "2025-10-15T10:15:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:15:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b76"
+  },
+  "title": "Raspberry Ice Cream",
+  "desc": "A bright and zesty frozen treat, our Raspberry Ice Cream captures the intense, slightly tart flavour of fresh raspberries. It’s a beautiful, refreshing alternative to traditional fruit flavours, with a creamy base. Perfect for a summer day or as a vibrant contrast to a rich cake. A truly fruity sensation.",
+  "category": "ice-creams",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538715/Raspberry_Ice_Cream_kdfbfh.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "raspberry puree",
+    "lemon juice"
+  ],
+  "createdAt": "2025-10-15T10:16:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:16:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b77"
+  },
+  "title": "Pineapple Upside Down Cake",
+  "desc": "A charming and retro dessert, this cake features caramelized pineapple rings and maraschino cherries baked into a buttery cake batter. When inverted, it reveals a sticky, sweet, and beautifully patterned topping. The moist cake combined with the tangy fruit creates a delightful tropical experience. A lovely classic.",
+  "category": "cakes",
+  "price": 480,
+  "offerPrice": 430,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538705/Pineapple_Upside_Down_Cake_s5hlbt.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "pineapple slices",
+    "maraschino cherries",
+    "eggs"
+  ],
+  "createdAt": "2025-10-15T10:17:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:17:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b78"
+  },
+  "title": "Oatmeal Cookie",
+  "desc": "A hearty and chewy cookie packed with nutritious rolled oats. Our Oatmeal Cookie has a comforting, spiced flavour, often with a hint of cinnamon. It’s a slightly healthier alternative to traditional cookies, providing fiber and a satisfying texture. Perfect with a warm cup of milk or tea. A wholesome treat.",
+  "category": "cookies",
+  "price": 75,
+  "offerPrice": 65,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538699/Oatmeal_Cookie_tadosb.jpg",
+  "ingredients": [
+    "oats",
+    "flour",
+    "butter",
+    "brown sugar",
+    "cinnamon",
+    "baking soda"
+  ],
+  "createdAt": "2025-10-15T10:18:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:18:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b79"
+  },
+  "title": "Pecan Pie",
+  "desc": "A classic American dessert with a rich, sweet filling made from corn syrup, butter, and eggs, generously loaded with crunchy pecan halves. The filling sets into a caramelized layer atop a flaky pastry crust. This decadent pie is traditionally served warm, often with a scoop of vanilla ice cream. A true Southern delight.",
+  "category": "pies",
+  "price": 350,
+  "offerPrice": 320,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538697/Pecan_Pie_y0o8pn.jpg",
+  "ingredients": [
+    "pecans",
+    "corn syrup",
+    "butter",
+    "sugar",
+    "eggs",
+    "pie crust"
+  ],
+  "createdAt": "2025-10-15T10:19:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:19:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7a"
+  },
+  "title": "Mint Chocolate Cookie",
+  "desc": "A refreshing twist on a classic, our Mint Chocolate Cookie is infused with a cool peppermint flavour and loaded with rich chocolate chips or chunks. The combination of dark chocolate and mint creates a delightful contrast. The vibrant green color makes it a fun and festive treat. A cool and satisfying indulgence.",
+  "category": "cookies",
+  "price": 85,
+  "offerPrice": 75,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538691/Mint_Chocolate_Cookie_lxrzfp.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "cocoa powder",
+    "mint extract",
+    "chocolate chips"
+  ],
+  "createdAt": "2025-10-15T10:20:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:20:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7b"
+  },
+  "title": "Oreo Cookie",
+  "desc": "The globally loved sandwich cookie featuring two chocolate wafers separated by a sweet crème filling. Our version offers the classic 'twist, lick, and dunk' experience. It's a satisfyingly crunchy and creamy treat that remains a timeless favourite for milk-dunking and general snacking enjoyment. A globally recognized snack.",
+  "category": "cookies",
+  "price": 60,
+  "offerPrice": 50,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538661/Oreo_Cookie_fmxct4.jpg",
+  "ingredients": [
+    "sugar",
+    "unbleached enriched flour",
+    "palm oil",
+    "cocoa",
+    "high fructose corn syrup"
+  ],
+  "createdAt": "2025-10-15T10:21:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:21:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7c"
+  },
+  "title": "Peanut Butter Cookie",
+  "desc": "A dense, chewy cookie with a distinctive peanut butter flavour and the classic cross-hatch pattern on top. Our Peanut Butter Cookie is rich, nutty, and perfectly sweet. It's a filling and satisfying treat that pairs wonderfully with a glass of cold milk. An all-time classic for peanut butter enthusiasts.",
+  "category": "cookies",
+  "price": 75,
+  "offerPrice": 65,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538653/Peanut_Butter_Cookie_mamdrd.jpg",
+  "ingredients": [
+    "peanut butter",
+    "flour",
+    "brown sugar",
+    "eggs",
+    "baking soda"
+  ],
+  "createdAt": "2025-10-15T10:22:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:22:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7d"
+  },
+  "title": "Panna Cotta",
+  "desc": "A classic Italian dessert, Panna Cotta means 'cooked cream'. It is a silky smooth, gelatin-set custard that is delightfully wobbly and light. Ours is delicately flavoured with vanilla and often topped with a fresh fruit coulis or caramel sauce. A sophisticated and elegant finish to any meal. Best served chilled.",
   "category": "puddings",
   "price": 150,
   "offerPrice": 130,
-  "badge": "veg",
+  "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538639/Panna_Cotta_svawmd.jpg",
   "ingredients": [
-    "mango puree",
-    "milk",
+    "heavy cream",
     "sugar",
-    "agar",
-    "cream"
+    "vanilla extract",
+    "gelatin",
+    "fruit coulis"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:23:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:23:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Coconut Pudding",
-  "desc": "Creamy coconut flavored pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7e"
+  },
+  "title": "Mint Chocolate Bar",
+  "desc": "A refreshing and intense chocolate bar combining the richness of dark chocolate with the cool burst of natural mint extract. This bar offers a clean, crisp finish, making it a sophisticated chocolate experience. The perfect treat for those who love the classic pairing of mint and chocolate. A cool, dark indulgence.",
+  "category": "chocolates",
+  "price": 190,
+  "offerPrice": 170,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538598/Mint_Chocolate_tntuxu.jpg",
   "ingredients": [
-    "coconut milk",
+    "cocoa solids",
     "sugar",
-    "agar",
-    "coconut flakes"
+    "cocoa butter",
+    "mint extract",
+    "emulsifier"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:24:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:24:00.000Z"
+  },
   "__v": 0
 },
 {
- 
-  "title": "Butterscotch Pudding",
-  "desc": "Rich butterscotch flavored pudding",
-  "category": "puddings",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b7f"
+  },
+  "title": "Mint Chocolate Chip Ice Cream",
+  "desc": "Our Mint Chocolate Chip Ice Cream is a beloved classic. The creamy, cool mint base is speckled with generous chips of dark chocolate, providing a satisfying crunch in every scoop. It's a refreshing, palate-cleansing dessert that is perfect after a heavy meal. A vibrant and classic flavour combination.",
+  "category": "ice-creams",
   "price": 140,
-  "offerPrice": 120,
-  "badge": "non-veg",
+  "offerPrice": 125,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538591/Mint_Chocolate_Chip_Ice_Cream_lnqpcm.jpg",
   "ingredients": [
-    "butterscotch",
     "milk",
-    "sugar",
-    "cornstarch",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
-
-  "title": "Banana Pudding",
-  "desc": "Classic banana layered pudding",
-  "category": "puddings",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "bananas",
-    "vanilla pudding",
-    "wafers",
     "cream",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
- 
-  "title": "Tapioca Pudding",
-  "desc": "Traditional tapioca pearl pudding",
-  "category": "puddings",
-  "price": 110,
-  "offerPrice": 90,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "tapioca pearls",
-    "milk",
     "sugar",
-    "vanilla",
-    "eggs"
+    "mint extract",
+    "chocolate chips",
+    "green food colouring"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:25:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:25:00.000Z"
+  },
   "__v": 0
 },
 {
- 
-  "title": "Chia Pudding",
-  "desc": "Healthy chia seed pudding",
-  "category": "puddings",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b80"
+  },
+  "title": "Milk Chocolate Bar",
+  "desc": "The ultimate classic chocolate experience. Our Milk Chocolate Bar is incredibly smooth, creamy, and sweet, made with a higher concentration of milk solids for that signature velvety texture. It's a comforting and familiar treat, perfect for everyday indulgence and simple pleasure. A timeless, feel-good chocolate.",
+  "category": "chocolates",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538590/Milk_Chocolate_udtjyy.jpg",
+  "ingredients": [
+    "sugar",
+    "cocoa butter",
+    "milk solids",
+    "cocoa mass",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:26:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:26:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b81"
+  },
+  "title": "Mango Ice Cream",
+  "desc": "Celebrate the king of fruits with our rich and tangy Mango Ice Cream. Made with real, luscious mango pulp, this ice cream offers an intense tropical flavour and a smooth, creamy texture. It's a vibrant and refreshing dessert that’s a favourite during the summer season. A delicious taste of the tropics.",
+  "category": "ice-creams",
   "price": 160,
   "offerPrice": 140,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538580/Mango_Ice_Cream_t9xiaa.jpg",
   "ingredients": [
-    "chia seeds",
-    "almond milk",
-    "honey",
-    "vanilla"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
- 
-  "title": "Lemon Pudding",
-  "desc": "Tangy lemon flavored pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "lemon juice",
     "milk",
+    "cream",
     "sugar",
-    "cornstarch",
-    "eggs"
+    "mango pulp",
+    "stabilizer"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:27:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:27:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Panna Cotta",
-  "desc": "Italian cream pudding dessert",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b82"
+  },
+  "title": "Mango Pudding",
+  "desc": "A light and refreshing dessert, our Mango Pudding is made from fresh mango purée and a creamy base, set to a soft, jelly-like consistency. It's a simple, elegant treat that highlights the sweet and tangy flavour of ripe mangoes. Perfect as a palate cleanser or a light tropical dessert. Deliciously fruity.",
   "category": "puddings",
-  "price": 180,
-  "offerPrice": 160,
+  "price": 130,
+  "offerPrice": 115,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538537/Mango_Pudding_sxtoc3.jpg",
   "ingredients": [
+    "mango pulp",
     "cream",
     "sugar",
-    "gelatin",
-    "vanilla"
+    "gelatin (or agar-agar)",
+    "water"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:28:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:28:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Crème Brûlée",
-  "desc": "French vanilla custard with caramelized sugar",
-  "category": "puddings",
-  "price": 220,
-  "offerPrice": 200,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cream",
-    "vanilla",
-    "egg yolks",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Mousse",
-  "desc": "Light and airy chocolate dessert",
-  "category": "puddings",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "cream",
-    "sugar",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
-
-  "title": "Fruit Trifle",
-  "desc": "Layered pudding with fruits and cake",
-  "category": "puddings",
-  "price": 170,
-  "offerPrice": 150,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "sponge cake",
-    "custard",
-    "fresh fruits",
-    "cream",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
-  "__v": 0
-},
-{
-
-  "title": "Semolina Pudding (Suji Halwa)",
-  "desc": "Traditional Indian semolina pudding",
-  "category": "puddings",
-  "price": 80,
-  "offerPrice": 65,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b83"
+  },
+  "title": "M&M Cookie",
+  "desc": "A fun and colourful cookie loaded with crunchy M&M candies and delicious chocolate chips. The chewy cookie dough is the perfect backdrop for the milk chocolate candies, offering a delightful crunch and extra sweetness. These vibrant cookies are a hit with children and a joyful treat for all ages. Colourful and sweet.",
+  "category": "cookies",
+  "price": 90,
+  "offerPrice": 80,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538505/M_M_Cookie_gfj7m7.jpg",
   "ingredients": [
-    "semolina",
-    "milk",
+    "flour",
+    "butter",
     "sugar",
-    "ghee",
-    "cardamom"
+    "M&M candies",
+    "chocolate chips",
+    "eggs"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:29:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:29:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Crème Caramel",
-  "desc": "Custard dessert with soft caramel on top",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b84"
+  },
+  "title": "Mango Custard",
+  "desc": "A creamy, smooth, and sweet dessert featuring the rich flavour of ripe mangoes blended into a classic custard base. It's a simple, comforting, and elegant pudding that is often served chilled. The delightful tropical aroma and velvety texture make it an ideal summer treat. A luxurious mango experience.",
   "category": "puddings",
-  "price": 190,
-  "offerPrice": 170,
-  "badge": "non-veg",
+  "price": 125,
+  "offerPrice": 110,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538487/Mango_Custard_ksxcni.jpg",
   "ingredients": [
     "milk",
+    "sugar",
+    "custard powder",
+    "mango pulp",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:30:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:30:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b85"
+  },
+  "title": "Lemon Drizzle Cake",
+  "desc": "A famously zesty and moist sponge cake soaked in a tangy lemon syrup, giving it a bright and refreshing flavour. The crunchy lemon glaze on top provides a lovely contrast in texture. It's a perfect cake for afternoon tea, offering a delightful balance of sweet and sour. Truly bright and uplifting.",
+  "category": "cakes",
+  "price": 420,
+  "offerPrice": 380,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538487/Lemon_Drizzle_Cake_zg0yfs.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
     "sugar",
     "eggs",
-    "vanilla",
-    "caramel"
+    "lemon zest",
+    "lemon juice"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:31:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:31:00.000Z"
+  },
   "__v": 0
 },
 {
-
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b86"
+  },
+  "title": "Macadamia Cookie",
+  "desc": "Indulge in our soft and chewy cookie generously studded with crunchy macadamia nuts. The buttery dough perfectly complements the mild, rich flavour of the macadamias. This gourmet cookie is a luxurious treat, offering a sophisticated flavour profile and satisfying texture. A premium nutty delight.",
+  "category": "cookies",
+  "price": 110,
+  "offerPrice": 95,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538468/Macadamia_Cookie_tlh1ql.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "macadamia nuts",
+    "eggs",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:32:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:32:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b87"
+  },
+  "title": "Ginger Cookie",
+  "desc": "A warmly spiced, crunchy cookie with a delightful chewiness, featuring a blend of ground ginger, cinnamon, and molasses. Our Ginger Cookie has a sharp, invigorating flavour and is often rolled in sugar before baking for an extra sparkle. The perfect comforting treat for a cold evening. Spicy and aromatic.",
+  "category": "cookies",
+  "price": 70,
+  "offerPrice": 60,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538464/Ginger_Cookie_pperu1.jpg",
+  "ingredients": [
+    "flour",
+    "molasses",
+    "ginger",
+    "cinnamon",
+    "butter",
+    "baking soda"
+  ],
+  "createdAt": "2025-10-15T10:33:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:33:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b88"
+  },
+  "title": "Lemon Pudding",
+  "desc": "A bright and cheerful dessert, our Lemon Pudding is creamy, smooth, and bursting with fresh, tangy lemon flavour. It can be served warm or chilled, offering a delightful citrus zing that is a perfect contrast to its sweetness. A light and refreshing end to any meal, providing a palate-cleansing finish.",
+  "category": "puddings",
+  "price": 120,
+  "offerPrice": 105,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538464/Lemon_Pudding_v3lpoi.jpg",
+  "ingredients": [
+    "milk",
+    "sugar",
+    "lemon juice",
+    "lemon zest",
+    "cornstarch"
+  ],
+  "createdAt": "2025-10-15T10:34:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:34:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b89"
+  },
+  "title": "Hazelnut Cookie",
+  "desc": "A rich, buttery cookie infused with the warm, nutty flavour of roasted hazelnuts. These cookies are delightfully crisp around the edges and slightly chewy in the center, often containing chunks of toasted hazelnuts for extra crunch. They pair exceptionally well with coffee or tea. A gourmet, nutty treat.",
+  "category": "cookies",
+  "price": 95,
+  "offerPrice": 85,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538428/Hazelnut_Cookie_otsc9r.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "ground hazelnuts",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:35:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:35:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8a"
+  },
+  "title": "Lemon Tart",
+  "desc": "A classic French dessert with a flaky, buttery shortcrust pastry holding a smooth, intensely tangy and sweet lemon curd filling. The Lemon Tart is elegant, refreshing, and beautifully balanced in flavour. It's an excellent choice for a light dessert or a sophisticated tea time treat. Zesty and bright.",
+  "category": "tarts",
+  "price": 170,
+  "offerPrice": 155,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538422/Lemon_Tart_ybptxm.jpg",
+  "ingredients": [
+    "shortcrust pastry",
+    "eggs",
+    "sugar",
+    "lemon juice",
+    "lemon zest",
+    "butter"
+  ],
+  "createdAt": "2025-10-15T10:36:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:36:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8b"
+  },
+  "title": "Lemon Sorbet Ice Cream",
+  "desc": "A wonderfully refreshing and dairy-free frozen dessert. Our Lemon Sorbet is intensely flavoured with fresh lemon juice and zest, offering a crisp, clean, and tangy taste. It’s the perfect light palate cleanser between courses or a bright, low-fat alternative to traditional ice cream. Pure, zesty refreshment.",
+  "category": "ice-creams",
+  "price": 130,
+  "offerPrice": 115,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538421/Lemon_Sorbet_Ice_Cream_kwkxgf.jpg",
+  "ingredients": [
+    "water",
+    "sugar",
+    "lemon juice",
+    "lemon zest"
+  ],
+  "createdAt": "2025-10-15T10:37:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:37:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8c"
+  },
+  "title": "Double Chocolate Cookie",
+  "desc": "For the serious chocolate lover, our Double Chocolate Cookie features a rich, dark chocolate dough with generous chunks of semi-sweet chocolate chips. It’s an intensely flavourful, moist, and chewy treat that offers a deep, satisfying cocoa experience. A decadent and indulgent cookie for a pure chocolate craving.",
+  "category": "cookies",
+  "price": 90,
+  "offerPrice": 80,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538378/Double_Chocolate_Cookie_s6ugh4.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "brown sugar",
+    "cocoa powder",
+    "chocolate chips",
+    "eggs"
+  ],
+  "createdAt": "2025-10-15T10:38:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:38:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8d"
+  },
   "title": "Jelly Pudding",
-  "desc": "Colorful fruit flavored jelly pudding",
+  "desc": "A fun and colourful dessert, our Jelly Pudding is a sweet, fruit-flavoured gelatin that is light and wobbly. It can be made with various fruit pieces suspended within the jelly for added texture and flavour. A refreshing, simple, and low-calorie treat that is perfect for children and light dessert fans. Colourful and light.",
   "category": "puddings",
   "price": 90,
   "offerPrice": 75,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538377/Jelly_Pudding_xxgh1g.jpg",
   "ingredients": [
-    "gelatin",
-    "fruit flavors",
+    "gelatin (or agar-agar)",
     "sugar",
+    "fruit juice/flavouring",
     "water",
-    "food coloring"
+    "fruit pieces"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:39:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:39:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Chocolate Pudding",
-  "desc": "Rich and creamy chocolate pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "non-veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8e"
+  },
+  "title": "Hazelnut Chocolate Bar",
+  "desc": "A rich milk chocolate bar embedded with crunchy, whole roasted hazelnuts. The sweet creaminess of the chocolate is beautifully contrasted by the toasted, nutty flavour and satisfying crunch of the hazelnuts. This classic combination creates a truly indulgent and textural experience. A satisfying nutty chocolate.",
+  "category": "chocolates",
+  "price": 190,
+  "offerPrice": 175,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538363/Hazelnut_Chocolate_ns8lur.jpg",
   "ingredients": [
-    "milk",
-    "chocolate",
+    "milk chocolate",
     "sugar",
-    "cornstarch",
-    "eggs"
+    "cocoa butter",
+    "roasted hazelnuts"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:40:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:40:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Chocolate Pudding",
-  "desc": "Rich and creamy chocolate pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "non-veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b8f"
+  },
+  "title": "Dark Chocolate Bar",
+  "desc": "Experience the intense, bittersweet notes of our premium Dark Chocolate Bar. With a high percentage of cocoa solids, this bar offers a complex and less sweet flavour profile, perfect for true chocolate connoisseurs. Enjoy the snap, the deep aroma, and the long, satisfying finish. A sophisticated, rich indulgence.",
+  "category": "chocolates",
+  "price": 200,
+  "offerPrice": 180,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538360/Dark_Chocolate_fcii6o.jpg",
   "ingredients": [
-    "milk",
-    "chocolate",
+    "cocoa mass",
     "sugar",
-    "cornstarch",
-    "eggs"
+    "cocoa butter",
+    "vanilla"
   ],
-  "createdAt": "2025-09-20T11:37:57.888Z",
-  "updatedAt": "2025-09-25T13:13:57.228Z",
+  "createdAt": "2025-10-15T10:41:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:41:00.000Z"
+  },
   "__v": 0
 },
 {
-
-  "title": "Chocolate Truffle Cake",
-  "desc": "Rich chocolate cake with truffle frosting",
-  "category": "cakes",
-  "price": 650,
-  "offerPrice": 550,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b90"
+  },
+  "title": "Fruit Trifle",
+  "desc": "A layered British dessert combining sponge cake soaked in sherry or juice, a layer of fresh or canned fruit, creamy custard, and topped with whipped cream. Our Fruit Trifle is a beautiful presentation of textures and flavours—soft cake, tender fruit, smooth custard, and light cream. Perfect for family gatherings. Layered delight.",
+  "category": "puddings",
+  "price": 250,
+  "offerPrice": 220,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538337/Fruit_Trifle_qz0pmw.jpg",
+  "ingredients": [
+    "sponge cake",
+    "custard",
+    "whipped cream",
+    "mixed fruit",
+    "sherry (optional)"
+  ],
+  "createdAt": "2025-10-15T10:42:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:42:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b91"
+  },
+  "title": "Cranberry Cookie",
+  "desc": "A delightful cookie combining the chewy texture of the dough with the tart, burst of dried cranberries. Often paired with white chocolate or oats, this cookie offers a lovely sweet and sour contrast. It’s a perfect treat for a festive mood or when you desire a fruity twist on a classic cookie. Tart and chewy.",
+  "category": "cookies",
+  "price": 85,
+  "offerPrice": 75,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538310/Cranberry_Cookie_j7uudi.jpg",
   "ingredients": [
     "flour",
-    "cocoa",
     "butter",
-    "eggs",
-    "sugar"
-  ]
+    "sugar",
+    "dried cranberries",
+    "oats (optional)"
+  ],
+  "createdAt": "2025-10-15T10:43:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:43:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Red Velvet Cake",
-  "desc": "Classic red velvet with cream cheese frosting",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b92"
+  },
+  "title": "Crème Caramel",
+  "desc": "A classic, elegant dessert consisting of a smooth custard base topped with a layer of clear caramel sauce. When inverted, the runny caramel cascades down the sides of the custard. Also known as flan, it is a delicate, creamy, and subtly sweet treat, best served chilled. A timeless, silky dessert.",
+  "category": "puddings",
+  "price": 140,
+  "offerPrice": 125,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538294/Cr%C3%A8me_Caramel_ay38vi.jpg",
+  "ingredients": [
+    "milk",
+    "eggs",
+    "sugar",
+    "vanilla",
+    "caramel sauce"
+  ],
+  "createdAt": "2025-10-15T10:44:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:44:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b93"
+  },
+  "title": "Coffee Ice Cream",
+  "desc": "Wake up your taste buds with our rich and aromatic Coffee Ice Cream. Infused with strong espresso or coffee extract, this creamy dessert offers a perfect balance of bitterness and sweetness. It's an invigorating treat for coffee lovers, perfect after dinner or as a mid-day pick-me-up. A bold, creamy favourite.",
+  "category": "ice-creams",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538268/Coffee_Ice_Cream_ionlgy.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "coffee/espresso extract",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T10:45:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:45:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b94"
+  },
+  "title": "Crème Brûlée",
+  "desc": "An elegant French dessert featuring a rich, creamy custard base, traditionally flavoured with vanilla. The signature feature is the contrasting layer of hardened caramelized sugar, which is cracked with a spoon just before eating. This dessert offers a delightful combination of cool creaminess and warm, brittle sugar. Classic French elegance.",
+  "category": "puddings",
+  "price": 180,
+  "offerPrice": 165,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538267/Cr%C3%A8me_Br%C3%BBl%C3%A9e_du0k0r.jpg",
+  "ingredients": [
+    "heavy cream",
+    "egg yolks",
+    "sugar",
+    "vanilla bean",
+    "torched sugar layer"
+  ],
+  "createdAt": "2025-10-15T10:46:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:46:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b95"
+  },
+  "title": "Dark Chocolate Bar (Plain)",
+  "desc": "A simple, pure indulgence in the form of a dark chocolate bar. This rich variant contains high cocoa solids, offering a deep, intense, and slightly bitter flavour profile. It's crafted for those who appreciate the robust, unadulterated taste of high-quality cocoa. Perfect for pairing with red wine or coffee. Unadulterated richness.",
+  "category": "chocolates",
+  "price": 200,
+  "offerPrice": 180,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538262/Dark_Chocolate_Bar_vbhjhx.jpg",
+  "ingredients": [
+    "cocoa mass",
+    "sugar",
+    "cocoa butter",
+    "emulsifier"
+  ],
+  "createdAt": "2025-10-15T10:47:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:47:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b96"
+  },
+  "title": "Coffee Mocha Cake",
+  "desc": "A rich and decadent cake layering moist chocolate sponge with creamy coffee-flavoured buttercream or ganache. The Coffee Mocha Cake offers a delightful dual flavour of robust coffee and deep chocolate, a classic and sophisticated pairing. Ideal for any special occasion. A perfect coffee-chocolate fusion.",
+  "category": "cakes",
+  "price": 580,
+  "offerPrice": 530,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538237/Coffee_Mocha_Cake_ph6rjn.jpg",
+  "ingredients": [
+    "flour",
+    "sugar",
+    "eggs",
+    "cocoa powder",
+    "coffee extract",
+    "buttercream/ganache"
+  ],
+  "createdAt": "2025-10-15T10:48:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:48:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b97"
+  },
+  "title": "Coconut Ice Cream",
+  "desc": "A tropical paradise in a scoop. Our Coconut Ice Cream is made with rich coconut milk and flakes, resulting in a creamy texture and an authentic, sweet coconut flavour. It's a delightful, refreshing, and exotic alternative to traditional dairy ice creams. Perfect for a summery treat or a tropical-themed dessert. Exotic and creamy.",
+  "category": "ice-creams",
+  "price": 140,
+  "offerPrice": 125,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538227/Coconut_Ice_Cream_hkcqvz.jpg",
+  "ingredients": [
+    "coconut milk",
+    "cream",
+    "sugar",
+    "desiccated coconut",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T10:49:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:49:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b98"
+  },
+  "title": "Coconut Cookie",
+  "desc": "A delightfully chewy cookie packed with shredded coconut for a tropical flavour and texture. These cookies are often slightly browned on the edges, bringing out the sweet, toasted flavour of the coconut. A simple, comforting treat that transports you to a sunny beach. Simple, sweet, and tropical.",
+  "category": "cookies",
+  "price": 80,
+  "offerPrice": 70,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538217/Coconut_Cookie_dkeq3w.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "shredded coconut",
+    "eggs"
+  ],
+  "createdAt": "2025-10-15T10:50:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:50:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b99"
+  },
+  "title": "Coconut Pudding",
+  "desc": "A creamy, smooth pudding made with coconut milk and often subtly sweetened. It offers a light, tropical flavour and a velvety texture that is incredibly soothing. This is a delightful, simple dessert, perfect for a light finish to a meal. It's a gentle, sweet taste of the tropics. Light and tropical.",
+  "category": "puddings",
+  "price": 110,
+  "offerPrice": 95,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538217/Coconut_Pudding_r0upor.jpg",
+  "ingredients": [
+    "coconut milk",
+    "sugar",
+    "cornstarch/gelatin",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:51:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:51:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9a"
+  },
+  "title": "Cinnamon Roll",
+  "desc": "A sweet, fluffy roll swirled with a rich filling of cinnamon and brown sugar, and typically topped with a generous layer of sweet cream cheese frosting. Our Cinnamon Roll is soft, warm, and irresistibly aromatic. It's the ultimate comfort pastry, perfect for breakfast or a sweet snack. Warm, sweet, and comforting.",
+  "category": "pastries",
+  "price": 120,
+  "offerPrice": 105,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538187/Cinnamon_Roll_foqdep.jpg",
+  "ingredients": [
+    "flour",
+    "yeast",
+    "butter",
+    "cinnamon",
+    "brown sugar",
+    "cream cheese frosting"
+  ],
+  "createdAt": "2025-10-15T10:52:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:52:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9b"
+  },
+  "title": "Chocolate Truffles",
+  "desc": "Luxurious, bite-sized chocolate confections made from a simple mixture of melted chocolate and cream (ganache). Our Chocolate Truffles are dusted with cocoa powder or coated in chocolate, offering an intensely rich, smooth, and decadent centre. An elegant treat perfect for gifting or special indulgence. Rich and luxurious.",
+  "category": "chocolates",
+  "price": 280,
+  "offerPrice": 250,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538181/Chocolate_Truffles_wcq1wz.jpg",
+  "ingredients": [
+    "dark chocolate",
+    "heavy cream",
+    "butter",
+    "cocoa powder/chocolate coating"
+  ],
+  "createdAt": "2025-10-15T10:53:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:53:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9c"
+  },
+  "title": "Chocolate Pudding (Sample Refill)",
+  "desc": "A rich and creamy chocolate pudding, just like the sample you provided. It's thick, smooth, and deeply flavoured with high-quality cocoa, offering a satisfying texture. This classic dessert is perfect served warm or cold. A timeless and comforting chocolate indulgence. Decadently simple and rich.",
+  "category": "puddings",
+  "price": 120,
+  "offerPrice": 100,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538148/Chocolate_Pudding_r1u2vl.jpg",
+  "ingredients": [
+    "milk",
+    "chocolate",
+    "sugar",
+    "cornstarch",
+    "eggs"
+  ],
+  "createdAt": "2025-10-15T10:54:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:54:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9d"
+  },
+  "title": "Cinnamon Cookie",
+  "desc": "A warm and inviting cookie with a distinct, comforting cinnamon flavour. These soft and chewy cookies are often coated in a cinnamon-sugar mixture before baking, giving them a delightful crisp exterior. They are wonderfully aromatic and pair perfectly with a hot beverage. Simple, sweet, and spiced.",
+  "category": "cookies",
+  "price": 70,
+  "offerPrice": 60,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538146/Cinnamon_Cookie_rpmplz.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "cinnamon",
+    "eggs",
+    "baking soda"
+  ],
+  "createdAt": "2025-10-15T10:55:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:55:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9e"
+  },
+  "title": "Chocolate Peanut Butter Bar",
+  "desc": "A classic pairing of creamy peanut butter and rich chocolate, often layered or swirled together in a dense, no-bake bar. This treat offers a satisfying combination of salty, nutty flavour and sweet chocolate. It’s a hearty, decadent snack that is incredibly satisfying for any craving. Salty, sweet, and rich.",
+  "category": "chocolates",
+  "price": 170,
+  "offerPrice": 150,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538118/Chocolate_Peanut_Butter_qp8bjn.jpg",
+  "ingredients": [
+    "peanut butter",
+    "powdered sugar",
+    "butter",
+    "milk chocolate"
+  ],
+  "createdAt": "2025-10-15T10:56:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:56:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219b9f"
+  },
+  "title": "Chocolate Truffle Cake",
+  "desc": "An intensely rich and dense cake, often made with a ganache filling and frosting, giving it an unparalleled velvety texture and deep chocolate flavour. This luxurious cake is a showstopper for any celebration, delivering a potent, decadent chocolate experience that is truly unforgettable. Ultimate chocolate indulgence.",
   "category": "cakes",
   "price": 750,
-  "offerPrice": 650,
+  "offerPrice": 680,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538112/Chocolate_Truffle_Cake_sj5jy7.jpg",
   "ingredients": [
     "flour",
-    "cocoa",
-    "buttermilk",
-    "red food coloring",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Black Forest Cake",
-  "desc": "Cherry and chocolate layered cake",
-  "category": "cakes",
-  "price": 800,
-  "offerPrice": 699,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cherries",
-    "chocolate",
-    "cream",
-    "flour",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Vanilla Sponge Cake",
-  "desc": "Light and fluffy vanilla cake",
-  "category": "cakes",
-  "price": 450,
-  "offerPrice": 399,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "vanilla",
-    "flour",
+    "cocoa powder",
+    "sugar",
     "eggs",
-    "butter",
-    "sugar"
-  ]
+    "heavy cream",
+    "dark chocolate"
+  ],
+  "createdAt": "2025-10-15T10:57:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:57:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Strawberry Cake",
-  "desc": "Fresh strawberry flavored cake",
-  "category": "cakes",
-  "price": 700,
-  "offerPrice": 599,
-  "badge": "non-veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba0"
+  },
+  "title": "Chocolate Orange Bar",
+  "desc": "A vibrant and zesty chocolate bar combining rich, dark or milk chocolate with the bright, fragrant flavour of natural orange oil. The citrus zest cuts through the sweetness of the chocolate, creating a refreshing and sophisticated taste experience. A wonderful treat for fans of this classic pairing. Zesty chocolate fusion.",
+  "category": "chocolates",
+  "price": 180,
+  "offerPrice": 160,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538061/Chocolate_Orange_xnmg1g.jpg",
   "ingredients": [
-    "strawberries",
-    "flour",
+    "cocoa solids",
+    "sugar",
+    "cocoa butter",
+    "orange oil",
+    "emulsifier"
+  ],
+  "createdAt": "2025-10-15T10:58:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:58:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba1"
+  },
+  "title": "Chocolate Fudge",
+  "desc": "Dense, smooth, and intensely chocolatey, our Chocolate Fudge is an ultra-rich confection. Made with butter, sugar, and high-quality chocolate, it melts in your mouth with a burst of cocoa flavour. Perfect for a potent, satisfying sweet hit or as a decadent addition to a dessert platter. Pure chocolate intensity.",
+  "category": "chocolates",
+  "price": 220,
+  "offerPrice": 200,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538058/Chocolate_Fudge_bkn0jx.jpg",
+  "ingredients": [
+    "sugar",
+    "butter",
+    "milk",
+    "cocoa powder",
+    "chocolate chips",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T10:59:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T10:59:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba2"
+  },
+  "title": "Chocolate Coconut Bar",
+  "desc": "A chewy, sweet bar combining the rich flavour of chocolate with the tropical texture and taste of coconut flakes. Often layered or coated, this bar offers a delightful chewiness and a balanced sweetness. It’s a perfect treat for those who enjoy the classic Mounds or Almond Joy candy bar combination. Tropical chocolate treat.",
+  "category": "chocolates",
+  "price": 160,
+  "offerPrice": 140,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538052/Chocolate_Coconut_oru4td.jpg",
+  "ingredients": [
+    "chocolate coating",
+    "shredded coconut",
+    "sweetened condensed milk",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T11:00:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba3"
+  },
+  "title": "Chocolate Ice Cream",
+  "desc": "Our classic Chocolate Ice Cream is rich, dark, and intensely flavourful, crafted with premium cocoa for a deep, satisfying taste. It's incredibly creamy and smooth, making it the perfect base for sundaes or enjoyable on its own. A timeless, essential flavour that truly satisfies any chocolate craving. Classic, rich, and creamy.",
+  "category": "ice-creams",
+  "price": 130,
+  "offerPrice": 110,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538051/Chocolate_Ice_Cream_lv6nyl.jpg",
+  "ingredients": [
+    "milk",
     "cream",
     "sugar",
-    "eggs"
-  ]
+    "cocoa powder",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T11:01:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:01:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Butterscotch Cake",
-  "desc": "Rich butterscotch flavored cake",
-  "category": "cakes",
-  "price": 600,
-  "offerPrice": 520,
-  "badge": "non-veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba4"
+  },
+  "title": "Chocolate Chip Cookie",
+  "desc": "The most beloved cookie in the world, our Chocolate Chip Cookie is chewy in the center, slightly crisp at the edges, and loaded with semi-sweet chocolate chips. The buttery, brown sugar flavour is a comforting classic. Perfect warm, these cookies are a timeless treat for all ages. Chewy, crisp, and classic.",
+  "category": "cookies",
+  "price": 80,
+  "offerPrice": 70,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538029/Chocolate_Chip_Cookie_tupos9.jpg",
   "ingredients": [
-    "butterscotch",
     "flour",
     "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Pineapple Upside Down Cake",
-  "desc": "Classic pineapple cake with caramelized topping",
-  "category": "cakes",
-  "price": 550,
-  "offerPrice": 480,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "pineapple",
     "brown sugar",
-    "flour",
-    "butter",
-    "eggs"
-  ]
+    "chocolate chips",
+    "eggs",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T11:02:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:02:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Coffee Mocha Cake",
-  "desc": "Rich coffee flavored chocolate cake",
-  "category": "cakes",
-  "price": 720,
-  "offerPrice": 640,
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba5"
+  },
+  "title": "Chocolate Mousse",
+  "desc": "An airy and elegant French dessert made by folding whipped cream into a rich, dark chocolate base. Our Chocolate Mousse is incredibly light, velvety, and intensely chocolatey, melting effortlessly on the tongue. It’s a sophisticated and luxurious dessert, best served chilled with a dusting of cocoa. Light, rich, and elegant.",
+  "category": "puddings",
+  "price": 160,
+  "offerPrice": 145,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760538022/Chocolate_Mousse_attibl.jpg",
   "ingredients": [
-    "coffee",
-    "chocolate",
-    "flour",
-    "cream",
-    "eggs"
-  ]
+    "dark chocolate",
+    "eggs",
+    "sugar",
+    "whipped cream",
+    "gelatin (optional)"
+  ],
+  "createdAt": "2025-10-15T11:03:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:03:00.000Z"
+  },
+  "__v": 0
 },
 {
-  "title": "Lemon Drizzle Cake",
-  "desc": "Tangy lemon cake with sweet glaze",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba6"
+  },
+  "title": "Chocolate Hazelnut Spread",
+  "desc": "A smooth, creamy, and highly addictive spread combining the nutty flavour of roasted hazelnuts with rich cocoa. This versatile treat is perfect for spreading on toast, filling pastries, or eating straight from the spoon. It offers a decadent and comforting flavour profile. Nutty, sweet, and incredibly versatile.",
+  "category": "spreads",
+  "price": 250,
+  "offerPrice": 220,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537999/Chocolate_Hazelnut_Spread_axv3td.jpg",
+  "ingredients": [
+    "sugar",
+    "vegetable oil",
+    "hazelnuts",
+    "cocoa powder",
+    "skimmed milk powder"
+  ],
+  "createdAt": "2025-10-15T11:04:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:04:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba7"
+  },
+  "title": "Chia Pudding",
+  "desc": "A healthy and refreshing dessert made by soaking chia seeds in milk (often non-dairy) and sweetened with natural ingredients. Our Chia Pudding has a delightful gel-like texture and can be flavoured with various fruits or spices. It’s a nutrient-rich, guilt-free treat. Healthy, light, and refreshing.",
+  "category": "puddings",
+  "price": 130,
+  "offerPrice": 115,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537972/Chia_Pudding_nzuyzd.jpg",
+  "ingredients": [
+    "chia seeds",
+    "almond/coconut milk",
+    "honey/maple syrup",
+    "vanilla",
+    "fruit topping"
+  ],
+  "createdAt": "2025-10-15T11:05:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:05:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba8"
+  },
+  "title": "Chocolate Croissant",
+  "desc": "A classic French 'pain au chocolat'. Our Chocolate Croissant is a golden, crescent-shaped pastry made from flaky, buttery layers, wrapped around a bar of rich dark chocolate. Baked to a beautiful crispness, the warm, melted chocolate inside makes this an irresistible breakfast or treat. Buttery and rich.",
+  "category": "pastries",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537941/Chocolate_Croissant_lwboct.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "milk",
+    "sugar",
+    "dark chocolate baton",
+    "yeast"
+  ],
+  "createdAt": "2025-10-15T11:06:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:06:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219ba9"
+  },
+  "title": "Carrot Cake",
+  "desc": "A moist, spiced cake loaded with shredded carrots, nuts, and often raisins. Our Carrot Cake is topped with a generous layer of tangy cream cheese frosting, which perfectly complements the warm spices of the cake. It's a comforting, wholesome, and richly textured dessert. Spiced, moist, and tangy.",
   "category": "cakes",
   "price": 500,
-  "offerPrice": 420,
+  "offerPrice": 450,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537936/Carrot_Cake_fhjw54.jpg",
   "ingredients": [
-    "lemon",
     "flour",
-    "butter",
+    "oil",
     "sugar",
-    "eggs"
-  ]
+    "carrots",
+    "cinnamon",
+    "nuts",
+    "cream cheese frosting"
+  ],
+  "createdAt": "2025-10-15T11:07:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:07:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Carrot Cake",
-  "desc": "Moist carrot cake with cream cheese frosting",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219baa"
+  },
+  "title": "Chocolate Éclair",
+  "desc": "An elongated French pastry made with choux dough, filled with a light, airy vanilla or coffee-flavoured cream, and topped with a glossy chocolate glaze. The Éclair is a delicate, elegant dessert that offers a wonderful contrast between the light pastry and the rich filling. Classic and sophisticated.",
+  "category": "pastries",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537915/Chocolate_%C3%89clair_om3gj7.jpg",
+  "ingredients": [
+    "choux pastry",
+    "pastry cream (vanilla/coffee)",
+    "chocolate glaze"
+  ],
+  "createdAt": "2025-10-15T11:08:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:08:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bab"
+  },
+  "title": "Chocolate Caramel Bar",
+  "desc": "A chewy, sweet bar featuring a rich layer of creamy caramel coated in a generous layer of milk or dark chocolate. The sticky, buttery caramel contrasts perfectly with the snap of the chocolate, creating a delightful texture and flavour experience. An irresistible combination of sweet and buttery. Chewy and decadent.",
+  "category": "chocolates",
+  "price": 170,
+  "offerPrice": 150,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537891/Chocolate_Caramel_inzotw.jpg",
+  "ingredients": [
+    "caramel",
+    "milk/dark chocolate",
+    "sugar",
+    "cream",
+    "butter"
+  ],
+  "createdAt": "2025-10-15T11:09:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:09:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bac"
+  },
+  "title": "Chocolate Almond Truffle",
+  "desc": "A luxurious, hand-rolled chocolate truffle with a rich, dark chocolate ganache centre, coated in cocoa powder and containing crunchy almond pieces. The toasted almonds provide a lovely nutty crunch and flavour to the intense chocolate. A gourmet, decadent treat perfect for a moment of quiet indulgence. Nutty and intense.",
+  "category": "chocolates",
+  "price": 290,
+  "offerPrice": 260,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537881/Chocolate_Almond_Truffle_vqrbem.jpg",
+  "ingredients": [
+    "dark chocolate",
+    "heavy cream",
+    "almond pieces",
+    "cocoa powder coating"
+  ],
+  "createdAt": "2025-10-15T11:10:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:10:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bad"
+  },
+  "title": "Caramel Roll",
+  "desc": "A gooey, sweet roll similar to a cinnamon roll, but drenched in a thick, buttery caramel sauce and often topped with pecans or walnuts. Served warm, this pastry is soft, tender, and incredibly rich. It's a comforting and indulgent breakfast or dessert treat. Gooey, buttery, and sweet.",
+  "category": "pastries",
+  "price": 130,
+  "offerPrice": 115,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537856/Caramel_Roll_lxstic.jpg",
+  "ingredients": [
+    "yeast dough",
+    "butter",
+    "brown sugar",
+    "caramel sauce",
+    "pecans/walnuts"
+  ],
+  "createdAt": "2025-10-15T11:11:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:11:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bae"
+  },
+  "title": "Butterscotch Cake",
+  "desc": "A moist, golden cake infused with the rich, toffee-like flavour of butterscotch, often featuring a creamy butterscotch frosting. This cake is comforting, sweet, and deeply flavourful, making it a wonderful alternative to traditional vanilla or chocolate cakes. Perfect for those who love caramel and brown sugar notes. Rich and comforting.",
+  "category": "cakes",
+  "price": 520,
+  "offerPrice": 470,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537836/Butterscotch_Cake_wjvlfr.jpg",
+  "ingredients": [
+    "flour",
+    "butter",
+    "brown sugar",
+    "eggs",
+    "butterscotch extract/sauce"
+  ],
+  "createdAt": "2025-10-15T11:12:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:12:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219baf"
+  },
+  "title": "Bread Pudding",
+  "desc": "A comforting, old-fashioned dessert made from stale bread soaked in a mixture of milk, eggs, sugar, and spices, then baked until golden. Our Bread Pudding is soft, warm, and often served with a vanilla or whiskey sauce. It’s the ultimate comfort food dessert. Warm, soft, and comforting.",
+  "category": "puddings",
+  "price": 140,
+  "offerPrice": 120,
+  "badge": "non-veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537821/Bread_Pudding_urhlye.jpg",
+  "ingredients": [
+    "bread",
+    "milk",
+    "eggs",
+    "sugar",
+    "cinnamon",
+    "raisins (optional)"
+  ],
+  "createdAt": "2025-10-15T11:13:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:13:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb0"
+  },
+  "title": "Caramel Ice Cream",
+  "desc": "A rich, creamy ice cream base swirled with a homemade, buttery caramel sauce. Our Caramel Ice Cream offers a sweet, caramelized flavour with a hint of salt to balance the richness. It’s an incredibly decadent and smooth treat, perfect for those who love intense, buttery flavours. Buttery, sweet, and smooth.",
+  "category": "ice-creams",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537812/Caramel_Ice_Cream_jq9vhg.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "caramel sauce",
+    "salt"
+  ],
+  "createdAt": "2025-10-15T11:14:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:14:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb1"
+  },
+  "title": "Caramel Pudding",
+  "desc": "A smooth, creamy pudding with a decadent, burnt sugar (caramel) flavour. Similar to Crème Caramel but with a slightly different texture, this pudding is comforting, sweet, and incredibly satisfying. The rich, deep notes of the caramelized sugar make it an excellent standalone dessert. Decadently caramelized.",
+  "category": "puddings",
+  "price": 130,
+  "offerPrice": 115,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537807/Caramel_Pudding_g5cldc.jpg",
+  "ingredients": [
+    "milk",
+    "sugar",
+    "cornstarch",
+    "caramelized sugar",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T11:15:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:15:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb2"
+  },
+  "title": "Butterscotch Pudding",
+  "desc": "A creamy, old-fashioned pudding made with brown sugar and butter, giving it a rich, caramelized, toffee-like flavour. Our Butterscotch Pudding is smooth, warm-toned, and utterly comforting, perfect as a simple, cozy dessert. A wonderful, comforting flavour for a sweet craving. Warm and comforting.",
+  "category": "puddings",
+  "price": 110,
+  "offerPrice": 95,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537792/Butterscotch_Pudding_mjwjq5.jpg",
+  "ingredients": [
+    "milk",
+    "brown sugar",
+    "butter",
+    "cornstarch",
+    "vanilla"
+  ],
+  "createdAt": "2025-10-15T11:16:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:16:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb3"
+  },
+  "title": "Blueberry Ice Cream",
+  "desc": "A delightful, slightly tart ice cream made with real blueberry purée. Our Blueberry Ice Cream is vibrant in flavour and colour, with a creamy base that perfectly balances the fruit's tartness. It’s a refreshing and fruity alternative, perfect for a summer dessert. Fruity, tangy, and refreshing.",
+  "category": "ice-creams",
+  "price": 140,
+  "offerPrice": 125,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537784/Blueberry_Ice_Cream_vfjjri.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "sugar",
+    "blueberry puree",
+    "lemon juice",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T11:17:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:17:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb4"
+  },
+  "title": "Butterscotch Ice Cream",
+  "desc": "Indulge in the rich, buttery, and caramelized flavour of our Butterscotch Ice Cream. Swirled with bits of toffee or butterscotch crunch, this creamy treat offers a perfect blend of smoothness and satisfying crunch. It’s a decadent dessert for any time of the year. Rich, buttery, and crunchy.",
+  "category": "ice-creams",
+  "price": 160,
+  "offerPrice": 145,
+  "badge": "veg",
+  "active": true,
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537773/Butterscotch_Ice_Cream_wyqxrr.jpg",
+  "ingredients": [
+    "milk",
+    "cream",
+    "brown sugar",
+    "butterscotch flavouring",
+    "toffee bits"
+  ],
+  "createdAt": "2025-10-15T11:18:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:18:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb5"
+  },
+  "title": "Black Forest Cake",
+  "desc": "A classic German dessert, our Black Forest Cake features multiple layers of chocolate sponge, whipped cream, and cherries. The cake is traditionally moistened with kirsch (cherry brandy) and decorated with chocolate shavings. It’s a beautifully balanced and celebratory dessert. Layered, rich, and fruity.",
   "category": "cakes",
   "price": 650,
   "offerPrice": 580,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537745/Black_Forest_Cake_zg01ug.jpg",
   "ingredients": [
-    "carrots",
-    "cinnamon",
-    "flour",
-    "cream cheese",
-    "eggs"
-  ]
+    "chocolate sponge",
+    "whipped cream",
+    "cherries",
+    "kirsch (optional)",
+    "chocolate shavings"
+  ],
+  "createdAt": "2025-10-15T11:19:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:19:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Chocolate Pudding",
-  "desc": "Rich and creamy chocolate pudding",
-  "category": "puddings",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "non-veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb6"
+  },
+  "title": "Black Currant Ice Cream",
+  "desc": "An intensely fruity and tangy ice cream made from black currant purée. This flavour is a sophisticated choice, offering a slightly sharp, wine-like fruitiness that contrasts beautifully with the creamy texture. It's a rich, deep purple colour and a unique, refreshing taste. Tart, rich, and fruity.",
+  "category": "ice-creams",
+  "price": 150,
+  "offerPrice": 135,
+  "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537740/Black_Currant_Ice_Cream_hsffcq.jpg",
   "ingredients": [
     "milk",
-    "chocolate",
-    "sugar",
-    "cornstarch",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Blueberry Pastry",
-  "desc": "Flaky pastry filled with fresh blueberries",
-  "category": "pastries",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "blueberries",
-    "sugar",
-    "cream"
-  ]
-},
-{
-
-  "title": "Oreo Cookie",
-  "desc": "Classic chocolate cookie with creamy filling",
-  "category": "cookies",
-  "price": 50,
-  "offerPrice": 40,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "cocoa",
-    "sugar",
     "cream",
-    "chocolate"
-  ]
-},
-{
-
-  "title": "Vanilla Pudding",
-  "desc": "Smooth and creamy vanilla pudding",
-  "category": "puddings",
-  "price": 110,
-  "offerPrice": 95,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
     "sugar",
-    "vanilla",
-    "cornstarch",
-    "eggs"
-  ]
+    "black currant puree",
+    "stabilizer"
+  ],
+  "createdAt": "2025-10-15T11:20:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:20:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Strawberry Ice Cream",
-  "desc": "Rich strawberry ice cream with real fruit",
-  "category": "ice creams",
-  "price": 100,
-  "offerPrice": 85,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "strawberries",
-    "sugar",
-    "cream"
-  ]
-},
-{
-
-  "title": "Dark Chocolate",
-  "desc": "Rich dark chocolate with 70% cocoa",
-  "category": "chocolates",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cocoa",
-    "sugar",
-    "cocoa butter"
-  ]
-},
-{
-  "title": "Mango Custard",
-  "desc": "Smooth custard with fresh mango puree",
-  "category": "puddings",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "mango",
-    "sugar",
-    "cornstarch",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Vanilla Croissant",
-  "desc": "Flaky croissant with vanilla cream filling",
-  "category": "pastries",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "sugar",
-    "vanilla",
-    "milk"
-  ]
-},
-{
-
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb7"
+  },
   "title": "Almond Danish",
-  "desc": "Crispy Danish pastry topped with almonds",
-  "category": "pastries",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "sugar",
-    "almonds",
-    "milk"
-  ]
-},
-{
- "title": "Chocolate Éclair",
-  "desc": "Pastry filled with chocolate cream",
-  "category": "pastries",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "non-veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "chocolate",
-    "eggs",
-    "sugar"
-  ]
-},
-{
-
-  "title": "Raspberry Tart",
-  "desc": "Crispy tart with fresh raspberries",
-  "category": "pastries",
-  "price": 160,
-  "offerPrice": 140,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "raspberries",
-    "sugar",
-    "cream"
-  ]
-},
-{
-
-  "title": "Pecan Pie",
-  "desc": "Sweet pie filled with pecans",
-  "category": "pastries",
-  "price": 170,
-  "offerPrice": 150,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "pecans",
-    "sugar",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Caramel Roll",
-  "desc": "Soft roll with caramel filling",
+  "desc": "A flaky, buttery Danish pastry, beautifully shaped and filled with a sweet, aromatic almond paste (frangipane). The pastry is typically topped with sliced almonds and a light sugar glaze. It's a perfect, satisfying pastry for breakfast or brunch. Buttery, flaky, and nutty.",
   "category": "pastries",
   "price": 140,
-  "offerPrice": 120,
-  "badge": "veg",
+  "offerPrice": 125,
+  "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537725/Almond_Danish_xo94bp.jpg",
   "ingredients": [
-    "flour",
+    "puff pastry",
     "butter",
-    "sugar",
-    "caramel",
-    "milk"
-  ]
+    "almond paste (frangipane)",
+    "sliced almonds",
+    "glaze"
+  ],
+  "createdAt": "2025-10-15T11:21:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:21:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Lemon Tart",
-  "desc": "Tangy lemon tart with sweet crust",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb8"
+  },
+  "title": "Blueberry Pastry",
+  "desc": "A sweet, buttery pastry filled with a generous amount of juicy blueberry filling. The pastry dough is light and flaky, providing a wonderful contrast to the soft, sweet-tart fruit filling. It’s a delightful treat for breakfast or a sweet snack. Fruity, flaky, and sweet.",
   "category": "pastries",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
+  "price": 120,
+  "offerPrice": 105,
+  "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537722/Blueberry_Pastry_x5geza.jpg",
   "ingredients": [
-    "flour",
+    "pastry dough",
     "butter",
-    "lemon",
+    "fresh/frozen blueberries",
     "sugar",
-    "eggs"
-  ]
+    "cornstarch"
+  ],
+  "createdAt": "2025-10-15T11:22:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:22:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Cinnamon Roll",
-  "desc": "Soft roll with cinnamon sugar",
-  "category": "pastries",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "cinnamon",
-    "sugar",
-    "milk"
-  ]
-},
-{
-
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bb9"
+  },
   "title": "Apple Strudel",
-  "desc": "Flaky pastry filled with spiced apples",
+  "desc": "A traditional Viennese pastry with thin, flaky dough rolled around a sweet filling of grated apples, cinnamon, sugar, and raisins. Our Apple Strudel is buttery, warm, and comforting, perfect when served slightly warm with a dusting of powdered sugar or a dollop of cream. Flaky, warm, and spiced.",
   "category": "pastries",
   "price": 160,
   "offerPrice": 140,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "butter",
-    "apples",
-    "sugar",
-    "cinnamon"
-  ]
-},
-{
-
-  "title": "Chocolate Croissant",
-  "desc": "Flaky croissant filled with chocolate",
-  "category": "pastries",
-  "price": 150,
-  "offerPrice": 130,
   "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537705/Apple_Strudel_d1xlrq.jpg",
   "ingredients": [
-    "flour",
-    "butter",
-    "chocolate",
-    "sugar",
-    "milk"
-  ]
-},
-{
-
-  "title": "Chocolate Chip Cookie",
-  "desc": "Classic cookie loaded with chocolate chips",
-  "category": "cookies",
-  "price": 50,
-  "offerPrice": 45,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "chocolate chips",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Oatmeal Cookie",
-  "desc": "Healthy oatmeal cookies with raisins",
-  "category": "cookies",
-  "price": 55,
-  "offerPrice": 50,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "oats",
-    "flour",
+    "strudel dough",
+    "apples",
+    "cinnamon",
     "sugar",
     "raisins",
-    "butter",
-    "eggs"
-  ]
+    "butter"
+  ],
+  "createdAt": "2025-10-15T11:23:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:23:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Peanut Butter Cookie",
-  "desc": "Soft cookie with rich peanut butter flavor",
-  "category": "cookies",
-  "price": 60,
-  "offerPrice": 55,
-  "badge": "veg",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bba"
+  },
+  "title": "Banana Pudding",
+  "desc": "A classic, comforting American dessert layered with vanilla wafers, sliced fresh bananas, and a rich vanilla custard, topped with whipped cream or meringue. Our Banana Pudding is creamy, sweet, and incredibly satisfying. The soft textures and sweet banana flavour make it a simple, beloved treat. Creamy, sweet, and soft.",
+  "category": "puddings",
+  "price": 125,
+  "offerPrice": 110,
+  "badge": "non-veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537692/Banana_Pudding_po71q0.jpg",
   "ingredients": [
-    "flour",
-    "sugar",
-    "peanut butter",
-    "butter",
-    "eggs"
-  ]
+    "bananas",
+    "vanilla wafers",
+    "custard",
+    "milk",
+    "eggs (in custard)"
+  ],
+  "createdAt": "2025-10-15T11:24:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:24:00.000Z"
+  },
+  "__v": 0
 },
 {
-
-  "title": "Double Chocolate Cookie",
-  "desc": "Rich chocolate cookie with chocolate chunks",
-  "category": "cookies",
-  "price": 65,
-  "offerPrice": 60,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "cocoa powder",
-    "chocolate chunks",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Sugar Cookie",
-  "desc": "Classic sweet and buttery sugar cookie",
-  "category": "cookies",
-  "price": 50,
-  "offerPrice": 45,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Coconut Cookie",
-  "desc": "Crispy coconut flavored cookies",
-  "category": "cookies",
-  "price": 55,
-  "offerPrice": 50,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "coconut",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bbb"
+  },
   "title": "Almond Cookie",
-  "desc": "Crunchy cookie with almond pieces",
+  "desc": "A light, delicate cookie with a soft chewiness and a pronounced almond flavour. Often made with almond flour or extract, these cookies are typically simple and elegantly presented. They offer a refined, nutty taste that pairs beautifully with a cup of tea or coffee. Delicate, nutty, and sweet.",
   "category": "cookies",
-  "price": 60,
-  "offerPrice": 55,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "almonds",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "M&M Cookie",
-  "desc": "Colorful M&M chocolate cookie",
-  "category": "cookies",
-  "price": 70,
-  "offerPrice": 65,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "M&M chocolates",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "White Chocolate Cookie",
-  "desc": "Cookie with white chocolate chunks",
-  "category": "cookies",
-  "price": 65,
-  "offerPrice": 60,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "white chocolate",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Macadamia Cookie",
-  "desc": "Soft cookie with macadamia nuts",
-  "category": "cookies",
-  "price": 75,
-  "offerPrice": 70,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "macadamia nuts",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Mint Chocolate Cookie",
-  "desc": "Chocolate cookie with refreshing mint flavor",
-  "category": "cookies",
-  "price": 65,
-  "offerPrice": 60,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "cocoa",
-    "mint extract",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Hazelnut Cookie",
-  "desc": "Cookie with chopped hazelnuts",
-  "category": "cookies",
-  "price": 70,
-  "offerPrice": 65,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "hazelnuts",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Cranberry Cookie",
-  "desc": "Sweet and tangy cookie with dried cranberries",
-  "category": "cookies",
-  "price": 65,
-  "offerPrice": 60,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "dried cranberries",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Ginger Cookie",
-  "desc": "Spicy cookie with ginger flavor",
-  "category": "cookies",
-  "price": 60,
-  "offerPrice": 55,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "ginger",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Cinnamon Cookie",
-  "desc": "Cookie with cinnamon spice",
-  "category": "cookies",
-  "price": 60,
-  "offerPrice": 55,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "sugar",
-    "cinnamon",
-    "butter",
-    "eggs"
-  ]
-},
-{
-
-  "title": "Vanilla Ice Cream",
-  "desc": "Classic creamy vanilla flavored ice cream",
-  "category": "icecreams",
-  "price": 100,
-  "offerPrice": 90,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "vanilla extract",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T12:30:00.000Z",
-  "updatedAt": "2025-09-25T14:00:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Ice Cream",
-  "desc": "Rich and creamy chocolate ice cream",
-  "category": "icecreams",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "cocoa",
-    "cream",
-    "chocolate"
-  ],
-  "createdAt": "2025-09-20T12:35:00.000Z",
-  "updatedAt": "2025-09-25T14:05:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Strawberry Ice Cream",
-  "desc": "Fresh strawberry flavored creamy ice cream",
-  "category": "icecreams",
-  "price": 110,
-  "offerPrice": 95,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "strawberries",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T12:40:00.000Z",
-  "updatedAt": "2025-09-25T14:10:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mango Ice Cream",
-  "desc": "Sweet mango flavored ice cream with tropical taste",
-  "category": "icecreams",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "mango puree",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T12:45:00.000Z",
-  "updatedAt": "2025-09-25T14:15:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Butterscotch Ice Cream",
-  "desc": "Creamy butterscotch ice cream with crunchy chips",
-  "category": "icecreams",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "butterscotch",
-    "cream",
-    "chocolate chips"
-  ],
-  "createdAt": "2025-09-20T12:50:00.000Z",
-  "updatedAt": "2025-09-25T14:20:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Coffee Ice Cream",
-  "desc": "Rich coffee flavored creamy ice cream",
-  "category": "icecreams",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "coffee",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T12:55:00.000Z",
-  "updatedAt": "2025-09-25T14:25:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Pistachio Ice Cream",
-  "desc": "Creamy pistachio ice cream with crunchy nuts",
-  "category": "icecreams",
-  "price": 140,
-  "offerPrice": 120,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "pistachio",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:00:00.000Z",
-  "updatedAt": "2025-09-25T14:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Black Currant Ice Cream",
-  "desc": "Tangy black currant flavored ice cream",
-  "category": "icecreams",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "black currants",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:05:00.000Z",
-  "updatedAt": "2025-09-25T14:35:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Blueberry Ice Cream",
-  "desc": "Creamy blueberry flavored ice cream with fruit bits",
-  "category": "icecreams",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "blueberries",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:10:00.000Z",
-  "updatedAt": "2025-09-25T14:40:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mint Chocolate Chip Ice Cream",
-  "desc": "Refreshing mint flavored ice cream with chocolate chips",
-  "category": "icecreams",
-  "price": 140,
-  "offerPrice": 120,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "mint",
-    "chocolate chips",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:15:00.000Z",
-  "updatedAt": "2025-09-25T14:45:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Caramel Ice Cream",
-  "desc": "Sweet caramel flavored creamy ice cream",
-  "category": "icecreams",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "caramel",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:20:00.000Z",
-  "updatedAt": "2025-09-25T14:50:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Lemon Sorbet Ice Cream",
-  "desc": "Tangy and refreshing lemon sorbet",
-  "category": "icecreams",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "lemon juice",
-    "sugar",
-    "water"
-  ],
-  "createdAt": "2025-09-20T13:25:00.000Z",
-  "updatedAt": "2025-09-25T14:55:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Raspberry Ice Cream",
-  "desc": "Fresh raspberry flavored creamy ice cream",
-  "category": "icecreams",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "raspberries",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:30:00.000Z",
-  "updatedAt": "2025-09-25T15:00:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Coconut Ice Cream",
-  "desc": "Tropical coconut flavored creamy ice cream",
-  "category": "icecreams",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "coconut milk",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T13:35:00.000Z",
-  "updatedAt": "2025-09-25T15:05:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Tiramisu Ice Cream",
-  "desc": "Coffee and mascarpone flavored Italian dessert ice cream",
-  "category": "icecreams",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "coffee",
-    "mascarpone",
-    "cream",
-    "cocoa"
-  ],
-  "createdAt": "2025-09-20T13:40:00.000Z",
-  "updatedAt": "2025-09-25T15:10:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Dark Chocolate Bar",
-  "desc": "Rich and smooth dark chocolate",
-  "category": "chocolates",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cocoa mass",
-    "sugar",
-    "cocoa butter"
-  ],
-  "createdAt": "2025-09-20T14:00:00.000Z",
-  "updatedAt": "2025-09-25T15:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Milk Chocolate",
-  "desc": "Creamy and sweet milk chocolate",
-  "category": "chocolates",
-  "price": 140,
-  "offerPrice": 120,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "cocoa butter",
-    "cocoa solids"
-  ],
-  "createdAt": "2025-09-20T14:05:00.000Z",
-  "updatedAt": "2025-09-25T15:35:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "White Chocolate",
-  "desc": "Smooth white chocolate with creamy texture",
-  "category": "chocolates",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "cocoa butter",
-    "vanilla"
-  ],
-  "createdAt": "2025-09-20T14:10:00.000Z",
-  "updatedAt": "2025-09-25T15:40:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Truffles",
-  "desc": "Soft chocolate truffles with rich ganache",
-  "category": "chocolates",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "cream",
-    "cocoa powder"
-  ],
-  "createdAt": "2025-09-20T14:15:00.000Z",
-  "updatedAt": "2025-09-25T15:45:00.000Z",
-  "__v": 0
-},
-{
-  "title": "Hazelnut Chocolate",
-  "desc": "Chocolate bar with crunchy hazelnuts",
-  "category": "chocolates",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk chocolate",
-    "hazelnuts",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:20:00.000Z",
-  "updatedAt": "2025-09-25T15:50:00.000Z",
-  "__v": 0
-},
-{
-  "title": "Almond Chocolate",
-  "desc": "Chocolate with roasted almond pieces",
-  "category": "chocolates",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk chocolate",
-    "almonds",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:25:00.000Z",
-  "updatedAt": "2025-09-25T15:55:00.000Z",
-  "__v": 0
-},
-{
-  "title": "Chocolate Caramel",
-  "desc": "Chocolate with soft caramel filling",
-  "category": "chocolates",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk chocolate",
-    "caramel",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:30:00.000Z",
-  "updatedAt": "2025-09-25T16:00:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mint Chocolate",
-  "desc": "Refreshing mint flavored chocolate",
-  "category": "chocolates",
-  "price": 170,
-  "offerPrice": 150,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "mint essence",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:35:00.000Z",
-  "updatedAt": "2025-09-25T16:05:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Fudge",
-  "desc": "Soft and rich chocolate fudge pieces",
-  "category": "chocolates",
-  "price": 190,
-  "offerPrice": 170,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "milk",
-    "sugar",
-    "butter"
-  ],
-  "createdAt": "2025-09-20T14:40:00.000Z",
-  "updatedAt": "2025-09-25T16:10:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Hazelnut Spread",
-  "desc": "Creamy chocolate spread with hazelnuts",
-  "category": "chocolates",
-  "price": 220,
-  "offerPrice": 200,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cocoa",
-    "sugar",
-    "hazelnuts",
-    "milk"
-  ],
-  "createdAt": "2025-09-20T14:45:00.000Z",
-  "updatedAt": "2025-09-25T16:15:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Coconut",
-  "desc": "Chocolate with desiccated coconut pieces",
-  "category": "chocolates",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk chocolate",
-    "coconut",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:50:00.000Z",
-  "updatedAt": "2025-09-25T16:20:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Almond Truffle",
-  "desc": "Chocolate truffle with almond center",
-  "category": "chocolates",
-  "price": 210,
-  "offerPrice": 190,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "almonds",
-    "cream",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T14:55:00.000Z",
-  "updatedAt": "2025-09-25T16:25:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Orange",
-  "desc": "Chocolate infused with natural orange flavor",
-  "category": "chocolates",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "dark chocolate",
-    "orange essence",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T15:00:00.000Z",
-  "updatedAt": "2025-09-25T16:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Chocolate Peanut Butter",
-  "desc": "Chocolate with creamy peanut butter filling",
-  "category": "chocolates",
-  "price": 220,
-  "offerPrice": 200,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk chocolate",
-    "peanut butter",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T15:05:00.000Z",
-  "updatedAt": "2025-09-25T16:35:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Strawberry Tart",
-  "desc": "Fresh strawberries on a buttery tart base",
-  "category": "fruit-based",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "strawberries",
-    "flour",
-    "sugar",
-    "butter",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T16:00:00.000Z",
-  "updatedAt": "2025-09-25T17:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mango Pudding",
-  "desc": "Creamy pudding with fresh mango puree",
-  "category": "fruit-based",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "mango",
-    "milk",
-    "sugar",
-    "gelatin"
-  ],
-  "createdAt": "2025-09-20T16:05:00.000Z",
-  "updatedAt": "2025-09-25T17:35:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Banana Cake",
-  "desc": "Moist banana cake with a hint of cinnamon",
-  "category": "fruit-based",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "banana",
-    "flour",
-    "sugar",
-    "eggs",
-    "butter"
-  ],
-  "createdAt": "2025-09-20T16:10:00.000Z",
-  "updatedAt": "2025-09-25T17:40:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Apple Crumble",
-  "desc": "Baked apples with a crunchy crumble topping",
-  "category": "fruit-based",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "apple",
-    "flour",
-    "butter",
-    "sugar",
-    "cinnamon"
-  ],
-  "createdAt": "2025-09-20T16:15:00.000Z",
-  "updatedAt": "2025-09-25T17:45:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mixed Fruit Parfait",
-  "desc": "Layered dessert with fresh fruits and cream",
-  "category": "fruit-based",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "strawberries",
-    "mango",
-    "kiwi",
-    "cream",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T16:20:00.000Z",
-  "updatedAt": "2025-09-25T17:50:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Pineapple Upside Down Cake",
-  "desc": "Moist cake topped with caramelized pineapple",
-  "category": "fruit-based",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "pineapple",
-    "flour",
-    "sugar",
-    "eggs",
-    "butter"
-  ],
-  "createdAt": "2025-09-20T16:25:00.000Z",
-  "updatedAt": "2025-09-25T17:55:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Blueberry Muffin",
-  "desc": "Soft muffin filled with fresh blueberries",
-  "category": "fruit-based",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "blueberries",
-    "flour",
-    "sugar",
-    "eggs",
-    "butter"
-  ],
-  "createdAt": "2025-09-20T16:30:00.000Z",
-  "updatedAt": "2025-09-25T18:00:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Cherry Pie",
-  "desc": "Classic pie with sweet cherry filling",
-  "category": "fruit-based",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cherry",
-    "flour",
-    "sugar",
-    "butter",
-    "eggs"
-  ],
-  "createdAt": "2025-09-20T16:35:00.000Z",
-  "updatedAt": "2025-09-25T18:05:00.000Z",
-  "__v": 0
-},
-{
- 
-  "title": "Kiwi Tart",
-  "desc": "Tart topped with fresh kiwi slices",
-  "category": "fruit-based",
-  "price": 180,
-  "offerPrice": 160,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "kiwi",
-    "flour",
-    "butter",
-    "sugar",
-    "cream"
-  ],
-  "createdAt": "2025-09-20T16:40:00.000Z",
-  "updatedAt": "2025-09-25T18:10:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Fruit Salad",
-  "desc": "Fresh seasonal fruits mixed together",
-  "category": "fruit-based",
-  "price": 100,
+  "price": 90,
   "offerPrice": 80,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "apple",
-    "banana",
-    "orange",
-    "grapes",
-    "mango"
-  ],
-  "createdAt": "2025-09-20T16:45:00.000Z",
-  "updatedAt": "2025-09-25T18:15:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Gulab Jamun",
-  "desc": "Soft fried dough balls soaked in sugar syrup",
-  "category": "traditional",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk powder",
-    "flour",
-    "sugar",
-    "ghee",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T17:00:00.000Z",
-  "updatedAt": "2025-09-25T18:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Jalebi",
-  "desc": "Crispy deep-fried spirals soaked in sugar syrup",
-  "category": "traditional",
-  "price": 100,
-  "offerPrice": 80,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537676/Almond_Cookie_jgdciv.jpg",
   "ingredients": [
     "flour",
-    "yogurt",
+    "almond flour/extract",
     "sugar",
-    "saffron"
+    "butter",
+    "baking powder"
   ],
-  "createdAt": "2025-09-20T17:05:00.000Z",
-  "updatedAt": "2025-09-25T18:35:00.000Z",
+  "createdAt": "2025-10-15T11:25:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:25:00.000Z"
+  },
   "__v": 0
 },
 {
-  "title": "Rasgulla",
-  "desc": "Soft cheese balls in light sugar syrup",
-  "category": "traditional",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "paneer",
-    "flour",
-    "sugar",
-    "water",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T17:10:00.000Z",
-  "updatedAt": "2025-09-25T18:40:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Ladoo",
-  "desc": "Round sweet balls made of flour and sugar",
-  "category": "traditional",
-  "price": 80,
-  "offerPrice": 70,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "gram flour",
-    "sugar",
-    "ghee",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T17:15:00.000Z",
-  "updatedAt": "2025-09-25T18:45:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Barfi",
-  "desc": "Fudge-like sweet made from condensed milk and sugar",
-  "category": "traditional",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "ghee",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T17:20:00.000Z",
-  "updatedAt": "2025-09-25T18:50:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Kaju Katli",
-  "desc": "Diamond-shaped cashew fudge",
-  "category": "traditional",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "cashew",
-    "sugar",
-    "ghee"
-  ],
-  "createdAt": "2025-09-20T17:25:00.000Z",
-  "updatedAt": "2025-09-25T18:55:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Peda",
-  "desc": "Sweet milk-based flat discs flavored with cardamom",
-  "category": "traditional",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "milk",
-    "sugar",
-    "cardamom",
-    "ghee"
-  ],
-  "createdAt": "2025-09-20T17:30:00.000Z",
-  "updatedAt": "2025-09-25T19:00:00.000Z",
-  "__v": 0
-},
-{
- "title": "Soan Papdi",
-  "desc": "Flaky sweet made from gram flour, sugar, and ghee",
-  "category": "traditional",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "gram flour",
-    "sugar",
-    "ghee",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T17:35:00.000Z",
-  "updatedAt": "2025-09-25T19:05:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Ras Malai",
-  "desc": "Soft cheese patties in sweetened milk",
-  "category": "traditional",
+  "_id": {
+    "$oid": "68d920f6407a3d08c3219bbc"
+  },
+  "title": "Almond Chocolate Bar",
+  "desc": "A satisfying chocolate bar combining smooth milk or dark chocolate with the crunch of whole or chopped almonds. The nutty texture and flavour of the almonds provide a great contrast to the rich chocolate. A classic and universally loved combination. Crunchy, nutty, and smooth chocolate.",
+  "category": "chocolates",
   "price": 180,
   "offerPrice": 160,
   "badge": "veg",
   "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
+  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1760537657/Almond_Chocolate_end2ao.jpg",
   "ingredients": [
-    "paneer",
-    "milk",
+    "milk/dark chocolate",
     "sugar",
-    "cardamom"
+    "cocoa butter",
+    "almonds (whole/chopped)"
   ],
-  "createdAt": "2025-09-20T17:40:00.000Z",
-  "updatedAt": "2025-09-25T19:10:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Balushahi",
-  "desc": "Deep-fried sweet dough soaked in sugar syrup",
-  "category": "traditional",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "flour",
-    "ghee",
-    "sugar",
-    "yogurt"
-  ],
-  "createdAt": "2025-09-20T17:45:00.000Z",
-  "updatedAt": "2025-09-25T19:15:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Mysore Pak",
-  "desc": "Rich gram flour and ghee sweet from South India",
-  "category": "traditional",
-  "price": 200,
-  "offerPrice": 180,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "gram flour",
-    "ghee",
-    "sugar"
-  ],
-  "createdAt": "2025-09-20T17:50:00.000Z",
-  "updatedAt": "2025-09-25T19:20:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Kheer",
-  "desc": "Rice pudding flavored with cardamom and nuts",
-  "category": "traditional",
-  "price": 150,
-  "offerPrice": 130,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "rice",
-    "milk",
-    "sugar",
-    "cardamom",
-    "nuts"
-  ],
-  "createdAt": "2025-09-20T17:55:00.000Z",
-  "updatedAt": "2025-09-25T19:25:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Puran Poli",
-  "desc": "Sweet stuffed flatbread from Maharashtra",
-  "category": "traditional",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "wheat flour",
-    "chana dal",
-    "jaggery",
-    "ghee"
-  ],
-  "createdAt": "2025-09-20T18:00:00.000Z",
-  "updatedAt": "2025-09-25T19:30:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Modak",
-  "desc": "Steamed rice flour dumplings with coconut-jaggery filling",
-  "category": "traditional",
-  "price": 130,
-  "offerPrice": 110,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "rice flour",
-    "coconut",
-    "jaggery",
-    "ghee"
-  ],
-  "createdAt": "2025-09-20T18:05:00.000Z",
-  "updatedAt": "2025-09-25T19:35:00.000Z",
-  "__v": 0
-},
-{
-
-  "title": "Laddu Besan",
-  "desc": "Fried gram flour sweet balls with ghee",
-  "category": "traditional",
-  "price": 120,
-  "offerPrice": 100,
-  "badge": "veg",
-  "active": true,
-  "image": "https://res.cloudinary.com/dfifffuai/image/upload/v1758392168/products/cs0sgugomqgzflvmjwev.webp",
-  "ingredients": [
-    "gram flour",
-    "sugar",
-    "ghee",
-    "cardamom"
-  ],
-  "createdAt": "2025-09-20T18:10:00.000Z",
-  "updatedAt": "2025-09-25T19:40:00.000Z",
+  "createdAt": "2025-10-15T11:26:00.000Z",
+  "updatedAt": {
+    "$date": "2025-10-15T11:26:00.000Z"
+  },
   "__v": 0
 }]

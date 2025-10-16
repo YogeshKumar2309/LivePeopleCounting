@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../admin/Sidebar";
+import MobileSidbar from "../admin/MobileSidbar";
 
 
 const AdminLayout = () => {
-  const [sidebarMenu, setSidebarMenu] = useState(true);
+  const [sidebarMenu, setSidebarMenu] = useState(false);
   return (
     <>
       <div className="flex h-screen ">
         {/* Sidebar */}
-        {sidebarMenu && (
-          <aside className="w-64 hidden sm:block">
-            <Sidebar />
+        {sidebarMenu ? (
+          <aside>
+            <Sidebar  onClose={setSidebarMenu}/>
           </aside>
+        ): (
+          <MobileSidbar onClose={setSidebarMenu}/>
         )}   
 
           {/* Content */}

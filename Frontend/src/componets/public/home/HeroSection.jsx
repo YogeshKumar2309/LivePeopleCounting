@@ -90,17 +90,17 @@ const HeroSection = () => {
         {/* Right Content - 3 Images */}
         <div className="grid grid-cols-2 gap-4">
           <img
-           src="https://res.cloudinary.com/dfifffuai/image/upload/v1759067666/products/zsvbk5idosvfc4c5hesu.jpg"
+           src="https://res.cloudinary.com/dfifffuai/image/upload/v1760538428/Hazelnut_Cookie_otsc9r.jpg"
             alt="Dessert 1"
             className="w-full h-56 object-cover rounded-lg shadow-lg col-span-2"
           />
           <img
-           src="https://res.cloudinary.com/dfifffuai/image/upload/v1759076870/products/uyugfl8ipnmy8ailepm4.jpg"
+           src="https://res.cloudinary.com/dfifffuai/image/upload/v1760538697/Pecan_Pie_y0o8pn.jpg"
             alt="Dessert 2"
             className="w-full h-40 object-cover rounded-lg shadow-lg"
           />
           <img
-              src="https://res.cloudinary.com/dfifffuai/image/upload/v1759058139/products/kuofz9rstympntqzft9g.jpg"
+              src="https://res.cloudinary.com/dfifffuai/image/upload/v1760538487/Lemon_Drizzle_Cake_zg0yfs.jpg"
             alt="Dessert 3"
             className="w-full h-40 object-cover rounded-lg shadow-lg"
           />

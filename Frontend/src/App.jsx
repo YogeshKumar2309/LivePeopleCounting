@@ -16,7 +16,6 @@ import UnauthPage from "./pages/Unauth/UnauthPage";
 import Products from "./pages/admin/Products";
 import Productlayout from "./pages/admin/Productlayout";
 import User from "./pages/admin/User";
-import LivePeople from "./pages/admin/LivePeople";
 import BisnessAnalytics from "./pages/admin/BisnessAnalytics";
 
 import PublicProducts from "./pages/public/Products";
@@ -34,6 +33,7 @@ import Cart from "./pages/user/Cart";
 import UserProfile from "./pages/user/UserProfile";
 import ProfilePage from "./pages/user/ProfilePage";
 import CurrentOrder from "./pages/user/CurrentOrder";
+import Order from "./pages/admin/Order";
 
 const App = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -103,11 +103,11 @@ const App = () => {
           {/* <Route index element={<div>User Dashboard</div>} /> */}
           <Route path="cart" element={<Cart />} />
           <Route path="profile" element={<UserProfile />}>
-            <Route index element={<ProfilePage />} />           
-            <Route path="orderDetails" element={<CurrentOrder/>} />
+            <Route index element={<ProfilePage />} />
+            <Route path="orderDetails" element={<CurrentOrder />} />
             <Route path="favorites" element={<Favorites />} />
           </Route>
-            <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
 
         {/* Admin Protected Routes */}
@@ -127,7 +127,7 @@ const App = () => {
             <Route path="allProduct" element={<Products />} />
             <Route path="edit/:id" element={<EditProductModal />} />
           </Route>
-          <Route path="livePeople" element={<LivePeople />} />
+          <Route path="orders" element={<Order />} />
           <Route path="bisnessAnalytics" element={<BisnessAnalytics />} />
         </Route>
 
